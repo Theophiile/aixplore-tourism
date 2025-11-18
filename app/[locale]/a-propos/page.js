@@ -112,7 +112,10 @@ export default function AProposPage({ params }) {
             transition={{ delay: 0.2 }}
             className="text-2xl md:text-3xl font-playfair italic max-w-3xl mx-auto"
           >
-            Entre lac et montagnes, une invitation à ressentir
+            {locale === 'fr' 
+              ? "Entre lac et montagnes, une invitation à ressentir"
+              : "Between lake and mountains, an invitation to feel"
+            }
           </motion.p>
         </div>
       </ParallaxSection>
@@ -126,17 +129,29 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
           >
             <p className="text-2xl md:text-3xl font-playfair italic text-stone-dark mb-8">
-              Ici, tout commence par un souffle.
+              {locale === 'fr' 
+                ? "Ici, tout commence par un souffle."
+                : "Here, everything begins with a breath."
+              }
             </p>
             <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed">
               <p>
-                Celui du vent sur le lac du Bourget, celui des forêts du Revard, celui d&apos;une voix qui raconte la Savoie autrement.
+                {locale === 'fr'
+                  ? "Celui du vent sur le lac du Bourget, celui des forêts du Revard, celui d'une voix qui raconte la Savoie autrement."
+                  : "The wind over Lake Bourget, the forests of Revard, the voice that tells Savoie differently."
+                }
               </p>
               <p>
-                Aixplore Tourism est né d&apos;un amour profond pour ce territoire singulier, où l&apos;eau, la pierre et la lumière s&apos;unissent dans une même harmonie.
+                {locale === 'fr'
+                  ? "Aixplore Tourism est né d'un amour profond pour ce territoire singulier, où l'eau, la pierre et la lumière s'unissent dans une même harmonie."
+                  : "Aixplore Tourism was born from a deep love for this singular territory, where water, stone and light unite in perfect harmony."
+                }
               </p>
               <p className="font-semibold text-stone-dark">
-                Nous proposons des excursions intimistes et guidées avec passion, pour que chaque visiteur reparte avec plus qu&apos;un souvenir : une émotion.
+                {locale === 'fr'
+                  ? "Nous proposons des excursions intimistes et guidées avec passion, pour que chaque visiteur reparte avec plus qu'un souvenir : une émotion."
+                  : "We offer intimate and passionately guided excursions, so that each visitor leaves with more than a memory: an emotion."
+                }
               </p>
             </div>
           </motion.div>
@@ -153,25 +168,40 @@ export default function AProposPage({ params }) {
             className="mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🌿</span> L&apos;esprit Aixplore
+              <span>🌿</span> {locale === 'fr' ? "L'esprit Aixplore" : "The Aixplore Spirit"}
             </h2>
             <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed">
               <p>
-                Nous croyons qu&apos;explorer, c&apos;est prendre le temps de regarder, d&apos;écouter et de ressentir.
+                {locale === 'fr'
+                  ? "Nous croyons qu'explorer, c'est prendre le temps de regarder, d'écouter et de ressentir."
+                  : "We believe that exploring means taking the time to look, listen and feel."
+                }
               </p>
               <p>
-                Nos excursions mêlent histoire, nature, culture et convivialité — toujours dans une ambiance simple et sincère.
+                {locale === 'fr'
+                  ? "Nos excursions mêlent histoire, nature, culture et convivialité — toujours dans une ambiance simple et sincère."
+                  : "Our excursions blend history, nature, culture and conviviality — always in a simple and sincere atmosphere."
+                }
               </p>
               <p>
-                Chaque circuit est imaginé pour raconter la Savoie à travers ses paysages, ses saveurs, ses visages et ses légendes.
+                {locale === 'fr'
+                  ? "Chaque circuit est imaginé pour raconter la Savoie à travers ses paysages, ses saveurs, ses visages et ses légendes."
+                  : "Each tour is designed to tell the story of Savoie through its landscapes, flavors, faces and legends."
+                }
               </p>
             </div>
             <div className="mt-8 p-6 bg-lake-light/30 rounded-lg border-l-4 border-lake-dark">
               <p className="text-xl font-playfair italic text-stone-dark">
-                &quot;Je ne cherche pas à impressionner, mais à émerveiller. Ce que j&apos;aime, c&apos;est voir les gens s&apos;arrêter, sourire, et se laisser surprendre.&quot;
+                {locale === 'fr'
+                  ? "\"Je ne cherche pas à impressionner, mais à émerveiller. Ce que j'aime, c'est voir les gens s'arrêter, sourire, et se laisser surprendre.\""
+                  : "\"I don't seek to impress, but to inspire wonder. What I love is seeing people stop, smile, and let themselves be surprised.\""
+                }
               </p>
               <p className="text-right mt-4 font-montserrat text-stone">
-                — Anaïs Husson, fondatrice et guide d&apos;Aixplore Tourism
+                {locale === 'fr'
+                  ? "— Anaïs Husson, fondatrice et guide d'Aixplore Tourism"
+                  : "— Anaïs Husson, founder and guide of Aixplore Tourism"
+                }
               </p>
             </div>
           </motion.div>
@@ -199,29 +229,50 @@ export default function AProposPage({ params }) {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6">
-                Une guide, une voix, une passion
+                {locale === 'fr' 
+                  ? "Une guide, une voix, une passion"
+                  : "A Guide, A Voice, A Passion"
+                }
               </h2>
               <div className="space-y-4 font-montserrat text-stone leading-relaxed">
                 <p>
-                  Formée à la médiation culturelle et titulaire du brevet d&apos;accompagnatrice en montagne, <span className="font-semibold text-stone-dark">Anaïs Husson</span> a créé Aixplore pour partager ce qu&apos;elle aime le plus : la beauté des petits détails.
+                  {locale === 'fr'
+                    ? <>Formée à la médiation culturelle et titulaire du brevet d&apos;accompagnatrice en montagne, <span className="font-semibold text-stone-dark">Anaïs Husson</span> a créé Aixplore pour partager ce qu&apos;elle aime le plus : la beauté des petits détails.</>
+                    : <>Trained in cultural mediation and holding a mountain guide certificate, <span className="font-semibold text-stone-dark">Anaïs Husson</span> created Aixplore to share what she loves most: the beauty of small details.</>
+                  }
                 </p>
                 <p className="italic">
-                  Un rayon de soleil sur les Gorges du Sierroz, le parfum des pins au sommet du Revard, la voix d&apos;un habitant qui se souvient d&apos;une histoire d&apos;autrefois…
+                  {locale === 'fr'
+                    ? "Un rayon de soleil sur les Gorges du Sierroz, le parfum des pins au sommet du Revard, la voix d'un habitant qui se souvient d'une histoire d'autrefois…"
+                    : "A ray of sunlight on the Gorges du Sierroz, the scent of pines at the summit of Revard, the voice of a local remembering a story from long ago…"
+                  }
                 </p>
                 <p>
-                  Curieuse, souriante et profondément attachée à sa région, Anaïs aime faire découvrir la Savoie autrement, hors des sentiers battus.
+                  {locale === 'fr'
+                    ? "Curieuse, souriante et profondément attachée à sa région, Anaïs aime faire découvrir la Savoie autrement, hors des sentiers battus."
+                    : "Curious, smiling, and deeply attached to her region, Anaïs loves to reveal Savoie differently, off the beaten path."
+                  }
                 </p>
                 <p>
-                  Elle ne se contente pas de raconter : elle écoute, échange, conseille, apprend à connaître ses visiteurs et leur partage toutes ses bonnes adresses pour prolonger la découverte.
+                  {locale === 'fr'
+                    ? "Elle ne se contente pas de raconter : elle écoute, échange, conseille, apprend à connaître ses visiteurs et leur partage toutes ses bonnes adresses pour prolonger la découverte."
+                    : "She doesn't just tell stories: she listens, exchanges, advises, gets to know her visitors and shares all her best local addresses to extend the discovery."
+                  }
                 </p>
               </div>
               <div className="mt-6 p-4 bg-white/70 rounded-lg">
                 <p className="text-lg font-playfair italic text-stone-dark">
-                  &quot;Je ne suis pas seulement la guide qui explique et qui s&apos;en va. Je suis celle qui vit le moment avec vous.&quot;
+                  {locale === 'fr'
+                    ? "\"Je ne suis pas seulement la guide qui explique et qui s'en va. Je suis celle qui vit le moment avec vous.\""
+                    : "\"I'm not just the guide who explains and leaves. I'm the one who lives the moment with you.\""
+                  }
                 </p>
               </div>
               <p className="mt-4 font-montserrat text-stone">
-                À travers son humour, son sens du contact et son regard poétique sur les paysages, Anaïs insuffle à chaque excursion une âme singulière — faite de nature, de culture et de rencontres vraies.
+                {locale === 'fr'
+                  ? "À travers son humour, son sens du contact et son regard poétique sur les paysages, Anaïs insuffle à chaque excursion une âme singulière — faite de nature, de culture et de rencontres vraies."
+                  : "Through her humor, her sense of connection and her poetic gaze on landscapes, Anaïs brings a unique soul to each excursion — made of nature, culture and real encounters."
+                }
               </p>
             </motion.div>
           </div>
@@ -238,17 +289,26 @@ export default function AProposPage({ params }) {
             className="text-center"
           >
             <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🕊</span> Des expériences à taille humaine
+              <span>🕊</span> {locale === 'fr' ? "Des expériences à taille humaine" : "Human-Sized Experiences"}
             </h2>
             <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed">
               <p>
-                Aixplore Tourism privilégie les petits groupes — <span className="font-semibold text-stone-dark">jusqu&apos;à 8 personnes</span> — pour offrir une atmosphère de confiance et d&apos;échanges.
+                {locale === 'fr'
+                  ? <>Aixplore Tourism privilégie les petits groupes — <span className="font-semibold text-stone-dark">jusqu&apos;à 8 personnes</span> — pour offrir une atmosphère de confiance et d&apos;échanges.</>
+                  : <>Aixplore Tourism favors small groups — <span className="font-semibold text-stone-dark">up to 8 people</span> — to offer an atmosphere of trust and exchange.</>
+                }
               </p>
               <p>
-                Chaque visite se déroule en <span className="font-semibold">français ou en anglais</span>, dans le respect du lieu et de ceux qui l&apos;habitent.
+                {locale === 'fr'
+                  ? <>Chaque visite se déroule en <span className="font-semibold">français ou en anglais</span>, dans le respect du lieu et de ceux qui l&apos;habitent.</>
+                  : <>Each visit takes place in <span className="font-semibold">French or English</span>, respecting the place and those who inhabit it.</>
+                }
               </p>
               <p>
-                Nos circuits favorisent la découverte locale, la gastronomie régionale, et une forme douce de tourisme, durable et respectueuse.
+                {locale === 'fr'
+                  ? "Nos circuits favorisent la découverte locale, la gastronomie régionale, et une forme douce de tourisme, durable et respectueuse."
+                  : "Our tours favor local discovery, regional gastronomy, and a gentle form of tourism, sustainable and respectful."
+                }
               </p>
             </div>
           </motion.div>
@@ -264,7 +324,7 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 text-center"
           >
-            💫 Nos valeurs
+            💫 {locale === 'fr' ? "Nos valeurs" : "Our Values"}
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -276,10 +336,10 @@ export default function AProposPage({ params }) {
             >
               <div className="text-5xl mb-4">❤️</div>
               <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
-                Authenticité
+                {locale === 'fr' ? "Authenticité" : "Authenticity"}
               </h3>
               <p className="font-montserrat text-stone">
-                Parler vrai, vivre vrai.
+                {locale === 'fr' ? "Parler vrai, vivre vrai." : "Speaking true, living true."}
               </p>
             </motion.div>
 
@@ -292,10 +352,13 @@ export default function AProposPage({ params }) {
             >
               <div className="text-5xl mb-4">✨</div>
               <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
-                Émerveillement
+                {locale === 'fr' ? "Émerveillement" : "Wonder"}
               </h3>
               <p className="font-montserrat text-stone">
-                Offrir des instants suspendus, simples et précieux.
+                {locale === 'fr' 
+                  ? "Offrir des instants suspendus, simples et précieux."
+                  : "Offering suspended, simple and precious moments."
+                }
               </p>
             </motion.div>
 
@@ -308,10 +371,13 @@ export default function AProposPage({ params }) {
             >
               <div className="text-5xl mb-4">📖</div>
               <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
-                Transmission
+                {locale === 'fr' ? "Transmission" : "Transmission"}
               </h3>
               <p className="font-montserrat text-stone">
-                Partager la richesse culturelle et naturelle de la Savoie.
+                {locale === 'fr'
+                  ? "Partager la richesse culturelle et naturelle de la Savoie."
+                  : "Sharing Savoie's cultural and natural wealth."
+                }
               </p>
             </motion.div>
 
@@ -324,10 +390,13 @@ export default function AProposPage({ params }) {
             >
               <div className="text-5xl mb-4">🌿</div>
               <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
-                Respect
+                {locale === 'fr' ? "Respect" : "Respect"}
               </h3>
               <p className="font-montserrat text-stone">
-                De la nature, du rythme, des émotions.
+                {locale === 'fr'
+                  ? "De la nature, du rythme, des émotions."
+                  : "Of nature, of rhythm, of emotions."
+                }
               </p>
             </motion.div>
           </div>
@@ -344,22 +413,34 @@ export default function AProposPage({ params }) {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🌍</span> Une aventure humaine
+              <span>🌍</span> {locale === 'fr' ? "Une aventure humaine" : "A Human Adventure"}
             </h2>
             <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed max-w-3xl mx-auto">
               <p>
-                Depuis sa création, Aixplore Tourism a accueilli des voyageurs venus des quatre coins du monde.
+                {locale === 'fr'
+                  ? "Depuis sa création, Aixplore Tourism a accueilli des voyageurs venus des quatre coins du monde."
+                  : "Since its creation, Aixplore Tourism has welcomed travelers from all over the world."
+                }
               </p>
               <p className="font-semibold text-stone-dark">
-                Anglais, Canadiens, Allemands, Australiens, Suédois, Thailandais, Américains, Chiliens, Brésiliens, Tchadiens, Français…
+                {locale === 'fr'
+                  ? "Anglais, Canadiens, Allemands, Australiens, Suédois, Thailandais, Américains, Chiliens, Brésiliens, Tchadiens, Français…"
+                  : "English, Canadians, Germans, Australians, Swedes, Thais, Americans, Chileans, Brazilians, Chadians, French…"
+                }
               </p>
               <p>
-                Tous repartent avec le même sentiment : celui d&apos;avoir vécu une parenthèse sincère, entre découverte et douceur.
+                {locale === 'fr'
+                  ? "Tous repartent avec le même sentiment : celui d'avoir vécu une parenthèse sincère, entre découverte et douceur."
+                  : "All leave with the same feeling: having lived a sincere interlude, between discovery and gentleness."
+                }
               </p>
             </div>
             <div className="mt-8 p-6 bg-beige-light rounded-lg max-w-2xl mx-auto">
               <p className="text-xl font-playfair italic text-stone-dark">
-                &quot;Il n&apos;y a pas de plus belle récompense que d&apos;entendre un visiteur dire : je me suis senti bien ici.&quot;
+                {locale === 'fr'
+                  ? "\"Il n'y a pas de plus belle récompense que d'entendre un visiteur dire : je me suis senti bien ici.\""
+                  : "\"There is no greater reward than hearing a visitor say: I felt good here.\""
+                }
               </p>
             </div>
           </motion.div>
@@ -375,7 +456,7 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-playfair font-bold mb-4 text-center"
           >
-            Ils nous ont fait confiance
+            {locale === 'fr' ? "Ils nous ont fait confiance" : "They Trusted Us"}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -384,7 +465,10 @@ export default function AProposPage({ params }) {
             transition={{ delay: 0.2 }}
             className="text-center text-beige-light font-montserrat mb-12"
           >
-            Témoignages authentiques de nos voyageurs
+            {locale === 'fr' 
+              ? "Témoignages authentiques de nos voyageurs"
+              : "Authentic testimonials from our travelers"
+            }
           </motion.p>
 
           <div className="relative">
@@ -427,7 +511,7 @@ export default function AProposPage({ params }) {
                   className={`w-3 h-3 rounded-full transition-all ${
                     index === currentTestimonial ? 'bg-gold w-8' : 'bg-white/30'
                   }`}
-                  aria-label={`Voir témoignage ${index + 1}`}
+                  aria-label={locale === 'fr' ? `Voir témoignage ${index + 1}` : `View testimonial ${index + 1}`}
                 />
               ))}
             </div>
@@ -444,13 +528,19 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
-              Prêt à ressentir la Savoie autrement ?
+              {locale === 'fr'
+                ? "Prêt à ressentir la Savoie autrement ?"
+                : "Ready to experience Savoie differently?"
+              }
             </h2>
             <p className="text-lg md:text-xl mb-8 font-montserrat">
-              Contactez-nous pour planifier votre prochaine aventure entre lac et montagnes
+              {locale === 'fr'
+                ? "Contactez-nous pour planifier votre prochaine aventure entre lac et montagnes"
+                : "Contact us to plan your next adventure between lake and mountains"
+              }
             </p>
             <Button href={`/${locale}/contact`} variant="gold">
-              Nous contacter
+              {locale === 'fr' ? "Nous contacter" : "Contact us"}
             </Button>
           </motion.div>
         </div>

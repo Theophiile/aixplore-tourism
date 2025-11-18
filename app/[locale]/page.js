@@ -13,19 +13,19 @@ export default function HomePage({ params }) {
   const highlights = [
     {
       title: t('nav.guidedTours'),
-      description: 'Découvrez les plus beaux sentiers des Alpes avec nos guides expérimentés',
+      description: t('home.guidedToursDesc'),
       href: `/${locale}/visites-guidees`,
       icon: '🚶‍♀️'
     },
     {
       title: t('nav.wellnessRetreats'),
-      description: 'Ressourcez-vous lors de nos retraites bien-être en montagne',
+      description: t('home.wellnessDesc'),
       href: `/${locale}/retraites-bien-etre`,
       icon: '🏔️'
     },
     {
       title: t('nav.familyNature'),
-      description: 'Des activités nature ludiques et éducatives pour toute la famille',
+      description: t('home.familyDesc'),
       href: `/${locale}/nature-famille`,
       icon: '🌿'
     }
@@ -82,7 +82,7 @@ export default function HomePage({ params }) {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6"
           >
-            Explorez les Alpes autrement
+            {t('home.exploreAlps')}
           </motion.h2>
           
           <motion.p
@@ -106,7 +106,7 @@ export default function HomePage({ params }) {
             viewport={{ once: true }}
             className="text-4xl font-playfair font-bold text-stone-dark mb-12 text-center"
           >
-            Nos Expériences
+            {t('home.experiences')}
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -144,7 +144,7 @@ export default function HomePage({ params }) {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-playfair font-bold mb-6"
           >
-            Prêt pour l&apos;aventure ?
+            {t('home.readyForAdventure')}
           </motion.h2>
           
           <motion.p
@@ -154,7 +154,7 @@ export default function HomePage({ params }) {
             transition={{ delay: 0.2 }}
             className="text-xl mb-8 max-w-2xl mx-auto"
           >
-            Contactez-nous pour planifier votre prochaine expérience dans les Alpes
+            {t('home.contactForNext')}
           </motion.p>
 
           <motion.div

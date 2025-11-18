@@ -20,7 +20,7 @@ export default function RenaissancePage({ params }) {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-playfair font-bold mb-6"
           >
-            🌑 Retraite "Renaissance"
+            {locale === 'fr' ? "🌑 Retraite \"Renaissance\"" : "🌑 \"Rebirth\" Retreat"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,10 @@ export default function RenaissancePage({ params }) {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-3xl font-playfair italic max-w-4xl mx-auto mb-6"
           >
-            Sous la nouvelle lune, un temps pour semer, méditer et renaître à soi
+            {locale === 'fr'
+              ? "Sous la nouvelle lune, un temps pour semer, méditer et renaître à soi"
+              : "Under the new moon, a time to plant seeds, meditate and be reborn to yourself"
+            }
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -36,7 +39,7 @@ export default function RenaissancePage({ params }) {
             transition={{ delay: 0.3 }}
             className="text-xl font-montserrat mb-8"
           >
-            📅 Du 9 au 12 octobre 2025 – Savoie
+            {locale === 'fr' ? "📅 Du 9 au 12 octobre 2025 – Savoie" : "📅 October 9-12, 2025 – Savoie"}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,7 +47,7 @@ export default function RenaissancePage({ params }) {
             transition={{ delay: 0.4 }}
           >
             <Button href={`/${locale}/contact`} variant="gold">
-              Je réserve ma place
+              {locale === 'fr' ? "Je réserve ma place" : "Book my spot"}
             </Button>
           </motion.div>
         </div>
@@ -89,7 +92,7 @@ export default function RenaissancePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-12 text-center">
-              💚 Ce que vous vivrez
+              {locale === 'fr' ? "💚 Ce que vous vivrez" : "💚 What You'll Experience"}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -101,10 +104,10 @@ export default function RenaissancePage({ params }) {
               >
                 <div className="text-4xl mb-4">🌑</div>
                 <h3 className="text-xl font-playfair font-bold mb-2">
-                  Rituel de Nouvelle Lune
+                  {locale === 'fr' ? "Rituel de Nouvelle Lune" : "New Moon Ritual"}
                 </h3>
                 <p className="font-montserrat">
-                  Méditation, intentions et eau lunaire
+                  {locale === 'fr' ? "Méditation, intentions et eau lunaire" : "Meditation, intentions and moon water"}
                 </p>
               </motion.div>
 
@@ -117,10 +120,10 @@ export default function RenaissancePage({ params }) {
               >
                 <div className="text-4xl mb-4">✍️</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Écriture d&apos;intentions
+                  {locale === 'fr' ? "Écriture d'intentions" : "Intention Writing"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Ce que j&apos;ai envie de semer
+                  {locale === 'fr' ? "Ce que j'ai envie de semer" : "What I want to seed"}
                 </p>
               </motion.div>
 
@@ -133,10 +136,10 @@ export default function RenaissancePage({ params }) {
               >
                 <div className="text-4xl mb-4">🧘</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Pratiques corporelles douces
+                  {locale === 'fr' ? "Pratiques corporelles douces" : "Gentle Body Practices"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Qi Gong, Pilates et Tai Chi à l&apos;éventail
+                  {locale === 'fr' ? "Qi Gong, Pilates et Tai Chi à l'éventail" : "Qi Gong, Pilates and Fan Tai Chi"}
                 </p>
               </motion.div>
 
@@ -149,10 +152,10 @@ export default function RenaissancePage({ params }) {
               >
                 <div className="text-4xl mb-4">🌿</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Soins individuels
+                  {locale === 'fr' ? "Soins individuels" : "Individual Healing"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Reiki et Réflexologie plantaire
+                  {locale === 'fr' ? "Reiki et Réflexologie plantaire" : "Reiki and Reflexology"}
                 </p>
               </motion.div>
 
@@ -165,10 +168,10 @@ export default function RenaissancePage({ params }) {
               >
                 <div className="text-4xl mb-4">🌾</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Balades méditatives et temps de silence
+                  {locale === 'fr' ? "Balades méditatives et temps de silence" : "Meditative Walks & Silent Times"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Marches contemplatives dans la nature
+                  {locale === 'fr' ? "Marches contemplatives dans la nature" : "Contemplative walks in nature"}
                 </p>
               </motion.div>
 
@@ -181,16 +184,19 @@ export default function RenaissancePage({ params }) {
               >
                 <div className="text-4xl mb-4">🔥</div>
                 <h3 className="text-xl font-playfair font-bold mb-2">
-                  Cercle de partage et danse lente
+                  {locale === 'fr' ? "Cercle de partage et danse lente" : "Sharing Circle & Slow Dance"}
                 </h3>
                 <p className="font-montserrat">
-                  "Je m&apos;ouvre à la vie"
+                  {locale === 'fr' ? "\"Je m'ouvre à la vie\"" : "\"I open myself to life\""}
                 </p>
               </motion.div>
             </div>
 
             <p className="text-center text-lg text-stone font-montserrat italic mt-8 max-w-3xl mx-auto">
-              Un séjour pour ralentir, clarifier l&apos;esprit et planter les graines du renouveau.
+              {locale === 'fr'
+                ? "Un séjour pour ralentir, clarifier l'esprit et planter les graines du renouveau."
+                : "A retreat to slow down, clarify the mind and plant the seeds of renewal."
+              }
             </p>
           </motion.div>
         </div>
@@ -206,23 +212,38 @@ export default function RenaissancePage({ params }) {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-stone-dark">
-              🌸 L&apos;expérience en quelques mots
+              {locale === 'fr' ? "🌸 L'expérience en quelques mots" : "🌸 The Experience in a Few Words"}
             </h2>
             <div className="space-y-4 text-lg font-montserrat leading-relaxed text-stone-dark">
               <p>
-                À chaque nouvelle lune, tout recommence.
+                {locale === 'fr'
+                  ? "À chaque nouvelle lune, tout recommence."
+                  : "With each new moon, everything begins again."
+                }
               </p>
               <p>
-                Cette retraite vous invite à tourner la page, à écrire la suite, à honorer votre propre cycle de transformation.
+                {locale === 'fr'
+                  ? "Cette retraite vous invite à tourner la page, à écrire la suite, à honorer votre propre cycle de transformation."
+                  : "This retreat invites you to turn the page, write the next chapter, and honor your own cycle of transformation."
+                }
               </p>
               <p>
-                On se reconnecte à la terre, à l&apos;eau, à la douceur du silence.
+                {locale === 'fr'
+                  ? "On se reconnecte à la terre, à l'eau, à la douceur du silence."
+                  : "We reconnect with the earth, water, and the softness of silence."
+                }
               </p>
               <p>
-                Petit à petit, la clarté revient, et la lumière intérieure renaît.
+                {locale === 'fr'
+                  ? "Petit à petit, la clarté revient, et la lumière intérieure renaît."
+                  : "Little by little, clarity returns, and the inner light is reborn."
+                }
               </p>
               <p className="text-2xl font-playfair italic text-lake-dark">
-                Un retour à soi, simple, sincère, puissant.
+                {locale === 'fr'
+                  ? "Un retour à soi, simple, sincère, puissant."
+                  : "A return to oneself, simple, sincere, powerful."
+                }
               </p>
             </div>
           </motion.div>
@@ -238,35 +259,65 @@ export default function RenaissancePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-8 text-center">
-              📋 À savoir
+              {locale === 'fr' ? "📋 À savoir" : "📋 Good to Know"}
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
               <table className="w-full font-montserrat">
                 <tbody className="divide-y divide-stone-light">
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Public</td>
-                    <td className="py-4 px-4 text-stone">Adultes – accessible à tous</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Public" : "Audience"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "Adultes – accessible à tous" : "Adults – accessible to all"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Durée</td>
-                    <td className="py-4 px-4 text-stone">4 jours / 3 nuits</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Durée" : "Duration"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "4 jours / 3 nuits" : "4 days / 3 nights"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Taille du groupe</td>
-                    <td className="py-4 px-4 text-stone">8 à 10 participants</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Taille du groupe" : "Group Size"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "8 à 10 participants" : "8 to 10 participants"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Lieu</td>
-                    <td className="py-4 px-4 text-stone">Gîte ou chalet en Savoie (secteur Bauges, Revard ou lac du Bourget)</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Lieu" : "Location"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' 
+                        ? "Gîte ou chalet en Savoie (secteur Bauges, Revard ou lac du Bourget)"
+                        : "Lodge or chalet in Savoie (Bauges, Revard or Lake Bourget area)"
+                      }
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Déconnexion</td>
-                    <td className="py-4 px-4 text-stone">Sans téléphone de 9h à 20h</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Déconnexion" : "Disconnection"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "Sans téléphone de 9h à 20h" : "No phone from 9am to 8pm"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Et s&apos;il pleut ?</td>
-                    <td className="py-4 px-4 text-stone italic">Les rituels s&apos;adaptent, la nature reste guide : l&apos;eau nettoie, le vent libère, la terre ancre.</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Et s'il pleut ?" : "What if it rains?"}
+                    </td>
+                    <td className="py-4 px-4 text-stone italic">
+                      {locale === 'fr'
+                        ? "Les rituels s'adaptent, la nature reste guide : l'eau nettoie, le vent libère, la terre ancre."
+                        : "Rituals adapt, nature remains guide: water cleanses, wind liberates, earth anchors."
+                      }
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -284,31 +335,46 @@ export default function RenaissancePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-12 text-center">
-              💰 Tarifs & Réservation
+              {locale === 'fr' ? "💰 Tarifs & Réservation" : "💰 Pricing & Booking"}
             </h2>
 
             <div className="mb-12">
               <div className="bg-gold/20 border-2 border-gold rounded-lg p-8 mb-4">
                 <h3 className="text-3xl font-playfair font-bold mb-6 text-gold">
-                  🌷 Offre de lancement – jusqu&apos;au 1ᵉʳ mai 2025
+                  {locale === 'fr' 
+                    ? "🌷 Offre de lancement – jusqu'au 1ᵉʳ mai 2025"
+                    : "🌷 Launch Offer – until May 1st, 2025"
+                  }
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6 font-montserrat">
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">🛏</div>
-                    <h4 className="text-xl font-semibold mb-2">Chambre partagée</h4>
-                    <p className="text-sm text-beige-light mb-3">(4 lits simples)</p>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {locale === 'fr' ? "Chambre partagée" : "Shared Room"}
+                    </h4>
+                    <p className="text-sm text-beige-light mb-3">
+                      {locale === 'fr' ? "(4 lits simples)" : "(4 single beds)"}
+                    </p>
                     <p className="text-3xl font-bold text-gold">480 €</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">🌸</div>
-                    <h4 className="text-xl font-semibold mb-2">Chambre double</h4>
-                    <p className="text-sm text-beige-light mb-3">(offre duo)</p>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {locale === 'fr' ? "Chambre double" : "Double Room"}
+                    </h4>
+                    <p className="text-sm text-beige-light mb-3">
+                      {locale === 'fr' ? "(offre duo)" : "(duo offer)"}
+                    </p>
                     <p className="text-3xl font-bold text-gold">550 €</p>
-                    <p className="text-sm text-beige-light">/ personne</p>
+                    <p className="text-sm text-beige-light">
+                      {locale === 'fr' ? "/ personne" : "/ person"}
+                    </p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">✨</div>
-                    <h4 className="text-xl font-semibold mb-2">Chambre double solo</h4>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {locale === 'fr' ? "Chambre double solo" : "Double Room Solo"}
+                    </h4>
                     <p className="text-sm text-beige-light mb-3">&nbsp;</p>
                     <p className="text-3xl font-bold text-gold">590 €</p>
                   </div>
@@ -318,25 +384,38 @@ export default function RenaissancePage({ params }) {
 
             <div className="mb-12">
               <h3 className="text-3xl font-playfair font-bold mb-6 text-beige-light">
-                🌿 Tarifs réguliers – à partir du 2 mai 2025
+                {locale === 'fr'
+                  ? "🌿 Tarifs réguliers – à partir du 2 mai 2025"
+                  : "🌿 Regular Rates – from May 2nd, 2025"
+                }
               </h3>
               <div className="grid md:grid-cols-3 gap-6 font-montserrat">
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">🛏</div>
-                  <h4 className="text-xl font-semibold mb-2">Chambre partagée</h4>
+                  <h4 className="text-xl font-semibold mb-2">
+                    {locale === 'fr' ? "Chambre partagée" : "Shared Room"}
+                  </h4>
                   <p className="text-sm text-beige-light mb-3">&nbsp;</p>
                   <p className="text-3xl font-bold">515 €</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">🌸</div>
-                  <h4 className="text-xl font-semibold mb-2">Chambre double</h4>
-                  <p className="text-sm text-beige-light mb-3">(offre duo)</p>
+                  <h4 className="text-xl font-semibold mb-2">
+                    {locale === 'fr' ? "Chambre double" : "Double Room"}
+                  </h4>
+                  <p className="text-sm text-beige-light mb-3">
+                    {locale === 'fr' ? "(offre duo)" : "(duo offer)"}
+                  </p>
                   <p className="text-3xl font-bold">670 €</p>
-                  <p className="text-sm text-beige-light">/ personne</p>
+                  <p className="text-sm text-beige-light">
+                    {locale === 'fr' ? "/ personne" : "/ person"}
+                  </p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">✨</div>
-                  <h4 className="text-xl font-semibold mb-2">Chambre double solo</h4>
+                  <h4 className="text-xl font-semibold mb-2">
+                    {locale === 'fr' ? "Chambre double solo" : "Double Room Solo"}
+                  </h4>
                   <p className="text-sm text-beige-light mb-3">&nbsp;</p>
                   <p className="text-3xl font-bold">640 €</p>
                 </div>
@@ -344,13 +423,20 @@ export default function RenaissancePage({ params }) {
             </div>
 
             <p className="text-center text-beige-light mb-8">
-              Hébergement, repas, soins et accompagnement inclus.<br />
-              Réservation obligatoire – 10 participants maximum.
+              {locale === 'fr'
+                ? "Hébergement, repas, soins et accompagnement inclus."
+                : "Accommodation, meals, treatments and guidance included."
+              }
+              <br />
+              {locale === 'fr'
+                ? "Réservation obligatoire – 10 participants maximum."
+                : "Booking required – maximum 10 participants."
+              }
             </p>
 
             <div className="text-center">
               <Button href={`/${locale}/contact`} variant="gold">
-                Je réserve ma place
+                {locale === 'fr' ? "Je réserve ma place" : "Book My Spot"}
               </Button>
             </div>
           </motion.div>
@@ -366,34 +452,49 @@ export default function RenaissancePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-12 text-center">
-              ❓ Questions fréquentes
+              {locale === 'fr' ? "❓ Questions fréquentes" : "❓ Frequently Asked Questions"}
             </h2>
             
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
-                  Dois-je avoir déjà fait une retraite ou connaître la méditation ?
+                  {locale === 'fr'
+                    ? "Dois-je avoir déjà fait une retraite ou connaître la méditation ?"
+                    : "Do I need to have done a retreat before or know meditation?"
+                  }
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Pas du tout. Cette retraite est accessible à tous, chacun avance à son rythme.
+                  {locale === 'fr'
+                    ? "Pas du tout. Cette retraite est accessible à tous, chacun avance à son rythme."
+                    : "Not at all. This retreat is accessible to everyone, each person progresses at their own pace."
+                  }
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
-                  Et si je ne souhaite pas partager mes intentions ?
+                  {locale === 'fr'
+                    ? "Et si je ne souhaite pas partager mes intentions ?"
+                    : "What if I don't want to share my intentions?"
+                  }
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Rien n&apos;est imposé. Le partage est toujours libre et bienveillant.
+                  {locale === 'fr'
+                    ? "Rien n'est imposé. Le partage est toujours libre et bienveillant."
+                    : "Nothing is imposed. Sharing is always free and benevolent."
+                  }
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
-                  Et s&apos;il pleut ?
+                  {locale === 'fr' ? "Et s'il pleut ?" : "What if it rains?"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  La pluie devient un élément du rituel. Rien ne s&apos;arrête : tout se transforme.
+                  {locale === 'fr'
+                    ? "La pluie devient un élément du rituel. Rien ne s'arrête : tout se transforme."
+                    : "The rain becomes part of the ritual. Nothing stops: everything transforms."
+                  }
                 </p>
               </div>
             </div>
@@ -413,14 +514,24 @@ export default function RenaissancePage({ params }) {
               🌿
             </h2>
             <p className="text-2xl md:text-3xl font-playfair mb-6">
-              Sous la nouvelle lune, tout redevient possible.
+              {locale === 'fr'
+                ? "Sous la nouvelle lune, tout redevient possible."
+                : "Under the new moon, everything becomes possible again."
+              }
             </p>
             <p className="text-xl font-montserrat mb-8">
-              On respire, on écrit, on médite, on renaît.<br />
-              Une retraite tout en douceur pour accueillir le changement et s&apos;ouvrir à la vie.
+              {locale === 'fr'
+                ? "On respire, on écrit, on médite, on renaît."
+                : "We breathe, we write, we meditate, we are reborn."
+              }
+              <br />
+              {locale === 'fr'
+                ? "Une retraite tout en douceur pour accueillir le changement et s'ouvrir à la vie."
+                : "A gentle retreat to welcome change and open up to life."
+              }
             </p>
             <Button href={`/${locale}/contact`} variant="gold">
-              Je réserve ma place maintenant
+              {locale === 'fr' ? "Je réserve ma place maintenant" : "Book My Spot Now"}
             </Button>
           </motion.div>
         </div>

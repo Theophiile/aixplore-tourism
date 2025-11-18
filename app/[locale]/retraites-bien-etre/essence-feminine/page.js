@@ -20,7 +20,7 @@ export default function EssenceFemininePage({ params }) {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-playfair font-bold mb-6"
           >
-            🌸 Retraite "Essence féminine"
+            {locale === 'fr' ? "🌸 Retraite \"Essence féminine\"" : "🌸 \"Feminine Essence\" Retreat"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,10 @@ export default function EssenceFemininePage({ params }) {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-3xl font-playfair italic max-w-4xl mx-auto mb-6"
           >
-            Un voyage intérieur pour accueillir sa vulnérabilité et renouer avec sa joie naturelle
+            {locale === 'fr'
+              ? "Un voyage intérieur pour accueillir sa vulnérabilité et renouer avec sa joie naturelle"
+              : "An inner journey to embrace vulnerability and reconnect with natural joy"
+            }
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -36,7 +39,7 @@ export default function EssenceFemininePage({ params }) {
             transition={{ delay: 0.3 }}
             className="text-xl font-montserrat mb-8"
           >
-            📅 Du 18 au 21 septembre 2025 – Savoie
+            {locale === 'fr' ? "📅 Du 18 au 21 septembre 2025 – Savoie" : "📅 September 18-21, 2025 – Savoie"}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,7 +47,7 @@ export default function EssenceFemininePage({ params }) {
             transition={{ delay: 0.4 }}
           >
             <Button href={`/${locale}/contact`} variant="gold">
-              Je réserve ma place
+              {locale === 'fr' ? "Je réserve ma place" : "Book my spot"}
             </Button>
           </motion.div>
         </div>
@@ -76,7 +79,10 @@ export default function EssenceFemininePage({ params }) {
                 Guidée par Anaïs, Isée et Marie, cette retraite est un espace bienveillant pour s&apos;explorer, se déposer, et retrouver le plaisir simple d&apos;être soi.
               </p>
               <p className="text-xl font-playfair italic text-lake-dark">
-                Quatre jours pour se reconnecter à son essence, sa douceur et sa force.
+                {locale === 'fr'
+                  ? "Quatre jours pour se reconnecter à son essence, sa douceur et sa force."
+                  : "Four days to reconnect with your essence, your softness and your strength."
+                }
               </p>
             </div>
           </motion.div>
@@ -92,7 +98,7 @@ export default function EssenceFemininePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-12 text-center">
-              💚 Ce que vous vivrez
+              {locale === 'fr' ? "💚 Ce que vous vivrez" : "💚 What You'll Experience"}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -104,10 +110,10 @@ export default function EssenceFemininePage({ params }) {
               >
                 <div className="text-4xl mb-4">🌺</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Pratiques corporelles douces
+                  {locale === 'fr' ? "Pratiques corporelles douces" : "Gentle Body Practices"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Qi Gong, Pilates, Tai Chi à l&apos;éventail
+                  {locale === 'fr' ? "Qi Gong, Pilates, Tai Chi à l'éventail" : "Qi Gong, Pilates, Fan Tai Chi"}
                 </p>
               </motion.div>
 
@@ -120,10 +126,10 @@ export default function EssenceFemininePage({ params }) {
               >
                 <div className="text-4xl mb-4">🌿</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Soins individuels
+                  {locale === 'fr' ? "Soins individuels" : "Individual Healing"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Reiki et Réflexologie plantaire
+                  {locale === 'fr' ? "Reiki et Réflexologie plantaire" : "Reiki and Reflexology"}
                 </p>
               </motion.div>
 
@@ -136,13 +142,13 @@ export default function EssenceFemininePage({ params }) {
               >
                 <div className="text-4xl mb-4">✍️</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Ateliers introspectifs
+                  {locale === 'fr' ? "Ateliers introspectifs" : "Introspective Workshops"}
                 </h3>
                 <p className="text-stone font-montserrat mb-2">
-                  "Qui suis-je hors du regard des autres ?"
+                  {locale === 'fr' ? "\"Qui suis-je hors du regard des autres ?\"" : "\"Who am I outside others' gaze?\""}
                 </p>
                 <p className="text-stone font-montserrat">
-                  "Créer sa liste de désirs"
+                  {locale === 'fr' ? "\"Créer sa liste de désirs\"" : "\"Creating my desire list\""}
                 </p>
               </motion.div>
 
@@ -155,10 +161,10 @@ export default function EssenceFemininePage({ params }) {
               >
                 <div className="text-4xl mb-4">🔥</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Cercles de parole et moments de sororité
+                  {locale === 'fr' ? "Cercles de parole et moments de sororité" : "Talking Circles & Sisterhood Moments"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Échanges entre femmes dans la bienveillance
+                  {locale === 'fr' ? "Échanges entre femmes dans la bienveillance" : "Exchanges between women in kindness"}
                 </p>
               </motion.div>
 
@@ -171,10 +177,10 @@ export default function EssenceFemininePage({ params }) {
               >
                 <div className="text-4xl mb-4">🌸</div>
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
-                  Balades méditatives & instants d&apos;écriture libre
+                  {locale === 'fr' ? "Balades méditatives & instants d'écriture libre" : "Meditative Walks & Free Writing"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Nature et expression créative
+                  {locale === 'fr' ? "Nature et expression créative" : "Nature and creative expression"}
                 </p>
               </motion.div>
 
@@ -187,16 +193,19 @@ export default function EssenceFemininePage({ params }) {
               >
                 <div className="text-4xl mb-4">🕯</div>
                 <h3 className="text-xl font-playfair font-bold mb-2">
-                  Méditations du soir
+                  {locale === 'fr' ? "Méditations du soir" : "Evening Meditations"}
                 </h3>
                 <p className="font-montserrat">
-                  Autour de la vulnérabilité et de la gratitude
+                  {locale === 'fr' ? "Autour de la vulnérabilité et de la gratitude" : "Around vulnerability and gratitude"}
                 </p>
               </motion.div>
             </div>
 
             <p className="text-center text-lg text-stone font-montserrat italic mt-8 max-w-3xl mx-auto">
-              Un espace pour respirer, partager, rire et se redécouvrir sans masque.
+              {locale === 'fr'
+                ? "Un espace pour respirer, partager, rire et se redécouvrir sans masque."
+                : "A space to breathe, share, laugh and rediscover yourself without a mask."
+              }
             </p>
           </motion.div>
         </div>
@@ -212,20 +221,32 @@ export default function EssenceFemininePage({ params }) {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-stone-dark">
-              🌷 L&apos;expérience en quelques mots
+              {locale === 'fr' ? "🌷 L'expérience en quelques mots" : "🌷 The Experience in a Few Words"}
             </h2>
             <div className="space-y-4 text-lg font-montserrat leading-relaxed text-stone-dark">
               <p>
-                Pendant ces quatre jours, on laisse tomber les armures.
+                {locale === 'fr' 
+                  ? "Pendant ces quatre jours, on laisse tomber les armures."
+                  : "During these four days, we drop the armor."
+                }
               </p>
               <p>
-                On apprend à se voir autrement — avec bienveillance, tendresse et humour.
+                {locale === 'fr'
+                  ? "On apprend à se voir autrement — avec bienveillance, tendresse et humour."
+                  : "We learn to see ourselves differently — with kindness, tenderness and humor."
+                }
               </p>
               <p>
-                Les échanges, les rires, les silences : tout devient chemin vers soi.
+                {locale === 'fr'
+                  ? "Les échanges, les rires, les silences : tout devient chemin vers soi."
+                  : "Exchanges, laughter, silences: everything becomes a path to oneself."
+                }
               </p>
               <p className="text-2xl font-playfair italic text-lake-dark">
-                Ici, on se célèbre autant qu&apos;on se libère.
+                {locale === 'fr'
+                  ? "Ici, on se célèbre autant qu'on se libère."
+                  : "Here, we celebrate ourselves as much as we free ourselves."
+                }
               </p>
             </div>
           </motion.div>
@@ -241,35 +262,65 @@ export default function EssenceFemininePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-8 text-center">
-              📋 À savoir
+              {locale === 'fr' ? "📋 À savoir" : "📋 Good to Know"}
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
               <table className="w-full font-montserrat">
                 <tbody className="divide-y divide-stone-light">
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Public</td>
-                    <td className="py-4 px-4 text-stone font-semibold">Réservé aux femmes</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Public" : "Audience"}
+                    </td>
+                    <td className="py-4 px-4 text-stone font-semibold">
+                      {locale === 'fr' ? "Réservé aux femmes" : "Women only"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Durée</td>
-                    <td className="py-4 px-4 text-stone">4 jours / 3 nuits</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Durée" : "Duration"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "4 jours / 3 nuits" : "4 days / 3 nights"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Taille du groupe</td>
-                    <td className="py-4 px-4 text-stone">8 à 10 participantes</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Taille du groupe" : "Group Size"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "8 à 10 participantes" : "8 to 10 participants"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Lieu</td>
-                    <td className="py-4 px-4 text-stone">Gîte ou chalet en Savoie (secteur Bauges, Revard ou lac du Bourget)</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Lieu" : "Location"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' 
+                        ? "Gîte ou chalet en Savoie (secteur Bauges, Revard ou lac du Bourget)"
+                        : "Lodge or chalet in Savoie (Bauges, Revard or Lake Bourget area)"
+                      }
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Déconnexion</td>
-                    <td className="py-4 px-4 text-stone">Sans téléphone de 9h à 20h</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Déconnexion" : "Disconnection"}
+                    </td>
+                    <td className="py-4 px-4 text-stone">
+                      {locale === 'fr' ? "Sans téléphone de 9h à 20h" : "No phone from 9am to 8pm"}
+                    </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">Et s&apos;il pleut ?</td>
-                    <td className="py-4 px-4 text-stone italic">Les activités s&apos;adaptent — la nature reste notre alliée.</td>
+                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                      {locale === 'fr' ? "Et s'il pleut ?" : "What if it rains?"}
+                    </td>
+                    <td className="py-4 px-4 text-stone italic">
+                      {locale === 'fr'
+                        ? "Les activités s'adaptent — la nature reste notre alliée."
+                        : "Activities adapt — nature remains our ally."
+                      }
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -287,31 +338,46 @@ export default function EssenceFemininePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-12 text-center">
-              💰 Tarifs & Réservation
+              {locale === 'fr' ? "💰 Tarifs & Réservation" : "💰 Pricing & Booking"}
             </h2>
 
             <div className="mb-12">
               <div className="bg-gold/20 border-2 border-gold rounded-lg p-8 mb-4">
                 <h3 className="text-3xl font-playfair font-bold mb-6 text-gold">
-                  🌷 Offre de lancement – jusqu&apos;au 1ᵉʳ mai 2025
+                  {locale === 'fr' 
+                    ? "🌷 Offre de lancement – jusqu'au 1ᵉʳ mai 2025"
+                    : "🌷 Launch Offer – until May 1st, 2025"
+                  }
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6 font-montserrat">
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">🛏</div>
-                    <h4 className="text-xl font-semibold mb-2">Chambre partagée</h4>
-                    <p className="text-sm text-beige-light mb-3">(4 lits simples)</p>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {locale === 'fr' ? "Chambre partagée" : "Shared Room"}
+                    </h4>
+                    <p className="text-sm text-beige-light mb-3">
+                      {locale === 'fr' ? "(4 lits simples)" : "(4 single beds)"}
+                    </p>
                     <p className="text-3xl font-bold text-gold">480 €</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">🌸</div>
-                    <h4 className="text-xl font-semibold mb-2">Chambre double</h4>
-                    <p className="text-sm text-beige-light mb-3">(offre duo)</p>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {locale === 'fr' ? "Chambre double" : "Double Room"}
+                    </h4>
+                    <p className="text-sm text-beige-light mb-3">
+                      {locale === 'fr' ? "(offre duo)" : "(duo offer)"}
+                    </p>
                     <p className="text-3xl font-bold text-gold">550 €</p>
-                    <p className="text-sm text-beige-light">/ personne</p>
+                    <p className="text-sm text-beige-light">
+                      {locale === 'fr' ? "/ personne" : "/ person"}
+                    </p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">✨</div>
-                    <h4 className="text-xl font-semibold mb-2">Chambre double solo</h4>
+                    <h4 className="text-xl font-semibold mb-2">
+                      {locale === 'fr' ? "Chambre double solo" : "Double Room Solo"}
+                    </h4>
                     <p className="text-sm text-beige-light mb-3">&nbsp;</p>
                     <p className="text-3xl font-bold text-gold">590 €</p>
                   </div>
@@ -321,25 +387,38 @@ export default function EssenceFemininePage({ params }) {
 
             <div className="mb-12">
               <h3 className="text-3xl font-playfair font-bold mb-6 text-beige-light">
-                🌿 Tarifs réguliers – à partir du 2 mai 2025
+                {locale === 'fr'
+                  ? "🌿 Tarifs réguliers – à partir du 2 mai 2025"
+                  : "🌿 Regular Rates – from May 2nd, 2025"
+                }
               </h3>
               <div className="grid md:grid-cols-3 gap-6 font-montserrat">
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">🛏</div>
-                  <h4 className="text-xl font-semibold mb-2">Chambre partagée</h4>
+                  <h4 className="text-xl font-semibold mb-2">
+                    {locale === 'fr' ? "Chambre partagée" : "Shared Room"}
+                  </h4>
                   <p className="text-sm text-beige-light mb-3">&nbsp;</p>
                   <p className="text-3xl font-bold">515 €</p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">🌸</div>
-                  <h4 className="text-xl font-semibold mb-2">Chambre double</h4>
-                  <p className="text-sm text-beige-light mb-3">(offre duo)</p>
+                  <h4 className="text-xl font-semibold mb-2">
+                    {locale === 'fr' ? "Chambre double" : "Double Room"}
+                  </h4>
+                  <p className="text-sm text-beige-light mb-3">
+                    {locale === 'fr' ? "(offre duo)" : "(duo offer)"}
+                  </p>
                   <p className="text-3xl font-bold">670 €</p>
-                  <p className="text-sm text-beige-light">/ personne</p>
+                  <p className="text-sm text-beige-light">
+                    {locale === 'fr' ? "/ personne" : "/ person"}
+                  </p>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">✨</div>
-                  <h4 className="text-xl font-semibold mb-2">Chambre double solo</h4>
+                  <h4 className="text-xl font-semibold mb-2">
+                    {locale === 'fr' ? "Chambre double solo" : "Double Room Solo"}
+                  </h4>
                   <p className="text-sm text-beige-light mb-3">&nbsp;</p>
                   <p className="text-3xl font-bold">640 €</p>
                 </div>
@@ -347,13 +426,20 @@ export default function EssenceFemininePage({ params }) {
             </div>
 
             <p className="text-center text-beige-light mb-8">
-              Hébergement, repas, soins et accompagnement inclus.<br />
-              Réservation obligatoire – 10 participantes maximum.
+              {locale === 'fr'
+                ? "Hébergement, repas, soins et accompagnement inclus."
+                : "Accommodation, meals, treatments and guidance included."
+              }
+              <br />
+              {locale === 'fr'
+                ? "Réservation obligatoire – 10 participantes maximum."
+                : "Booking required – maximum 10 participants."
+              }
             </p>
 
             <div className="text-center">
               <Button href={`/${locale}/contact`} variant="gold">
-                Je réserve ma place
+                {locale === 'fr' ? "Je réserve ma place" : "Book My Spot"}
               </Button>
             </div>
           </motion.div>
@@ -369,34 +455,46 @@ export default function EssenceFemininePage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-12 text-center">
-              ❓ Questions fréquentes
+              {locale === 'fr' ? "❓ Questions fréquentes" : "❓ Frequently Asked Questions"}
             </h2>
             
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
-                  Dois-je venir seule ?
+                  {locale === 'fr' ? "Dois-je venir seule ?" : "Should I come alone?"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Beaucoup viennent seules, et repartent avec de vraies amitiés.
+                  {locale === 'fr'
+                    ? "Beaucoup viennent seules, et repartent avec de vraies amitiés."
+                    : "Many come alone and leave with true friendships."
+                  }
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
-                  Faut-il être à l&apos;aise pour parler en groupe ?
+                  {locale === 'fr'
+                    ? "Faut-il être à l'aise pour parler en groupe ?"
+                    : "Do I need to be comfortable speaking in a group?"
+                  }
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Non, rien n&apos;est forcé. Chacune participe à son rythme, dans le respect de son espace.
+                  {locale === 'fr'
+                    ? "Non, rien n'est forcé. Chacune participe à son rythme, dans le respect de son espace."
+                    : "No, nothing is forced. Everyone participates at their own pace, respecting their space."
+                  }
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
-                  Y a-t-il un thème particulier ?
+                  {locale === 'fr' ? "Y a-t-il un thème particulier ?" : "Is there a particular theme?"}
                 </h3>
                 <p className="text-stone font-montserrat">
-                  Oui : mieux se connaître, s&apos;honorer et oser rayonner tel qu&apos;on est.
+                  {locale === 'fr'
+                    ? "Oui : mieux se connaître, s'honorer et oser rayonner tel qu'on est."
+                    : "Yes: to know yourself better, honor yourself and dare to shine as you are."
+                  }
                 </p>
               </div>
             </div>
@@ -416,14 +514,24 @@ export default function EssenceFemininePage({ params }) {
               🌿
             </h2>
             <p className="text-2xl md:text-3xl font-playfair mb-6 text-stone-dark">
-              Une bulle entre femmes, pour se redécouvrir sans filtre.
+              {locale === 'fr'
+                ? "Une bulle entre femmes, pour se redécouvrir sans filtre."
+                : "A women's bubble, to rediscover yourself unfiltered."
+              }
             </p>
             <p className="text-xl font-montserrat mb-8 text-stone-dark">
-              Des respirations, des rires, des mots et des silences qui apaisent.<br />
-              Un moment pour vous retrouver, vous aimer et repartir un peu plus libre.
+              {locale === 'fr'
+                ? "Des respirations, des rires, des mots et des silences qui apaisent."
+                : "Breaths, laughter, words and silences that soothe."
+              }
+              <br />
+              {locale === 'fr'
+                ? "Un moment pour vous retrouver, vous aimer et repartir un peu plus libre."
+                : "A moment to find yourself, love yourself and leave a little freer."
+              }
             </p>
             <Button href={`/${locale}/contact`} variant="primary">
-              Je réserve ma place maintenant
+              {locale === 'fr' ? "Je réserve ma place maintenant" : "Book My Spot Now"}
             </Button>
           </motion.div>
         </div>
