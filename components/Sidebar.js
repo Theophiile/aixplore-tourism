@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getTranslation } from '@/lib/translations';
 
 const menuItems = [
@@ -17,7 +17,7 @@ const menuItems = [
   { key: 'contact', href: '/contact', icon: '💬' },
 ];
 
-function SidebarContent({ locale, pathname, isActive, t }) {
+function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
   return (
     <>
       {/* Logo */}
@@ -59,8 +59,8 @@ function SidebarContent({ locale, pathname, isActive, t }) {
       {/* Langue */}
       <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-stone-light bg-beige-light">
         <div className="flex gap-2 justify-center">
-          <Link
-            href={`/fr${pathname.replace(/^\/(fr|en)/, '')}`}
+          <button
+            onClick={() => onLanguageChange('fr')}
             className={`px-4 py-2 rounded-lg text-sm font-montserrat transition-all ${
               locale === 'fr'
                 ? 'bg-lake text-white'
@@ -68,9 +68,9 @@ function SidebarContent({ locale, pathname, isActive, t }) {
             }`}
           >
             FR
-          </Link>
-          <Link
-            href={`/en${pathname.replace(/^\/(fr|en)/, '')}`}
+          </button>
+          <button
+            onClick={() => onLanguageChange('en')}
             className={`px-4 py-2 rounded-lg text-sm font-montserrat transition-all ${
               locale === 'en'
                 ? 'bg-lake text-white'
@@ -78,7 +78,7 @@ function SidebarContent({ locale, pathname, isActive, t }) {
             }`}
           >
             EN
-          </Link>
+          </button>
         </div>
       </div>
     </>
@@ -88,12 +88,42 @@ function SidebarContent({ locale, pathname, isActive, t }) {
 export default function Sidebar({ locale = 'fr' }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Restaurer la position de scroll au chargement et lors du changement de locale
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+    if (savedScrollPosition) {
+      // Utiliser requestAnimationFrame pour s'assurer que le DOM est prêt
+      requestAnimationFrame(() => {
+        window.scrollTo(0, parseInt(savedScrollPosition, 10));
+      });
+      sessionStorage.removeItem('scrollPosition');
+    }
+  }, [locale, pathname]);
 
   const isActive = (href) => {
     if (href === '/') {
       return pathname === `/${locale}` || pathname === '/';
     }
     return pathname.includes(href);
+  };
+
+  const handleLanguageChange = (newLocale) => {
+    // Sauvegarder la position de scroll actuelle
+    const scrollPosition = window.scrollY;
+    sessionStorage.setItem('scrollPosition', scrollPosition.toString());
+    
+    // Construire la nouvelle URL avec le nouveau locale
+    const newPath = `/${newLocale}${pathname.replace(/^\/(fr|en)/, '')}`;
+    
+    // Naviguer vers la nouvelle page SANS scroller en haut
+    router.push(newPath, { scroll: false });
+    
+    // Restaurer immédiatement la position (backup au cas où)
+    setTimeout(() => {
+      window.scrollTo(0, scrollPosition);
+    }, 0);
   };
 
   const t = (key) => getTranslation(locale, `nav.${key}`);
@@ -141,7 +171,7 @@ export default function Sidebar({ locale = 'fr' }) {
               transition={{ type: 'spring', damping: 25 }}
               className="fixed left-0 top-0 h-screen w-64 bg-beige-light border-r border-stone-light shadow-xl z-40 overflow-y-auto lg:hidden"
             >
-              <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} />
+              <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
             </motion.aside>
 
             <motion.div
@@ -157,7 +187,7 @@ export default function Sidebar({ locale = 'fr' }) {
 
       {/* Sidebar Desktop */}
       <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 bg-beige-light border-r border-stone-light shadow-xl z-40 overflow-y-auto">
-        <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} />
+        <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
       </aside>
     </>
   );
