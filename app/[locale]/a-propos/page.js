@@ -102,7 +102,7 @@ export default function AProposPage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
+            className="text-5xl md:text-7xl font-playfair font-light mb-6"
           >
             Aixplore Tourism
           </motion.h1>
@@ -110,7 +110,7 @@ export default function AProposPage({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl md:text-3xl font-playfair italic max-w-3xl mx-auto"
+            className="text-2xl md:text-3xl font-playfair font-light italic max-w-3xl mx-auto"
           >
             {locale === 'fr' 
               ? "Entre lac et montagnes, une invitation à ressentir"
@@ -134,7 +134,7 @@ export default function AProposPage({ params }) {
                 : "Here, everything begins with a breath."
               }
             </p>
-            <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed">
+            <div className="space-y-4 font-montserrat font-light text-lg text-stone leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Celui du vent sur le lac du Bourget, celui des forêts du Revard, celui d'une voix qui raconte la Savoie autrement."
@@ -147,7 +147,7 @@ export default function AProposPage({ params }) {
                   : "Aixplore Tourism was born from a deep love for this singular territory, where water, stone and light unite in perfect harmony."
                 }
               </p>
-              <p className="font-semibold text-stone-dark">
+              <p className="font-normal text-stone-dark">
                 {locale === 'fr'
                   ? "Nous proposons des excursions intimistes et guidées avec passion, pour que chaque visiteur reparte avec plus qu'un souvenir : une émotion."
                   : "We offer intimate and passionately guided excursions, so that each visitor leaves with more than a memory: an emotion."
@@ -167,10 +167,10 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🌿</span> {locale === 'fr' ? "L'esprit Aixplore" : "The Aixplore Spirit"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6 text-center">
+              {locale === 'fr' ? "L'esprit Aixplore" : "The Aixplore Spirit"}
             </h2>
-            <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed">
+            <div className="space-y-4 font-montserrat font-light text-lg text-stone leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Nous croyons qu'explorer, c'est prendre le temps de regarder, d'écouter et de ressentir."
@@ -219,7 +219,9 @@ export default function AProposPage({ params }) {
               className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-lake to-gold-light flex items-center justify-center">
-                <span className="text-9xl">🌸</span>
+                <div className="text-center text-white">
+                  <p className="text-3xl font-playfair font-light">Anaïs Husson</p>
+                </div>
               </div>
             </motion.div>
 
@@ -228,13 +230,13 @@ export default function AProposPage({ params }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6">
+              <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6">
                 {locale === 'fr' 
                   ? "Une guide, une voix, une passion"
                   : "A Guide, A Voice, A Passion"
                 }
               </h2>
-              <div className="space-y-4 font-montserrat text-stone leading-relaxed">
+              <div className="space-y-4 font-montserrat font-light text-stone leading-relaxed">
                 <p>
                   {locale === 'fr'
                     ? <>Formée à la médiation culturelle et titulaire du brevet d&apos;accompagnatrice en montagne, <span className="font-semibold text-stone-dark">Anaïs Husson</span> a créé Aixplore pour partager ce qu&apos;elle aime le plus : la beauté des petits détails.</>
@@ -288,10 +290,10 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🕊</span> {locale === 'fr' ? "Des expériences à taille humaine" : "Human-Sized Experiences"}
+            <h2 className="text-4xl font-playfair font-light text-stone-dark mb-6 text-center">
+              {locale === 'fr' ? "Des expériences à taille humaine" : "Human-Sized Experiences"}
             </h2>
-            <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed">
+            <div className="space-y-4 font-montserrat font-light text-lg text-stone leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? <>Aixplore Tourism privilégie les petits groupes — <span className="font-semibold text-stone-dark">jusqu&apos;à 8 personnes</span> — pour offrir une atmosphère de confiance et d&apos;échanges.</>
@@ -322,9 +324,9 @@ export default function AProposPage({ params }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 text-center"
+            className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-4 text-center"
           >
-            💫 {locale === 'fr' ? "Nos valeurs" : "Our Values"}
+            {locale === 'fr' ? "Nos valeurs" : "Our Values"}
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -334,11 +336,10 @@ export default function AProposPage({ params }) {
               viewport={{ once: true }}
               className="bg-white/90 p-6 rounded-lg shadow-lg text-center"
             >
-              <div className="text-5xl mb-4">❤️</div>
-              <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
+              <h3 className="text-2xl font-playfair font-normal text-stone-dark mb-3">
                 {locale === 'fr' ? "Authenticité" : "Authenticity"}
               </h3>
-              <p className="font-montserrat text-stone">
+              <p className="font-montserrat font-light text-stone">
                 {locale === 'fr' ? "Parler vrai, vivre vrai." : "Speaking true, living true."}
               </p>
             </motion.div>
@@ -350,11 +351,10 @@ export default function AProposPage({ params }) {
               transition={{ delay: 0.1 }}
               className="bg-white/90 p-6 rounded-lg shadow-lg text-center"
             >
-              <div className="text-5xl mb-4">✨</div>
-              <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
+              <h3 className="text-2xl font-playfair font-normal text-stone-dark mb-3">
                 {locale === 'fr' ? "Émerveillement" : "Wonder"}
               </h3>
-              <p className="font-montserrat text-stone">
+              <p className="font-montserrat font-light text-stone">
                 {locale === 'fr' 
                   ? "Offrir des instants suspendus, simples et précieux."
                   : "Offering suspended, simple and precious moments."
@@ -369,11 +369,10 @@ export default function AProposPage({ params }) {
               transition={{ delay: 0.2 }}
               className="bg-white/90 p-6 rounded-lg shadow-lg text-center"
             >
-              <div className="text-5xl mb-4">📖</div>
-              <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
+              <h3 className="text-2xl font-playfair font-normal text-stone-dark mb-3">
                 {locale === 'fr' ? "Transmission" : "Transmission"}
               </h3>
-              <p className="font-montserrat text-stone">
+              <p className="font-montserrat font-light text-stone">
                 {locale === 'fr'
                   ? "Partager la richesse culturelle et naturelle de la Savoie."
                   : "Sharing Savoie's cultural and natural wealth."
@@ -388,11 +387,10 @@ export default function AProposPage({ params }) {
               transition={{ delay: 0.3 }}
               className="bg-white/90 p-6 rounded-lg shadow-lg text-center"
             >
-              <div className="text-5xl mb-4">🌿</div>
-              <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
+              <h3 className="text-2xl font-playfair font-normal text-stone-dark mb-3">
                 {locale === 'fr' ? "Respect" : "Respect"}
               </h3>
-              <p className="font-montserrat text-stone">
+              <p className="font-montserrat font-light text-stone">
                 {locale === 'fr'
                   ? "De la nature, du rythme, des émotions."
                   : "Of nature, of rhythm, of emotions."
@@ -412,10 +410,10 @@ export default function AProposPage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🌍</span> {locale === 'fr' ? "Une aventure humaine" : "A Human Adventure"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6 text-center">
+              {locale === 'fr' ? "Une aventure humaine" : "A Human Adventure"}
             </h2>
-            <div className="space-y-4 font-montserrat text-lg text-stone leading-relaxed max-w-3xl mx-auto">
+            <div className="space-y-4 font-montserrat font-light text-lg text-stone leading-relaxed max-w-3xl mx-auto">
               <p>
                 {locale === 'fr'
                   ? "Depuis sa création, Aixplore Tourism a accueilli des voyageurs venus des quatre coins du monde."
@@ -454,7 +452,7 @@ export default function AProposPage({ params }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-bold mb-4 text-center"
+            className="text-4xl md:text-5xl font-playfair font-light mb-4 text-center"
           >
             {locale === 'fr' ? "Ils nous ont fait confiance" : "They Trusted Us"}
           </motion.h2>
@@ -463,7 +461,7 @@ export default function AProposPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-center text-beige-light font-montserrat mb-12"
+            className="text-center text-beige-light font-montserrat font-light mb-12"
           >
             {locale === 'fr' 
               ? "Témoignages authentiques de nos voyageurs"
@@ -483,11 +481,11 @@ export default function AProposPage({ params }) {
               >
                 <div className="flex justify-center mb-4">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <span key={i} className="text-gold text-2xl">⭐</span>
+                    <span key={i} className="text-gold text-2xl">★</span>
                   ))}
                 </div>
                 
-                <p className="text-lg md:text-xl font-montserrat text-center mb-6 italic">
+                <p className="text-lg md:text-xl font-montserrat font-light text-center mb-6 italic">
                   &quot;{testimonials[currentTestimonial].text}&quot;
                 </p>
                 
@@ -527,13 +525,13 @@ export default function AProposPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-6">
               {locale === 'fr'
                 ? "Prêt à ressentir la Savoie autrement ?"
                 : "Ready to experience Savoie differently?"
               }
             </h2>
-            <p className="text-lg md:text-xl mb-8 font-montserrat">
+            <p className="text-lg md:text-xl mb-8 font-montserrat font-light">
               {locale === 'fr'
                 ? "Contactez-nous pour planifier votre prochaine aventure entre lac et montagnes"
                 : "Contact us to plan your next adventure between lake and mountains"

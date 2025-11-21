@@ -18,9 +18,9 @@ export default function EssenceFemininePage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
+            className="text-5xl md:text-7xl font-playfair font-light drop-shadow-2xl mb-6"
           >
-            {locale === 'fr' ? "🌸 Retraite \"Essence féminine\"" : "🌸 \"Feminine Essence\" Retreat"}
+            {locale === 'fr' ? "Retraite \"Essence féminine\"" : "\"Feminine Essence\" Retreat"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -39,7 +39,7 @@ export default function EssenceFemininePage({ params }) {
             transition={{ delay: 0.3 }}
             className="text-xl font-montserrat mb-8"
           >
-            {locale === 'fr' ? "📅 Du 18 au 21 septembre 2025 – Savoie" : "📅 September 18-21, 2025 – Savoie"}
+            {locale === 'fr' ? "Du 18 au 21 septembre 2025 – Savoie" : "September 18-21, 2025 – Savoie"}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function EssenceFemininePage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6">
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6">
               ✨ Une parenthèse pour se retrouver
             </h2>
             <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed max-w-3xl mx-auto">
@@ -75,7 +75,7 @@ export default function EssenceFemininePage({ params }) {
               <p>
                 Une pause entre femmes, pour se redécouvrir en douceur, loin des rôles, des attentes et des jugements.
               </p>
-              <p className="font-semibold text-stone-dark">
+              <p className="font-normal text-stone-dark">
                 Guidée par Anaïs, Isée et Marie, cette retraite est un espace bienveillant pour s&apos;explorer, se déposer, et retrouver le plaisir simple d&apos;être soi.
               </p>
               <p className="text-xl font-playfair italic text-lake-dark">
@@ -97,8 +97,8 @@ export default function EssenceFemininePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-12 text-center">
-              {locale === 'fr' ? "💚 Ce que vous vivrez" : "💚 What You'll Experience"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-12 text-center">
+              {locale === 'fr' ? "Ce que vous vivrez" : "What You'll Experience"}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -109,7 +109,7 @@ export default function EssenceFemininePage({ params }) {
                 className="bg-gradient-to-br from-lake-light to-lake p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🌺</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   {locale === 'fr' ? "Pratiques corporelles douces" : "Gentle Body Practices"}
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -125,7 +125,7 @@ export default function EssenceFemininePage({ params }) {
                 className="bg-gradient-to-br from-gold-light to-gold/40 p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🌿</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   {locale === 'fr' ? "Soins individuels" : "Individual Healing"}
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -141,7 +141,7 @@ export default function EssenceFemininePage({ params }) {
                 className="bg-gradient-to-br from-beige to-beige-light p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">✍️</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   {locale === 'fr' ? "Ateliers introspectifs" : "Introspective Workshops"}
                 </h3>
                 <p className="text-stone font-montserrat mb-2">
@@ -160,7 +160,7 @@ export default function EssenceFemininePage({ params }) {
                 className="bg-gradient-to-br from-stone-light to-lake-light p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🔥</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   {locale === 'fr' ? "Cercles de parole et moments de sororité" : "Talking Circles & Sisterhood Moments"}
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -176,7 +176,7 @@ export default function EssenceFemininePage({ params }) {
                 className="bg-gradient-to-br from-beige-light to-gold-light p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🌸</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   {locale === 'fr' ? "Balades méditatives & instants d'écriture libre" : "Meditative Walks & Free Writing"}
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -192,7 +192,7 @@ export default function EssenceFemininePage({ params }) {
                 className="bg-gradient-to-br from-lake to-lake-dark text-white p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🕯</div>
-                <h3 className="text-xl font-playfair font-bold mb-2">
+                <h3 className="text-xl font-playfair font-normal mb-2">
                   {locale === 'fr' ? "Méditations du soir" : "Evening Meditations"}
                 </h3>
                 <p className="font-montserrat">
@@ -220,8 +220,8 @@ export default function EssenceFemininePage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-stone-dark">
-              {locale === 'fr' ? "🌷 L'expérience en quelques mots" : "🌷 The Experience in a Few Words"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-8 text-stone-dark">
+              {locale === 'fr' ? "L'expérience en quelques mots" : "The Experience in a Few Words"}
             </h2>
             <div className="space-y-4 text-lg font-montserrat leading-relaxed text-stone-dark">
               <p>
@@ -261,23 +261,23 @@ export default function EssenceFemininePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-8 text-center">
+            <h2 className="text-4xl font-playfair font-light text-stone-dark mb-8 text-center">
               {locale === 'fr' ? "📋 À savoir" : "📋 Good to Know"}
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
-              <table className="w-full font-montserrat">
+              <table className="w-full font-montserrat font-light">
                 <tbody className="divide-y divide-stone-light">
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Public" : "Audience"}
                     </td>
-                    <td className="py-4 px-4 text-stone font-semibold">
+                    <td className="py-4 px-4 text-stone font-normal">
                       {locale === 'fr' ? "Réservé aux femmes" : "Women only"}
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Durée" : "Duration"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -285,7 +285,7 @@ export default function EssenceFemininePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Taille du groupe" : "Group Size"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -293,7 +293,7 @@ export default function EssenceFemininePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Lieu" : "Location"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -304,7 +304,7 @@ export default function EssenceFemininePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Déconnexion" : "Disconnection"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -312,7 +312,7 @@ export default function EssenceFemininePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Et s'il pleut ?" : "What if it rains?"}
                     </td>
                     <td className="py-4 px-4 text-stone italic">
@@ -337,22 +337,22 @@ export default function EssenceFemininePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-12 text-center">
-              {locale === 'fr' ? "💰 Tarifs & Réservation" : "💰 Pricing & Booking"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-12 text-center">
+              {locale === 'fr' ? "Tarifs & Réservation" : "Pricing & Booking"}
             </h2>
 
             <div className="mb-12">
               <div className="bg-gold/20 border-2 border-gold rounded-lg p-8 mb-4">
-                <h3 className="text-3xl font-playfair font-bold mb-6 text-gold">
+                <h3 className="text-3xl font-playfair font-light mb-6 text-gold">
                   {locale === 'fr' 
-                    ? "🌷 Offre de lancement – jusqu'au 1ᵉʳ mai 2025"
-                    : "🌷 Launch Offer – until May 1st, 2025"
+                    ? "Offre de lancement – jusqu'au 1ᵉʳ mai 2025"
+                    : "Launch Offer – until May 1st, 2025"
                   }
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6 font-montserrat">
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">🛏</div>
-                    <h4 className="text-xl font-semibold mb-2">
+                    <h4 className="text-xl font-normal mb-2">
                       {locale === 'fr' ? "Chambre partagée" : "Shared Room"}
                     </h4>
                     <p className="text-sm text-beige-light mb-3">
@@ -362,7 +362,7 @@ export default function EssenceFemininePage({ params }) {
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">🌸</div>
-                    <h4 className="text-xl font-semibold mb-2">
+                    <h4 className="text-xl font-normal mb-2">
                       {locale === 'fr' ? "Chambre double" : "Double Room"}
                     </h4>
                     <p className="text-sm text-beige-light mb-3">
@@ -375,7 +375,7 @@ export default function EssenceFemininePage({ params }) {
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
                     <div className="text-4xl mb-3">✨</div>
-                    <h4 className="text-xl font-semibold mb-2">
+                    <h4 className="text-xl font-normal mb-2">
                       {locale === 'fr' ? "Chambre double solo" : "Double Room Solo"}
                     </h4>
                     <p className="text-sm text-beige-light mb-3">&nbsp;</p>
@@ -386,16 +386,16 @@ export default function EssenceFemininePage({ params }) {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-3xl font-playfair font-bold mb-6 text-beige-light">
+              <h3 className="text-3xl font-playfair font-light mb-6 text-beige-light">
                 {locale === 'fr'
-                  ? "🌿 Tarifs réguliers – à partir du 2 mai 2025"
-                  : "🌿 Regular Rates – from May 2nd, 2025"
+                  ? "Tarifs réguliers – à partir du 2 mai 2025"
+                  : "Regular Rates – from May 2nd, 2025"
                 }
               </h3>
               <div className="grid md:grid-cols-3 gap-6 font-montserrat">
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">🛏</div>
-                  <h4 className="text-xl font-semibold mb-2">
+                  <h4 className="text-xl font-normal mb-2">
                     {locale === 'fr' ? "Chambre partagée" : "Shared Room"}
                   </h4>
                   <p className="text-sm text-beige-light mb-3">&nbsp;</p>
@@ -403,7 +403,7 @@ export default function EssenceFemininePage({ params }) {
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">🌸</div>
-                  <h4 className="text-xl font-semibold mb-2">
+                  <h4 className="text-xl font-normal mb-2">
                     {locale === 'fr' ? "Chambre double" : "Double Room"}
                   </h4>
                   <p className="text-sm text-beige-light mb-3">
@@ -416,7 +416,7 @@ export default function EssenceFemininePage({ params }) {
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/20">
                   <div className="text-4xl mb-3">✨</div>
-                  <h4 className="text-xl font-semibold mb-2">
+                  <h4 className="text-xl font-normal mb-2">
                     {locale === 'fr' ? "Chambre double solo" : "Double Room Solo"}
                   </h4>
                   <p className="text-sm text-beige-light mb-3">&nbsp;</p>
@@ -454,13 +454,13 @@ export default function EssenceFemininePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-12 text-center">
+            <h2 className="text-4xl font-playfair font-light text-stone-dark mb-12 text-center">
               {locale === 'fr' ? "❓ Questions fréquentes" : "❓ Frequently Asked Questions"}
             </h2>
             
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-3">
                   {locale === 'fr' ? "Dois-je venir seule ?" : "Should I come alone?"}
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -472,7 +472,7 @@ export default function EssenceFemininePage({ params }) {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-3">
                   {locale === 'fr'
                     ? "Faut-il être à l'aise pour parler en groupe ?"
                     : "Do I need to be comfortable speaking in a group?"
@@ -487,7 +487,7 @@ export default function EssenceFemininePage({ params }) {
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-3">
                   {locale === 'fr' ? "Y a-t-il un thème particulier ?" : "Is there a particular theme?"}
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -510,7 +510,7 @@ export default function EssenceFemininePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-stone-dark">
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-6 text-stone-dark">
               🌿
             </h2>
             <p className="text-2xl md:text-3xl font-playfair mb-6 text-stone-dark">

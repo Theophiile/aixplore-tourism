@@ -78,15 +78,15 @@ export default function VisitesGuideesPage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
+            className="text-5xl md:text-7xl font-playfair font-light mb-6 drop-shadow-2xl"
           >
-            {locale === 'fr' ? "🧭 Nos visites guidées" : "🧭 Our Guided Tours"}
+            {locale === 'fr' ? "Nos visites guidées" : "Our Guided Tours"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl font-montserrat max-w-3xl mx-auto"
+            className="text-xl md:text-2xl font-montserrat font-light max-w-3xl mx-auto drop-shadow-lg"
           >
             {locale === 'fr'
               ? "Découvrez la Savoie autrement, entre lac et montagnes"
@@ -105,7 +105,7 @@ export default function VisitesGuideesPage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? <>Toutes nos excursions sont guidées par <span className="font-semibold text-stone-dark">Anaïs, guide locale passionnée</span>, en petit groupe (8 personnes maximum).</>
@@ -120,13 +120,13 @@ export default function VisitesGuideesPage({ params }) {
               </p>
             </div>
             <div className="mt-8 p-6 bg-white rounded-lg shadow-lg max-w-2xl mx-auto">
-              <p className="text-xl font-playfair italic text-stone-dark">
+              <p className="text-xl font-playfair italic text-stone-dark font-light">
                 {locale === 'fr'
                   ? "\"Chaque sortie est une rencontre : avec un lieu, une histoire, une émotion.\""
                   : "\"Each outing is an encounter: with a place, a story, an emotion.\""
                 }
               </p>
-              <p className="text-right mt-2 font-montserrat text-stone">
+              <p className="text-right mt-2 font-montserrat font-light text-stone">
                 — Aixplore Tourism
               </p>
             </div>
@@ -143,8 +143,7 @@ export default function VisitesGuideesPage({ params }) {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 flex items-center gap-3">
-              <span className="text-5xl">🥾</span>
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-4 flex items-center gap-3">
               {locale === 'fr' 
                 ? "Balades & randonnées panoramiques"
                 : "Walks & Panoramic Hikes"
@@ -182,8 +181,7 @@ export default function VisitesGuideesPage({ params }) {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 flex items-center gap-3">
-              <span className="text-5xl">🌅</span>
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-4 flex items-center gap-3">
               {locale === 'fr'
                 ? "Journées & demi-journées découverte"
                 : "Full & Half-Day Discovery Tours"
@@ -221,8 +219,8 @@ export default function VisitesGuideesPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-12 text-center">
-              {locale === 'fr' ? "✨ À savoir" : "✨ Good to Know"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-12 text-center">
+              {locale === 'fr' ? "À savoir" : "Good to Know"}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -232,11 +230,10 @@ export default function VisitesGuideesPage({ params }) {
                 viewport={{ once: true }}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
               >
-                <div className="text-3xl mb-3">🗣️</div>
-                <h3 className="text-xl font-playfair font-bold mb-2">
+                <h3 className="text-xl font-playfair font-normal mb-2">
                   {locale === 'fr' ? "Langues" : "Languages"}
                 </h3>
-                <p className="font-montserrat">
+                <p className="font-montserrat font-light">
                   {locale === 'fr'
                     ? "Toutes les visites sont guidées en français ou en anglais"
                     : "All tours are guided in French or English"
@@ -251,11 +248,10 @@ export default function VisitesGuideesPage({ params }) {
                 transition={{ delay: 0.1 }}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
               >
-                <div className="text-3xl mb-3">👥</div>
-                <h3 className="text-xl font-playfair font-bold mb-2">
+                <h3 className="text-xl font-playfair font-normal mb-2">
                   {locale === 'fr' ? "Petit groupe" : "Small Group"}
                 </h3>
-                <p className="font-montserrat">
+                <p className="font-montserrat font-light">
                   {locale === 'fr'
                     ? "Groupes de 8 personnes maximum"
                     : "Groups of 8 people maximum"
@@ -270,11 +266,10 @@ export default function VisitesGuideesPage({ params }) {
                 transition={{ delay: 0.2 }}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
               >
-                <div className="text-3xl mb-3">✅</div>
-                <h3 className="text-xl font-playfair font-bold mb-2">
+                <h3 className="text-xl font-playfair font-normal mb-2">
                   {locale === 'fr' ? "Départs garantis" : "Guaranteed Departures"}
                 </h3>
-                <p className="font-montserrat">
+                <p className="font-montserrat font-light">
                   {locale === 'fr'
                     ? "À partir de 3 participants"
                     : "From 3 participants"
@@ -289,11 +284,10 @@ export default function VisitesGuideesPage({ params }) {
                 transition={{ delay: 0.3 }}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6"
               >
-                <div className="text-3xl mb-3">💳</div>
-                <h3 className="text-xl font-playfair font-bold mb-2">
+                <h3 className="text-xl font-playfair font-normal mb-2">
                   {locale === 'fr' ? "Réservation" : "Booking"}
                 </h3>
-                <p className="font-montserrat">
+                <p className="font-montserrat font-light">
                   {locale === 'fr'
                     ? "Paiement sécurisé à la réservation"
                     : "Secure payment upon booking"
@@ -308,11 +302,10 @@ export default function VisitesGuideesPage({ params }) {
                 transition={{ delay: 0.4 }}
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-6 md:col-span-2"
               >
-                <div className="text-3xl mb-3">🚗</div>
-                <h3 className="text-xl font-playfair font-bold mb-2">
+                <h3 className="text-xl font-playfair font-normal mb-2">
                   {locale === 'fr' ? "Transport" : "Transportation"}
                 </h3>
-                <p className="font-montserrat">
+                <p className="font-montserrat font-light">
                   {locale === 'fr'
                     ? "Transport inclus selon l'excursion"
                     : "Transportation included depending on the tour"

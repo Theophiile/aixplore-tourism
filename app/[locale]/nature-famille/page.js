@@ -12,7 +12,7 @@ export default function NatureFamillePage({ params }) {
 
   const activities = [
     {
-      title: locale === 'fr' ? "🎨 Chasse aux couleurs" : "🎨 Color Hunt",
+      title: locale === 'fr' ? "Chasse aux couleurs" : "Color Hunt",
       description: locale === 'fr' 
         ? "Observer les teintes du printemps et trouver dans la nature les éléments correspondant à chaque couleur."
         : "Observe the spring hues and find natural elements matching each color.",
@@ -22,7 +22,7 @@ export default function NatureFamillePage({ params }) {
       href: `/${locale}/nature-famille/chasse-couleurs`
     },
     {
-      title: locale === 'fr' ? "🔍 Chasse au trésor nature" : "🔍 Nature Treasure Hunt",
+      title: locale === 'fr' ? "Chasse au trésor nature" : "Nature Treasure Hunt",
       description: locale === 'fr'
         ? "Résoudre des énigmes, suivre des indices et redécouvrir la montagne en jouant."
         : "Solve riddles, follow clues and rediscover the mountain while playing.",
@@ -32,7 +32,7 @@ export default function NatureFamillePage({ params }) {
       href: `/${locale}/nature-famille/chasse-tresor`
     },
     {
-      title: locale === 'fr' ? "🌸 Herbier coloré" : "🌸 Colorful Herbarium",
+      title: locale === 'fr' ? "Herbier coloré" : "Colorful Herbarium",
       description: locale === 'fr'
         ? "Créer un herbier artistique à partir des fleurs et feuilles ramassées sur le chemin."
         : "Create an artistic herbarium from flowers and leaves collected along the way.",
@@ -42,7 +42,7 @@ export default function NatureFamillePage({ params }) {
       href: `/${locale}/nature-famille/herbier`
     },
     {
-      title: locale === 'fr' ? "🎧 Écoute sensorielle" : "🎧 Sensory Listening",
+      title: locale === 'fr' ? "Écoute sensorielle" : "Sensory Listening",
       description: locale === 'fr'
         ? "Se poser, fermer les yeux, écouter la cascade et reconnaître les sons des oiseaux."
         : "Pause, close your eyes, listen to the waterfall and recognize bird sounds.",
@@ -52,7 +52,7 @@ export default function NatureFamillePage({ params }) {
       href: `/${locale}/nature-famille/ecoute-oiseaux`
     },
     {
-      title: locale === 'fr' ? "🪶 Land Art & Nature" : "🪶 Land Art & Nature",
+      title: locale === 'fr' ? "Land Art & Nature" : "Land Art & Nature",
       description: locale === 'fr'
         ? "Réaliser un tableau naturel à partir de bois, pierres, feuilles et terre."
         : "Create a natural artwork using wood, stones, leaves and earth.",
@@ -62,7 +62,7 @@ export default function NatureFamillePage({ params }) {
       href: `/${locale}/nature-famille/land-art`
     },
     {
-      title: locale === 'fr' ? "🌌 Le mystère du disque céleste" : "🌌 The Celestial Disc Mystery",
+      title: locale === 'fr' ? "Le mystère du disque céleste" : "The Celestial Disc Mystery",
       description: locale === 'fr'
         ? "Jeu d'observation et d'imaginaire autour des étoiles et des légendes anciennes."
         : "Observation and imagination game around stars and ancient legends.",
@@ -72,7 +72,7 @@ export default function NatureFamillePage({ params }) {
       href: `/${locale}/nature-famille/disque-celeste`
     },
     {
-      title: locale === 'fr' ? "🍄 Les secrets des champignons" : "🍄 Mushroom Secrets",
+      title: locale === 'fr' ? "Les secrets des champignons" : "Mushroom Secrets",
       description: locale === 'fr'
         ? "Jeu \"cherche et trouve\" et découverte de la vie du sol."
         : "\"Seek and find\" game and discover life in the soil.",
@@ -94,15 +94,15 @@ export default function NatureFamillePage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
+            className="text-5xl md:text-7xl font-playfair font-light mb-6 drop-shadow-2xl"
           >
-            {locale === 'fr' ? "🌿 Les Rendez-vous Nature en Famille" : "🌿 Family Nature Outings"}
+            {locale === 'fr' ? "Les Rendez-vous Nature en Famille" : "Family Nature Outings"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-3xl font-playfair italic max-w-3xl mx-auto"
+            className="text-xl md:text-3xl font-playfair italic max-w-3xl mx-auto font-light drop-shadow-lg"
           >
             {locale === 'fr'
               ? "Grandir ensemble, les pieds dans l'herbe et les yeux grands ouverts"
@@ -119,7 +119,7 @@ export default function NatureFamillePage({ params }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="space-y-6 text-lg text-stone font-montserrat leading-relaxed"
+            className="space-y-6 text-lg text-stone font-montserrat font-light leading-relaxed"
           >
             <p>
               {locale === 'fr'
@@ -157,22 +157,22 @@ export default function NatureFamillePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6">
-              {locale === 'fr' ? "🌸 Pourquoi ces rendez-vous ?" : "🌸 Why These Outings?"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6">
+              {locale === 'fr' ? "Pourquoi ces rendez-vous ?" : "Why These Outings?"}
             </h2>
-            <p className="text-2xl font-playfair italic text-lake-dark mb-6">
+            <p className="text-2xl font-playfair italic text-lake-dark mb-6 font-light">
               {locale === 'fr'
                 ? "Parce que la nature est la plus belle salle de classe du monde."
                 : "Because nature is the most beautiful classroom in the world."
               }
             </p>
-            <p className="text-lg text-stone font-montserrat mb-4">
+            <p className="text-lg text-stone font-montserrat font-light mb-4">
               {locale === 'fr'
                 ? "Les études montrent que les enfants qui passent du temps dehors développent :"
                 : "Studies show that children who spend time outdoors develop:"
               }
             </p>
-            <ul className="space-y-2 text-lg text-stone font-montserrat ml-6">
+            <ul className="space-y-2 text-lg text-stone font-montserrat font-light ml-6">
               <li className="flex items-start gap-2">
                 <span>•</span>
                 <span>
@@ -210,7 +210,7 @@ export default function NatureFamillePage({ params }) {
                 </span>
               </li>
             </ul>
-            <p className="text-lg text-stone font-montserrat mt-6">
+            <p className="text-lg text-stone font-montserrat font-light mt-6">
               {locale === 'fr'
                 ? "Ces matinées sont conçues comme des bulles d'éveil et de bien-être, où chaque famille retrouve le plaisir de marcher, jouer et créer ensemble, loin des sollicitations du quotidien."
                 : "These mornings are designed as bubbles of awakening and well-being, where each family rediscovers the pleasure of walking, playing and creating together, away from daily demands."
@@ -227,16 +227,16 @@ export default function NatureFamillePage({ params }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 text-center"
+            className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-4 text-center"
           >
-            {locale === 'fr' ? "🌞 Programme 2026" : "🌞 2026 Program"}
+            {locale === 'fr' ? "Programme 2026" : "2026 Program"}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-center text-stone font-montserrat mb-12 max-w-2xl mx-auto text-lg"
+            className="text-center text-stone font-montserrat font-light mb-12 max-w-2xl mx-auto text-lg"
           >
             {locale === 'fr'
               ? "7 sorties sensorielles et ludiques pour explorer la Savoie en famille"
@@ -260,16 +260,16 @@ export default function NatureFamillePage({ params }) {
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-sm text-gold font-montserrat font-semibold mb-1">
-                    📅 {item.date}
+                  <p className="text-sm text-gold font-montserrat font-normal mb-1">
+                    {item.date}
                   </p>
-                  <p className="text-sm text-lake font-montserrat font-semibold mb-3">
-                    📍 {item.location}
+                  <p className="text-sm text-lake font-montserrat font-normal mb-3">
+                    {item.location}
                   </p>
-                  <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
+                  <h3 className="text-xl font-playfair font-normal text-stone-dark mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-stone font-montserrat leading-relaxed mb-4">
+                  <p className="text-stone font-montserrat font-light leading-relaxed mb-4">
                     {item.description}
                   </p>
                   <div className="mt-auto">
@@ -292,12 +292,12 @@ export default function NatureFamillePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-8 text-center">
-              {locale === 'fr' ? "🍀 Ce que vos enfants vont y découvrir" : "🍀 What Your Children Will Discover"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-8 text-center">
+              {locale === 'fr' ? "Ce que vos enfants vont y découvrir" : "What Your Children Will Discover"}
             </h2>
-            <ul className="space-y-4 text-lg text-stone font-montserrat">
+            <ul className="space-y-4 text-lg text-stone font-montserrat font-light">
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">✨</span>
+                <span className="text-2xl flex-shrink-0">•</span>
                 <span>
                   {locale === 'fr'
                     ? "Le plaisir d'apprendre sans s'en rendre compte, en observant, en jouant, en manipulant."
@@ -306,7 +306,7 @@ export default function NatureFamillePage({ params }) {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">🎨</span>
+                <span className="text-2xl flex-shrink-0">•</span>
                 <span>
                   {locale === 'fr'
                     ? "La joie de créer à partir d'éléments naturels : herbiers, œuvres d'art, petits bateaux, trésors cachés."
@@ -315,7 +315,7 @@ export default function NatureFamillePage({ params }) {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">💚</span>
+                <span className="text-2xl flex-shrink-0">•</span>
                 <span>
                   {locale === 'fr'
                     ? "Le bonheur d'être ensemble, dehors, dans la lumière, le vent, la forêt."
@@ -324,7 +324,7 @@ export default function NatureFamillePage({ params }) {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">🌿</span>
+                <span className="text-2xl flex-shrink-0">•</span>
                 <span>
                   {locale === 'fr'
                     ? "Une connexion sensorielle et émotionnelle à la nature, essentielle à leur équilibre."
@@ -346,33 +346,33 @@ export default function NatureFamillePage({ params }) {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
-              {locale === 'fr' ? "🍎 Informations pratiques" : "🍎 Practical Information"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-4">
+              {locale === 'fr' ? "Informations pratiques" : "Practical Information"}
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 font-montserrat">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <span>🕓</span> {locale === 'fr' ? "Durée" : "Duration"}
+              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
+                {locale === 'fr' ? "Durée" : "Duration"}
               </h3>
               <p>{locale === 'fr' ? "environ 3h à 4h" : "approximately 3 to 4 hours"}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <span>👨‍👩‍👧‍👦</span> {locale === 'fr' ? "Public" : "Audience"}
+              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
+                {locale === 'fr' ? "Public" : "Audience"}
               </h3>
               <p>{locale === 'fr' ? "familles avec enfants de 5 à 12 ans" : "families with children aged 5 to 12"}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <span>⚙</span> {locale === 'fr' ? "Niveau" : "Level"}
+              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
+                {locale === 'fr' ? "Niveau" : "Level"}
               </h3>
               <p>{locale === 'fr' ? "facile, accessible à tous" : "easy, accessible to all"}</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                <span>📍</span> {locale === 'fr' ? "Lieux" : "Locations"}
+              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
+                {locale === 'fr' ? "Lieux" : "Locations"}
               </h3>
               <p>
                 {locale === 'fr'
@@ -384,10 +384,10 @@ export default function NatureFamillePage({ params }) {
           </div>
 
           <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-              <span>🎒</span> {locale === 'fr' ? "À prévoir" : "What to Bring"}
+            <h3 className="text-xl font-normal mb-4 flex items-center gap-2">
+              {locale === 'fr' ? "À prévoir" : "What to Bring"}
             </h3>
-            <p className="text-beige-light">
+            <p className="text-beige-light font-light">
               {locale === 'fr'
                 ? "chaussures fermées, eau, chapeau, curiosité et bonne humeur !"
                 : "closed shoes, water, hat, curiosity and good mood!"
@@ -405,14 +405,13 @@ export default function NatureFamillePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-center">
-              {locale === 'fr' ? "💰 Tarifs & Réservation" : "💰 Rates & Booking"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-8 text-center">
+              {locale === 'fr' ? "Tarifs & Réservation" : "Rates & Booking"}
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-4xl mb-3">👧</div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-normal mb-2">
                   {locale === 'fr' ? "Enfant" : "Child"}
                 </h3>
                 <p className="text-sm text-beige-light mb-2">
@@ -421,8 +420,7 @@ export default function NatureFamillePage({ params }) {
                 <p className="text-3xl font-bold text-gold">€13</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-4xl mb-3">👨</div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-normal mb-2">
                   {locale === 'fr' ? "Adulte" : "Adult"}
                 </h3>
                 <p className="text-sm text-beige-light mb-2">
@@ -431,8 +429,7 @@ export default function NatureFamillePage({ params }) {
                 <p className="text-3xl font-bold text-gold">€9</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-4xl mb-3">👨‍👩‍👧‍👦</div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-normal mb-2">
                   {locale === 'fr' ? "Forfait famille" : "Family Package"}
                 </h3>
                 <p className="text-sm text-beige-light mb-2">
@@ -441,8 +438,7 @@ export default function NatureFamillePage({ params }) {
                 <p className="text-3xl font-bold text-gold">€40</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <div className="text-4xl mb-3">➕</div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl font-normal mb-2">
                   {locale === 'fr' ? "Supplémentaire" : "Additional"}
                 </h3>
                 <p className="text-sm text-beige-light mb-2">
@@ -453,26 +449,26 @@ export default function NatureFamillePage({ params }) {
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 space-y-4">
-              <p className="text-beige-light font-montserrat">
-                ✅ {locale === 'fr'
+              <p className="text-beige-light font-montserrat font-light">
+                {locale === 'fr'
                   ? "Réservation obligatoire – les places sont limitées pour préserver la qualité du moment partagé."
                   : "Booking required – spots are limited to preserve the quality of the shared moment."
                 }
               </p>
-              <p className="text-beige-light font-montserrat">
-                📅 {locale === 'fr'
+              <p className="text-beige-light font-montserrat font-light">
+                {locale === 'fr'
                   ? "Réservation obligatoire – sorties limitées à 10 familles."
                   : "Booking required – outings limited to 10 families."
                 }
               </p>
-              <p className="text-beige-light font-montserrat">
-                💳 {locale === 'fr'
+              <p className="text-beige-light font-montserrat font-light">
+                {locale === 'fr'
                   ? "Paiement par carte ou virement au moment de la réservation."
                   : "Payment by card or bank transfer upon booking."
                 }
               </p>
-              <p className="text-beige-light font-montserrat">
-                🌦 {locale === 'fr'
+              <p className="text-beige-light font-montserrat font-light">
+                {locale === 'fr'
                   ? "En cas de météo défavorable : Si la sortie ne peut pas être maintenue, une autre date vous sera proposée, ou vous pourrez choisir un remboursement intégral."
                   : "In case of unfavorable weather: If the outing cannot be maintained, another date will be offered, or you can choose a full refund."
                 }
@@ -498,9 +494,9 @@ export default function NatureFamillePage({ params }) {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-8">
-              {locale === 'fr' ? "💬 L'esprit Aixplore" : "💬 The Aixplore Spirit"}
+              {locale === 'fr' ? "L'esprit Aixplore" : "The Aixplore Spirit"}
             </h2>
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
               <p className="italic">
                 {locale === 'fr'
                   ? "Parce qu'un souvenir d'enfance commence souvent par une promenade dans la nature."
@@ -513,19 +509,19 @@ export default function NatureFamillePage({ params }) {
                   : "Because growing up also means learning to see the world differently."
                 }
               </p>
-              <p className="font-semibold text-stone-dark">
+              <p className="font-normal text-stone-dark">
                 {locale === 'fr'
-                  ? "Ces balades sont des moments de complicité, d'émerveillement et de lenteur, où chaque rire résonne entre les arbres et chaque pas devient une découverte 🌲💫"
-                  : "These walks are moments of complicity, wonder and slowness, where every laugh resonates through the trees and every step becomes a discovery 🌲💫"
+                  ? "Ces balades sont des moments de complicité, d'émerveillement et de lenteur, où chaque rire résonne entre les arbres et chaque pas devient une découverte."
+                  : "These walks are moments of complicity, wonder and slowness, where every laugh resonates through the trees and every step becomes a discovery."
                 }
               </p>
             </div>
 
             <div className="mt-12 p-8 bg-gradient-to-r from-lake-light to-gold-light rounded-lg">
-              <p className="text-2xl font-playfair italic text-stone-dark">
+              <p className="text-2xl font-playfair italic text-stone-dark font-light">
                 {locale === 'fr'
-                  ? "👉 Rejoignez les Petits Explorateurs d'Aixplore et offrez à vos enfants le plus beau des cadeaux : le temps de s'émerveiller."
-                  : "👉 Join the Little Explorers of Aixplore and give your children the most beautiful gift: time to wonder."
+                  ? "Rejoignez les Petits Explorateurs d'Aixplore et offrez à vos enfants le plus beau des cadeaux : le temps de s'émerveiller."
+                  : "Join the Little Explorers of Aixplore and give your children the most beautiful gift: time to wonder."
                 }
               </p>
             </div>

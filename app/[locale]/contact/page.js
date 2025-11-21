@@ -103,7 +103,7 @@ export default function ContactPage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-playfair font-bold mb-4"
+            className="text-5xl md:text-6xl font-playfair font-light mb-4"
           >
             {locale === 'fr' ? "Contactez-Nous" : "Contact Us"}
           </motion.h1>
@@ -111,7 +111,7 @@ export default function ContactPage({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-montserrat max-w-2xl mx-auto"
+            className="text-xl font-montserrat font-light max-w-2xl mx-auto"
           >
             {locale === 'fr'
               ? "Une question ? Un projet de visite ? Nous sommes là pour vous répondre"
@@ -132,7 +132,7 @@ export default function ContactPage({ params }) {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-lg shadow-lg"
             >
-              <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6">
+              <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
                 {locale === 'fr' ? "Envoyez-nous un message" : "Send us a message"}
               </h2>
               
@@ -196,12 +196,27 @@ export default function ContactPage({ params }) {
                     required
                     className="w-full px-4 py-3 border border-stone-light rounded-lg focus:outline-none focus:ring-2 focus:ring-lake font-montserrat"
                   >
-                    <option value="">{locale === 'fr' ? "Sélectionnez un sujet" : "Select a subject"}</option>
-                    <option value="visite-guidee">{locale === 'fr' ? "Visite guidée" : "Guided tour"}</option>
-                    <option value="visite-privee">{locale === 'fr' ? "Visite privée" : "Private tour"}</option>
-                    <option value="nature-famille">{locale === 'fr' ? "Rendez-vous Nature en Famille" : "Family Nature Outing"}</option>
-                    <option value="retraite">{locale === 'fr' ? "Retraite bien-être" : "Wellness retreat"}</option>
-                    <option value="autre">{locale === 'fr' ? "Autre demande" : "Other request"}</option>
+                    <option value="">
+                      {locale === 'fr' ? "Choisissez une option" : "Choose an option"}
+                    </option>
+                    <option value="informations-excursion">
+                      {locale === 'fr' 
+                        ? "Obtenir des informations sur une excursion (accessibilité / organisation...)" 
+                        : "Get information about an excursion (accessibility / organization...)"}
+                    </option>
+                    <option value="devis-groupe">
+                      {locale === 'fr' 
+                        ? "Demande de devis pour un groupe ou une visite privée" 
+                        : "Quote request for a group or private tour"}
+                    </option>
+                    <option value="partenariat">
+                      {locale === 'fr' 
+                        ? "Proposition de partenariat (hôtel, presse, agence...)" 
+                        : "Partnership proposal (hotel, press, agency...)"}
+                    </option>
+                    <option value="autre">
+                      {locale === 'fr' ? "Autre demande" : "Other request"}
+                    </option>
                   </select>
                 </div>
 
@@ -238,77 +253,57 @@ export default function ContactPage({ params }) {
               className="space-y-8"
             >
               <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-6">
+                <h3 className="text-2xl font-playfair font-light text-stone-dark mb-6">
                   {locale === 'fr' ? "Informations de contact" : "Contact Information"}
                 </h3>
                 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-lake rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">📧</span>
-                    </div>
-                    <div>
-                      <h4 className="font-montserrat font-semibold text-stone-dark mb-1">Email</h4>
-                      <a href="mailto:contact@aixplore-tourism.com" className="text-lake hover:text-lake-dark font-montserrat">
-                        contact@aixplore-tourism.com
-                      </a>
-                    </div>
+                  <div>
+                    <h4 className="font-montserrat font-semibold text-stone-dark mb-1">Email</h4>
+                    <a href="mailto:contact@aixplore-tourism.com" className="text-lake hover:text-lake-dark font-montserrat font-light">
+                      contact@aixplore-tourism.com
+                    </a>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-lake rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">📱</span>
-                    </div>
-                    <div>
-                      <h4 className="font-montserrat font-semibold text-stone-dark mb-1">
-                        {locale === 'fr' ? "Téléphone" : "Phone"}
-                      </h4>
-                      <a href="tel:+33612345678" className="text-lake hover:text-lake-dark font-montserrat">
-                        +33 6 12 34 56 78
-                      </a>
-                    </div>
+                  <div>
+                    <h4 className="font-montserrat font-semibold text-stone-dark mb-1">
+                      {locale === 'fr' ? "Téléphone" : "Phone"}
+                    </h4>
+                    <a href="tel:+33612345678" className="text-lake hover:text-lake-dark font-montserrat font-light">
+                      +33 6 12 34 56 78
+                    </a>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-lake rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">📍</span>
-                    </div>
-                    <div>
-                      <h4 className="font-montserrat font-semibold text-stone-dark mb-1">
-                        {locale === 'fr' ? "Localisation" : "Location"}
-                      </h4>
-                      <p className="text-stone font-montserrat">
-                        Annecy, Haute-Savoie<br />
-                        Auvergne-Rhône-Alpes, France
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="font-montserrat font-semibold text-stone-dark mb-1">
+                      {locale === 'fr' ? "Localisation" : "Location"}
+                    </h4>
+                    <p className="text-stone font-montserrat font-light">
+                      Annecy, Haute-Savoie<br />
+                      Auvergne-Rhône-Alpes, France
+                    </p>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-lake rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl">⏰</span>
-                    </div>
-                    <div>
-                      <h4 className="font-montserrat font-semibold text-stone-dark mb-1">
-                        {locale === 'fr' ? "Horaires" : "Hours"}
-                      </h4>
-                      <p className="text-stone font-montserrat">
-                        {locale === 'fr'
-                          ? <>Lun - Sam : 9h00 - 19h00<br />Dimanche : Sur rendez-vous</>
-                          : <>Mon - Sat: 9:00 AM - 7:00 PM<br />Sunday: By appointment</>
-                        }
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="font-montserrat font-semibold text-stone-dark mb-1">
+                      {locale === 'fr' ? "Horaires" : "Hours"}
+                    </h4>
+                    <p className="text-stone font-montserrat font-light">
+                      {locale === 'fr'
+                        ? <>Lun - Sam : 9h00 - 19h00<br />Dimanche : Sur rendez-vous</>
+                        : <>Mon - Sat: 9:00 AM - 7:00 PM<br />Sunday: By appointment</>
+                      }
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Réseaux sociaux */}
               <div className="bg-gradient-to-br from-lake-light to-gold-light p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-4">
+                <h3 className="text-2xl font-playfair font-light text-stone-dark mb-4">
                   {locale === 'fr' ? "Suivez-nous" : "Follow us"}
                 </h3>
-                <p className="text-stone font-montserrat mb-6">
+                <p className="text-stone font-montserrat font-light mb-6">
                   {locale === 'fr'
                     ? "Découvrez nos dernières aventures et conseils sur les réseaux sociaux"
                     : "Discover our latest adventures and tips on social media"
@@ -317,24 +312,17 @@ export default function ContactPage({ params }) {
                 <div className="flex gap-4">
                   <a 
                     href="#" 
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-lake hover:text-white transition-all duration-300 shadow-md"
+                    className="px-6 py-2 bg-white rounded-full hover:bg-lake hover:text-white transition-all duration-300 shadow-md font-montserrat"
                     aria-label="Facebook"
                   >
-                    <span className="text-2xl">f</span>
+                    Facebook
                   </a>
                   <a 
                     href="#" 
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-lake hover:text-white transition-all duration-300 shadow-md"
+                    className="px-6 py-2 bg-white rounded-full hover:bg-lake hover:text-white transition-all duration-300 shadow-md font-montserrat"
                     aria-label="Instagram"
                   >
-                    <span className="text-2xl">📷</span>
-                  </a>
-                  <a 
-                    href="#" 
-                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-lake hover:text-white transition-all duration-300 shadow-md"
-                    aria-label="YouTube"
-                  >
-                    <span className="text-2xl">▶</span>
+                    Instagram
                   </a>
                 </div>
               </div>
@@ -352,10 +340,10 @@ export default function ContactPage({ params }) {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-4">
+            <h2 className="text-4xl font-playfair font-light text-stone-dark mb-4">
               {locale === 'fr' ? "Questions Fréquentes" : "Frequently Asked Questions"}
             </h2>
-            <p className="text-lg text-stone font-montserrat">
+            <p className="text-lg text-stone font-montserrat font-light">
               {locale === 'fr'
                 ? "Trouvez rapidement les réponses à vos questions"
                 : "Quickly find answers to your questions"
@@ -392,7 +380,7 @@ export default function ContactPage({ params }) {
                     exit={{ height: 0, opacity: 0 }}
                     className="px-6 py-4 bg-white"
                   >
-                    <p className="text-stone font-montserrat leading-relaxed">
+                    <p className="text-stone font-montserrat font-light leading-relaxed">
                       {item.answer}
                     </p>
                   </motion.div>

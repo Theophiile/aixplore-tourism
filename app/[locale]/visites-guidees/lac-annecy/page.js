@@ -18,7 +18,7 @@ export default function LacAnnecyPage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-playfair font-bold mb-6"
+            className="text-4xl md:text-6xl font-playfair font-light drop-shadow-2xl mb-6"
           >
             Contes et reflets du lac
           </motion.h1>
@@ -34,7 +34,7 @@ export default function LacAnnecyPage({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-lg font-montserrat"
+            className="text-lg font-montserrat font-light"
           >
             Boucle depuis les Puisots – entre forêts et belvédères
           </motion.p>
@@ -49,7 +49,7 @@ export default function LacAnnecyPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
               <p>
                 À quelques minutes du centre d&apos;Annecy, le plateau des Puisots offre une échappée douce loin du tumulte du lac.
               </p>
@@ -62,7 +62,7 @@ export default function LacAnnecyPage({ params }) {
               <p>
                 Votre guide partage les secrets de ce paysage millénaire : formation du lac, légendes locales et histoires de montagne.
               </p>
-              <p className="font-semibold text-stone-dark text-xl">
+              <p className="font-normal text-stone-dark text-xl">
                 Le chemin forme une boucle panoramique, agréable et accessible à tous, idéale pour ressentir la douceur de la Haute-Savoie entre nature et contemplation.
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function LacAnnecyPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-12 text-center">
               🏞 Ce que vous allez découvrir
             </h2>
             
@@ -93,7 +93,7 @@ export default function LacAnnecyPage({ params }) {
                 className="bg-gradient-to-br from-lake-light to-lake p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🏔️</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   Vues spectaculaires
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -109,7 +109,7 @@ export default function LacAnnecyPage({ params }) {
                 className="bg-gradient-to-br from-beige to-gold-light p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🌲</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   Balade forestière paisible
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -125,7 +125,7 @@ export default function LacAnnecyPage({ params }) {
                 className="bg-gradient-to-br from-beige-light to-beige p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">🌊</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   Histoire naturelle et géologique
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -141,7 +141,7 @@ export default function LacAnnecyPage({ params }) {
                 className="bg-gradient-to-br from-gold-light to-gold/40 p-6 rounded-lg shadow-lg"
               >
                 <div className="text-4xl mb-4">📖</div>
-                <h3 className="text-xl font-playfair font-bold text-stone-dark mb-2">
+                <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
                   Anecdotes locales
                 </h3>
                 <p className="text-stone font-montserrat">
@@ -161,14 +161,14 @@ export default function LacAnnecyPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-playfair font-bold text-stone-dark mb-8 text-center">
+            <h2 className="text-4xl font-playfair font-light text-stone-dark mb-8 text-center">
               ℹ️ À savoir
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl">
               <div className="space-y-6 font-montserrat">
                 <div>
-                  <h3 className="text-xl font-semibold text-stone-dark mb-2 flex items-center gap-2">
+                  <h3 className="text-xl font-normal text-stone-dark mb-2 flex items-center gap-2">
                     <span>💪</span> Niveau physique
                   </h3>
                   <p className="text-stone">
@@ -177,7 +177,7 @@ export default function LacAnnecyPage({ params }) {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-stone-dark mb-2 flex items-center gap-2">
+                  <h3 className="text-xl font-normal text-stone-dark mb-2 flex items-center gap-2">
                     <span>🎒</span> Prévoir
                   </h3>
                   <p className="text-stone">
@@ -186,7 +186,7 @@ export default function LacAnnecyPage({ params }) {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-stone-dark mb-2 flex items-center gap-2">
+                  <h3 className="text-xl font-normal text-stone-dark mb-2 flex items-center gap-2">
                     <span>✅</span> Inclus
                   </h3>
                   <p className="text-stone">
@@ -207,7 +207,7 @@ export default function LacAnnecyPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-6">
               Découvrez la beauté du lac d&apos;Annecy
             </h2>
             <p className="text-xl font-montserrat mb-8">

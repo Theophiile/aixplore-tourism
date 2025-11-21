@@ -122,15 +122,15 @@ export default function CoupsDeCoeurPage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-playfair font-bold mb-4"
+            className="text-5xl md:text-6xl font-playfair font-light mb-4"
           >
-            {locale === 'fr' ? "💛 Nos Coups de Cœur 💛" : "💛 Our Favorite Places 💛"}
+            {locale === 'fr' ? "Nos Coups de Cœur" : "Our Favorite Places"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-montserrat max-w-2xl mx-auto"
+            className="text-xl font-montserrat font-light max-w-2xl mx-auto"
           >
             {locale === 'fr'
               ? "Les lieux secrets et incontournables que nous adorons partager"
@@ -148,10 +148,10 @@ export default function CoupsDeCoeurPage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-stone-dark mb-6">
+            <h2 className="text-3xl md:text-4xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Notre Guide d'Inspiration Locale" : "Our Local Inspiration Guide"}
             </h2>
-            <p className="text-lg text-stone font-montserrat leading-relaxed">
+            <p className="text-lg text-stone font-montserrat font-light leading-relaxed">
               {locale === 'fr'
                 ? "Après des années à explorer chaque recoin des Alpes, nous avons sélectionné pour vous nos endroits préférés. Des spots instagrammables aux adresses authentiques que seuls les locaux connaissent, découvrez nos recommandations pour enrichir votre séjour."
                 : "After years of exploring every corner of the Alps, we've selected our favorite places for you. From Instagram-worthy spots to authentic addresses that only locals know, discover our recommendations to enrich your stay."
@@ -174,7 +174,7 @@ export default function CoupsDeCoeurPage({ params }) {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl font-playfair font-bold text-stone-dark mb-8"
+                className="text-3xl font-playfair font-light text-stone-dark mb-8"
               >
                 {category}
               </motion.h2>
@@ -190,15 +190,13 @@ export default function CoupsDeCoeurPage({ params }) {
                     className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="relative h-64 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-lake-light/50 to-gold/50 flex items-center justify-center">
-                        <span className="text-6xl">📸</span>
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-lake-light/50 to-gold/50"></div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
+                      <h3 className="text-xl font-playfair font-normal text-stone-dark mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-stone font-montserrat leading-relaxed">
+                      <p className="text-stone font-montserrat font-light leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -219,10 +217,10 @@ export default function CoupsDeCoeurPage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-playfair font-light mb-6">
               {locale === 'fr' ? "Besoin de Conseils Personnalisés ?" : "Need Personalized Advice?"}
             </h2>
-            <p className="text-lg font-montserrat mb-8 max-w-2xl mx-auto">
+            <p className="text-lg font-montserrat font-light mb-8 max-w-2xl mx-auto">
               {locale === 'fr'
                 ? "Nous sommes là pour vous aider à créer votre itinéraire idéal ! Contactez-nous pour des recommandations sur mesure selon vos goûts et le temps dont vous disposez."
                 : "We're here to help you create your ideal itinerary! Contact us for personalized recommendations based on your tastes and available time."
@@ -244,10 +242,10 @@ export default function CoupsDeCoeurPage({ params }) {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-4">
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-4">
               {locale === 'fr' ? "Carte Interactive" : "Interactive Map"}
             </h2>
-            <p className="text-stone font-montserrat">
+            <p className="text-stone font-montserrat font-light">
               {locale === 'fr'
                 ? "Retrouvez tous nos coups de cœur géolocalisés pour planifier facilement vos visites"
                 : "Find all our favorite geolocated places to easily plan your visits"
@@ -257,8 +255,7 @@ export default function CoupsDeCoeurPage({ params }) {
 
           <div className="bg-stone-light rounded-lg h-96 flex items-center justify-center">
             <div className="text-center text-stone">
-              <span className="text-6xl mb-4 block">🗺️</span>
-              <p className="font-montserrat">
+              <p className="font-montserrat font-light text-lg">
                 {locale === 'fr' ? "Carte interactive à venir" : "Interactive map coming soon"}
               </p>
             </div>

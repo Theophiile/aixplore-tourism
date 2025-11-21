@@ -18,18 +18,18 @@ export default function ChasseTresor({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-playfair font-bold mb-4"
+            className="text-4xl md:text-6xl font-playfair font-light drop-shadow-2xl mb-4"
           >
             {locale === 'fr' 
-              ? "🔍 La Croix des Bergers – La grande chasse au trésor nature"
-              : "🔍 Croix des Bergers – The Great Nature Treasure Hunt"
+              ? "La Croix des Bergers – La grande chasse au trésor nature"
+              : "Croix des Bergers – The Great Nature Treasure Hunt"
             }
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-montserrat"
+            className="text-xl font-montserrat font-light drop-shadow-lg"
           >
             {locale === 'fr' ? "17 mai 2026" : "May 17, 2026"}
           </motion.p>
@@ -44,10 +44,10 @@ export default function ChasseTresor({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6">
-              {locale === 'fr' ? "🌿 Présentation de la sortie" : "🌿 Outing Presentation"}
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+              {locale === 'fr' ? "Présentation de la sortie" : "Outing Presentation"}
             </h2>
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Au cœur des prairies fleuries et des bois paisibles du versant d'Aix-les-Bains, la Croix des Bergers est un lieu idéal pour vivre une aventure grandeur nature."
@@ -66,7 +66,7 @@ export default function ChasseTresor({ params }) {
                   : "Together, parents and children will have to observe, search, solve riddles and cooperate to reach the final treasure: a nature snack to enjoy facing the panorama."
                 }
               </p>
-              <p className="font-semibold text-stone-dark">
+              <p className="font-normal text-stone-dark">
                 {locale === 'fr'
                   ? "Encadrée par Anaïs, guide Aixplore, cette balade allie jeu, découverte et complicité, pour reconnecter petits et grands à la nature et au plaisir de marcher ensemble."
                   : "Led by Anaïs, Aixplore guide, this walk combines play, discovery and complicity, to reconnect young and old to nature and the pleasure of walking together."
@@ -85,24 +85,24 @@ export default function ChasseTresor({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6">
-              {locale === 'fr' ? "🗺 Thématique : Aventure et observation en pleine nature" : "🗺 Theme: Adventure and Observation in Nature"}
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+              {locale === 'fr' ? "Thématique : Aventure et observation en pleine nature" : "Theme: Adventure and Observation in Nature"}
             </h2>
-            <ul className="space-y-3 text-lg text-stone font-montserrat">
+            <ul className="space-y-3 text-lg text-stone font-montserrat font-light">
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">🌲</span>
+                <span className="flex-shrink-0">•</span>
                 <span>{locale === 'fr' ? "Explorer les sentiers autrement, en suivant la piste du trésor." : "Explore trails differently, following the treasure trail."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">🧭</span>
+                <span className="flex-shrink-0">•</span>
                 <span>{locale === 'fr' ? "Développer le sens de l'orientation et de l'observation." : "Develop sense of direction and observation."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">🪶</span>
+                <span className="flex-shrink-0">•</span>
                 <span>{locale === 'fr' ? "Résoudre des énigmes inspirées de la nature locale." : "Solve riddles inspired by local nature."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">🍪</span>
+                <span className="flex-shrink-0">•</span>
                 <span>{locale === 'fr' ? "Célébrer la coopération avec un goûter partagé en plein air." : "Celebrate cooperation with a shared outdoor snack."}</span>
               </li>
             </ul>
@@ -118,13 +118,13 @@ export default function ChasseTresor({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6">
-              {locale === 'fr' ? "🧩 Activité principale" : "🧩 Main Activity"}
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+              {locale === 'fr' ? "Activité principale" : "Main Activity"}
             </h2>
-            <h3 className="text-2xl font-playfair font-bold text-lake-dark mb-4">
-              {locale === 'fr' ? "💎 Grande chasse au trésor nature" : "💎 Great Nature Treasure Hunt"}
+            <h3 className="text-2xl font-playfair font-normal text-lake-dark mb-4">
+              {locale === 'fr' ? "Grande chasse au trésor nature" : "Great Nature Treasure Hunt"}
             </h3>
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Tout au long du parcours, des indices seront cachés : symboles, objets naturels, petits défis ou messages à décoder."
@@ -139,8 +139,8 @@ export default function ChasseTresor({ params }) {
               </p>
               <p className="italic">
                 {locale === 'fr'
-                  ? "👉 Objectif : apprendre à observer, coopérer, réfléchir et savourer — littéralement !"
-                  : "👉 Objective: learn to observe, cooperate, reflect and savor — literally!"
+                  ? "Objectif : apprendre à observer, coopérer, réfléchir et savourer — littéralement !"
+                  : "Objective: learn to observe, cooperate, reflect and savor — literally!"
                 }
               </p>
             </div>
@@ -156,31 +156,31 @@ export default function ChasseTresor({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6 text-center">
-              {locale === 'fr' ? "🌸 En résumé" : "🌸 Summary"}
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6 text-center">
+              {locale === 'fr' ? "En résumé" : "Summary"}
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
-              <table className="w-full font-montserrat">
+              <table className="w-full font-montserrat font-light">
                 <tbody className="divide-y divide-stone-light">
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">📅 {locale === 'fr' ? "Date" : "Date"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Date" : "Date"}</td>
                     <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Dimanche 17 mai 2026" : "Sunday, May 17, 2026"}</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">⏰ {locale === 'fr' ? "Horaires" : "Schedule"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Horaires" : "Schedule"}</td>
                     <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Rendez-vous à 13h00 – retour vers 17h00" : "Meeting at 1:00 PM – return around 5:00 PM"}</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">📍 {locale === 'fr' ? "Lieu" : "Location"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Lieu" : "Location"}</td>
                     <td className="py-4 px-4 text-stone">{locale === 'fr' ? "La Croix des Bergers (secteur d'Aix-les-Bains)" : "Croix des Bergers (Aix-les-Bains area)"}</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">📏 {locale === 'fr' ? "Distance" : "Distance"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Distance" : "Distance"}</td>
                     <td className="py-4 px-4 text-stone">6,54 km</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">⏱ {locale === 'fr' ? "Durée de marche" : "Walking time"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Durée de marche" : "Walking time"}</td>
                     <td className="py-4 px-4 text-stone">
                       {locale === 'fr' 
                         ? "Environ 3h (avec pauses et ateliers inclus)"
@@ -189,15 +189,15 @@ export default function ChasseTresor({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">⛰ {locale === 'fr' ? "Dénivelé positif / négatif" : "Elevation gain / loss"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Dénivelé positif / négatif" : "Elevation gain / loss"}</td>
                     <td className="py-4 px-4 text-stone">+55 m / -55 m</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">⚙ {locale === 'fr' ? "Difficulté" : "Difficulty"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Difficulté" : "Difficulty"}</td>
                     <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Facile – adaptée aux enfants" : "Easy – suitable for children"}</td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">👨‍👩‍👧‍👦 {locale === 'fr' ? "Public" : "Audience"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Public" : "Audience"}</td>
                     <td className="py-4 px-4 text-stone">
                       {locale === 'fr' 
                         ? "Parents et enfants de 5 à 12 ans (7 familles max)"
@@ -206,7 +206,7 @@ export default function ChasseTresor({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">💰 {locale === 'fr' ? "Tarif" : "Rate"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Tarif" : "Rate"}</td>
                     <td className="py-4 px-4 text-stone">
                       {locale === 'fr'
                         ? "9 € / adulte – 13 € / enfant – Pack famille : 40 €"
@@ -215,7 +215,7 @@ export default function ChasseTresor({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">🎒 {locale === 'fr' ? "À prévoir" : "What to bring"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "À prévoir" : "What to bring"}</td>
                     <td className="py-4 px-4 text-stone">
                       {locale === 'fr'
                         ? "Chaussures fermées, eau, coupe-vent léger, curiosité et bonne humeur"
@@ -224,7 +224,7 @@ export default function ChasseTresor({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">🚗 {locale === 'fr' ? "Accès & covoiturage" : "Access & carpooling"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Accès & covoiturage" : "Access & carpooling"}</td>
                     <td className="py-4 px-4 text-stone">
                       {locale === 'fr'
                         ? "Le lieu précis du point de départ sera communiqué quelques jours avant la sortie. Nous privilégions le covoiturage entre familles via un groupe WhatsApp dédié."
@@ -233,7 +233,7 @@ export default function ChasseTresor({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">☀ {locale === 'fr' ? "Météo" : "Weather"}</td>
+                    <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Météo" : "Weather"}</td>
                     <td className="py-4 px-4 text-stone">
                       {locale === 'fr'
                         ? "En cas de pluie, la sortie est reportée ou intégralement remboursée."
@@ -256,10 +256,10 @@ export default function ChasseTresor({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6">
-              {locale === 'fr' ? "🌼 Ce que vos enfants vont vivre" : "🌼 What Your Children Will Experience"}
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+              {locale === 'fr' ? "Ce que vos enfants vont vivre" : "What Your Children Will Experience"}
             </h2>
-            <ul className="space-y-3 text-lg text-stone font-montserrat">
+            <ul className="space-y-3 text-lg text-stone font-montserrat font-light">
               <li className="flex items-start gap-3">
                 <span className="flex-shrink-0">•</span>
                 <span>{locale === 'fr' ? "Une aventure nature à taille d'enfant." : "A child-sized nature adventure."}</span>
@@ -289,7 +289,7 @@ export default function ChasseTresor({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold mb-6">
+            <h2 className="text-3xl font-playfair font-light mb-6">
               {locale === 'fr' ? "Prêt pour l'aventure ?" : "Ready for the adventure?"}
             </h2>
             <p className="text-lg font-montserrat mb-8">

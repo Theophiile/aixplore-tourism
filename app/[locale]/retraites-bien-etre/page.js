@@ -12,7 +12,7 @@ export default function RetraitesBienEtrePage({ params }) {
 
   const retreats = [
     {
-      title: locale === 'fr' ? "🌿 Légèreté" : "🌿 Lightness",
+      title: locale === 'fr' ? "Légèreté" : "Lightness",
       description: locale === 'fr' 
         ? "Jeûne & légèreté : se libérer du trop-plein, retrouver l'énergie naturelle du corps. Une retraite pour apaiser le mental, alléger le corps et réapprendre à goûter la vie à travers un jeûne de deux jours, la marche, les soins et l'écriture introspective."
         : "Fasting & lightness: free yourself from excess, rediscover the body's natural energy. A retreat to soothe the mind, lighten the body and relearn to taste life through a two-day fast, walking, healing and introspective writing.",
@@ -21,7 +21,7 @@ export default function RetraitesBienEtrePage({ params }) {
       href: `/${locale}/retraites-bien-etre/legerete`
     },
     {
-      title: locale === 'fr' ? "🌕 Rayonner" : "🌕 Radiate",
+      title: locale === 'fr' ? "Rayonner" : "Radiate",
       description: locale === 'fr'
         ? "Laisser la lumière de la lune éclairer ce que l'on porte encore. Une expérience de libération et de purification : écriture intuitive, cérémonie du feu, danse et rituels de pleine lune."
         : "Let the moonlight illuminate what we still carry. An experience of release and purification: intuitive writing, fire ceremony, dance and full moon rituals.",
@@ -30,7 +30,7 @@ export default function RetraitesBienEtrePage({ params }) {
       href: `/${locale}/retraites-bien-etre/rayonner`
     },
     {
-      title: locale === 'fr' ? "🌸 Essence féminine" : "🌸 Feminine Essence",
+      title: locale === 'fr' ? "Essence féminine" : "Feminine Essence",
       description: locale === 'fr'
         ? "Un voyage intérieur pour accueillir sa vulnérabilité et renouer avec sa joie naturelle. Entre introspection, respiration, écriture et douceur, une parenthèse entre femmes pour se redécouvrir."
         : "An inner journey to embrace vulnerability and reconnect with natural joy. Between introspection, breath, writing and gentleness, a pause among women to rediscover ourselves.",
@@ -39,7 +39,7 @@ export default function RetraitesBienEtrePage({ params }) {
       href: `/${locale}/retraites-bien-etre/essence-feminine`
     },
     {
-      title: locale === 'fr' ? "🌑 Renaissance" : "🌑 Rebirth",
+      title: locale === 'fr' ? "Renaissance" : "Rebirth",
       description: locale === 'fr'
         ? "Silence, intentions et renaissance. Sous la nouvelle lune, un moment pour semer, méditer et s'ouvrir à la vie à travers rituels, soins et écriture d'intentions."
         : "Silence, intentions and rebirth. Under the new moon, a moment to plant seeds, meditate and open to life through rituals, healing and intention writing.",
@@ -60,7 +60,7 @@ export default function RetraitesBienEtrePage({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
+            className="text-5xl md:text-7xl font-playfair font-light mb-6 drop-shadow-2xl"
           >
             {locale === 'fr' 
               ? "Retraites Bien-être en Montagne"
@@ -71,7 +71,7 @@ export default function RetraitesBienEtrePage({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-3xl font-playfair italic max-w-3xl mx-auto mb-8"
+            className="text-xl md:text-3xl font-playfair italic max-w-3xl mx-auto mb-8 font-light drop-shadow-lg"
           >
             {locale === 'fr'
               ? "Reconnectez-vous à l'essentiel, à la nature et à vous-même"
@@ -102,10 +102,10 @@ export default function RetraitesBienEtrePage({ params }) {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 flex items-center justify-center gap-3">
-              <span>🌿</span> {locale === 'fr' ? "Une parenthèse pour se retrouver" : "A Pause to Find Yourself"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6 flex items-center justify-center gap-3">
+              {locale === 'fr' ? "Une parenthèse pour se retrouver" : "A Pause to Find Yourself"}
             </h2>
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed max-w-4xl mx-auto">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed max-w-4xl mx-auto">
               <p>
                 {locale === 'fr'
                   ? "Quatre retraites, quatre moments privilégiés pour ralentir, respirer et retrouver la simplicité d'un rythme naturel."
@@ -118,7 +118,7 @@ export default function RetraitesBienEtrePage({ params }) {
                   : "Each stay is a bubble out of time, blending gentle body practices, energy healing, meditative walks and introspection."
                 }
               </p>
-              <p className="font-semibold text-stone-dark">
+              <p className="font-normal text-stone-dark">
                 {locale === 'fr'
                   ? "Encadrées par Anaïs, Isée et Marie, ces retraites sont une invitation à réapprendre à s'écouter, à libérer le mental et à apaiser le corps."
                   : "Led by Anaïs, Isée and Marie, these retreats are an invitation to relearn how to listen to yourself, free your mind and soothe your body."
@@ -130,7 +130,7 @@ export default function RetraitesBienEtrePage({ params }) {
                   : "Each edition has its own theme — fasting, full moon, feminine, rebirth — but all share the same intention:"
                 }
               </p>
-              <p className="text-xl font-playfair font-semibold text-lake-dark">
+              <p className="text-xl font-playfair font-light text-lake-dark">
                 {locale === 'fr'
                   ? "se libérer, s'alléger et se reconnecter à soi."
                   : "to free yourself, lighten up and reconnect with yourself."
@@ -149,19 +149,19 @@ export default function RetraitesBienEtrePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 flex items-center gap-3">
-              <span>🍲</span> {locale === 'fr' 
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6 flex items-center gap-3">
+              {locale === 'fr' 
                 ? "Pourquoi un régime cétogène doux pendant la retraite ?"
                 : "Why a Gentle Ketogenic Diet During the Retreat?"
               }
             </h2>
-            <p className="text-xl font-playfair italic text-stone-dark mb-6">
+            <p className="text-xl font-playfair italic text-stone-dark mb-6 font-light">
               {locale === 'fr'
                 ? "On ne peut pas apaiser l'esprit sans prendre soin du corps."
                 : "We cannot soothe the spirit without caring for the body."
               }
             </p>
-            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed mb-8">
+            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed mb-8">
               <p>
                 {locale === 'fr'
                   ? <>Durant les retraites, nous adoptons une <span className="font-semibold text-stone-dark">alimentation cétogène douce</span>, pensée pour rééquilibrer les énergies et favoriser la clarté mentale.</>
@@ -174,7 +174,7 @@ export default function RetraitesBienEtrePage({ params }) {
                   : "The principle: greatly reduce sugars and increase good fats to allow the body to enter a state of ketosis, where it draws energy from fats rather than glucose."
                 }
               </p>
-              <p className="font-semibold text-lake-dark">
+              <p className="font-normal text-lake-dark">
                 {locale === 'fr'
                   ? "Résultat : un esprit plus clair, une énergie stable, un véritable recentrage."
                   : "Result: a clearer mind, stable energy, true recentering."
@@ -183,13 +183,13 @@ export default function RetraitesBienEtrePage({ params }) {
             </div>
 
             <div className="bg-gradient-to-br from-beige to-gold-light p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-6">
-                🌿 {locale === 'fr' 
+              <h3 className="text-2xl font-playfair font-normal text-stone-dark mb-6">
+                {locale === 'fr' 
                   ? "Ce que vous retrouverez dans vos assiettes :"
                   : "What you'll find on your plate:"
                 }
               </h3>
-              <div className="grid md:grid-cols-2 gap-4 font-montserrat text-stone-dark">
+              <div className="grid md:grid-cols-2 gap-4 font-montserrat font-light text-stone-dark">
                 <div className="flex items-start gap-2">
                   <span>•</span>
                   <p>{locale === 'fr' ? "Viandes et poissons de qualité" : "Quality meats and fish"}</p>
@@ -211,13 +211,13 @@ export default function RetraitesBienEtrePage({ params }) {
                   <p>{locale === 'fr' ? "Fruits à faible teneur en sucre (baies, citron, avocat...)" : "Low-sugar fruits (berries, lemon, avocado...)"}</p>
                 </div>
               </div>
-              <p className="mt-6 text-stone italic">
+              <p className="mt-6 text-stone italic font-light">
                 {locale === 'fr'
                   ? "Les féculents, légumineuses, fruits sucrés et produits à base de glucose sont provisoirement écartés : fini le sucre dans le café et les douceurs du soir."
                   : "Starches, legumes, sweet fruits and glucose-based products are temporarily set aside: no more sugar in coffee and evening treats."
                 }
               </p>
-              <p className="mt-4 text-stone-dark font-semibold">
+              <p className="mt-4 text-stone-dark font-normal">
                 {locale === 'fr'
                   ? "Ce n'est pas une contrainte, mais un retour à l'essentiel : offrir au corps la paix qu'il mérite pour que l'esprit puisse, lui aussi, se régénérer."
                   : "It's not a constraint, but a return to the essential: offering the body the peace it deserves so that the mind can also regenerate."
@@ -236,16 +236,16 @@ export default function RetraitesBienEtrePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6 flex items-center gap-3">
-              <span>📵</span> {locale === 'fr' ? "Pourquoi couper le téléphone ?" : "Why Disconnect from Phones?"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-6 flex items-center gap-3">
+              {locale === 'fr' ? "Pourquoi couper le téléphone ?" : "Why Disconnect from Phones?"}
             </h2>
-            <p className="text-xl font-playfair italic mb-6">
+            <p className="text-xl font-playfair italic mb-6 font-light">
               {locale === 'fr'
                 ? "Parce qu'il n'y a pas de pleine présence les yeux sur un écran."
                 : "Because there is no full presence with eyes on a screen."
               }
             </p>
-            <div className="space-y-4 text-lg font-montserrat leading-relaxed">
+            <div className="space-y-4 text-lg font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? <>Chaque retraite inclut une <span className="font-semibold">déconnexion complète de 9h à 20h</span> : pas de téléphone, pas d&apos;écran, pas de notifications.</>
@@ -264,7 +264,7 @@ export default function RetraitesBienEtrePage({ params }) {
                   : "Screens fragment our attention, fuel stress and prevent full relaxation."
                 }
               </p>
-              <p className="font-semibold">
+              <p className="font-normal">
                 {locale === 'fr'
                   ? "Ici, vous apprendrez à respirer sans \"scroll\", à marcher sans photo, à ressentir sans écran."
                   : "Here, you'll learn to breathe without scrolling, to walk without taking photos, to feel without screens."
@@ -272,14 +272,14 @@ export default function RetraitesBienEtrePage({ params }) {
               </p>
             </div>
             <div className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-lg">
-              <p className="text-2xl font-playfair italic text-center">
+              <p className="text-2xl font-playfair italic text-center font-light">
                 {locale === 'fr'
                   ? "\"Quand on se débranche du monde, on se rebranche à soi.\""
                   : "\"When you unplug from the world, you plug back into yourself.\""
                 }
               </p>
             </div>
-            <p className="mt-6 text-beige-light text-sm text-center">
+            <p className="mt-6 text-beige-light text-sm text-center font-light">
               {locale === 'fr'
                 ? "(Les téléphones restent accessibles le soir pour prévenir vos proches si besoin.)"
                 : "(Phones remain accessible in the evening to notify loved ones if needed.)"
@@ -297,15 +297,15 @@ export default function RetraitesBienEtrePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6 text-center flex items-center justify-center gap-3">
-              <span>💫</span> {locale === 'fr' ? "Informations pratiques communes" : "Common Practical Information"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6 text-center flex items-center justify-center gap-3">
+              {locale === 'fr' ? "Informations pratiques communes" : "Common Practical Information"}
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
-              <table className="w-full font-montserrat">
+              <table className="w-full font-montserrat font-light">
                 <tbody className="divide-y divide-stone-light">
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Public" : "Audience"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -316,7 +316,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Type de jeûne" : "Type of fast"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -327,7 +327,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Lieu" : "Location"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -338,7 +338,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Taille du groupe" : "Group size"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -349,7 +349,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Déconnexion totale" : "Total disconnection"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -360,7 +360,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Et s'il pleut ?" : "What if it rains?"}
                     </td>
                     <td className="py-4 px-4 text-stone italic">
@@ -371,7 +371,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </td>
                   </tr>
                   <tr>
-                    <td className="py-4 px-4 font-semibold text-stone-dark">
+                    <td className="py-4 px-4 font-normal text-stone-dark">
                       {locale === 'fr' ? "Lectures" : "Reading"}
                     </td>
                     <td className="py-4 px-4 text-stone">
@@ -395,7 +395,7 @@ export default function RetraitesBienEtrePage({ params }) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 text-center"
+            className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-4 text-center"
           >
             {locale === 'fr'
               ? "Les quatre retraites de l'année 2025"
@@ -407,7 +407,7 @@ export default function RetraitesBienEtrePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-center text-stone font-montserrat mb-12 max-w-2xl mx-auto"
+            className="text-center text-stone font-montserrat font-light mb-12 max-w-2xl mx-auto"
           >
             {locale === 'fr'
               ? "Quatre moments uniques pour vous reconnecter à l'essentiel"
@@ -439,8 +439,8 @@ export default function RetraitesBienEtrePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-12 text-center flex items-center justify-center gap-3">
-              <span>💰</span> {locale === 'fr' 
+            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-12 text-center flex items-center justify-center gap-3">
+              {locale === 'fr' 
                 ? "Tarifs des retraites bien-être en montagne"
                 : "Mountain Wellness Retreat Pricing"
               }
@@ -449,16 +449,15 @@ export default function RetraitesBienEtrePage({ params }) {
             {/* Offre de lancement */}
             <div className="mb-12">
               <div className="bg-gold/20 border-2 border-gold rounded-lg p-8 mb-4">
-                <h3 className="text-3xl font-playfair font-bold mb-6 text-gold flex items-center gap-2">
-                  🌷 {locale === 'fr'
+                <h3 className="text-3xl font-playfair font-normal mb-6 text-gold flex items-center gap-2">
+                  {locale === 'fr'
                     ? "Offre de lancement – jusqu'au 1ᵉʳ mai 2025"
                     : "Launch Offer – until May 1, 2025"
                   }
                 </h3>
-                <div className="grid md:grid-cols-3 gap-6 font-montserrat">
+                <div className="grid md:grid-cols-3 gap-6 font-montserrat font-light">
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                    <div className="text-4xl mb-3">🛏</div>
-                    <h4 className="text-xl font-semibold mb-2">
+                    <h4 className="text-xl font-normal mb-2">
                       {locale === 'fr' ? "Chambre partagée" : "Shared room"}
                     </h4>
                     <p className="text-sm text-beige-light mb-3">
@@ -467,8 +466,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     <p className="text-3xl font-bold text-gold">€450</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                    <div className="text-4xl mb-3">🌸</div>
-                    <h4 className="text-xl font-semibold mb-2">
+                    <h4 className="text-xl font-normal mb-2">
                       {locale === 'fr' ? "Chambre double" : "Double room"}
                     </h4>
                     <p className="text-sm text-beige-light mb-3">
@@ -480,8 +478,7 @@ export default function RetraitesBienEtrePage({ params }) {
                     </p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                    <div className="text-4xl mb-3">✨</div>
-                    <h4 className="text-xl font-semibold mb-2">
+                    <h4 className="text-xl font-normal mb-2">
                       {locale === 'fr' ? "Chambre double solo" : "Double room solo"}
                     </h4>
                     <p className="text-sm text-beige-light mb-3">&nbsp;</p>
@@ -493,8 +490,8 @@ export default function RetraitesBienEtrePage({ params }) {
 
             {/* Tarifs réguliers */}
             <div className="mb-12">
-              <h3 className="text-3xl font-playfair font-bold mb-6 text-beige-light flex items-center gap-2">
-                🌿 {locale === 'fr'
+              <h3 className="text-3xl font-playfair font-normal mb-6 text-beige-light flex items-center gap-2">
+                {locale === 'fr'
                   ? "Tarifs réguliers – à partir du 2 mai 2025"
                   : "Regular Rates – from May 2, 2025"
                 }
@@ -534,10 +531,10 @@ export default function RetraitesBienEtrePage({ params }) {
 
             {/* Informations incluses */}
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
-              <h4 className="text-2xl font-playfair font-bold mb-4 text-center">
+              <h4 className="text-2xl font-playfair font-normal mb-4 text-center">
                 {locale === 'fr' ? "Ce qui est inclus" : "What's Included"}
               </h4>
-              <div className="grid md:grid-cols-2 gap-4 font-montserrat text-beige-light">
+              <div className="grid md:grid-cols-2 gap-4 font-montserrat font-light text-beige-light">
                 <div className="flex items-center gap-2">
                   <span>✓</span>
                   <p>{locale === 'fr' ? "Hébergement 3 nuits" : "3-night accommodation"}</p>
@@ -563,7 +560,7 @@ export default function RetraitesBienEtrePage({ params }) {
                   <p>{locale === 'fr' ? "Le matériel (tapis de yoga, couvertures...)" : "Equipment (yoga mats, blankets...)"}</p>
                 </div>
               </div>
-              <p className="mt-6 text-center text-beige italic">
+              <p className="mt-6 text-center text-beige italic font-light">
                 {locale === 'fr'
                   ? "Les retraites sont limitées à 8 à 10 participants pour préserver la qualité et la bienveillance du groupe."
                   : "Retreats are limited to 8 to 10 participants to preserve the quality and kindness of the group."
@@ -575,7 +572,7 @@ export default function RetraitesBienEtrePage({ params }) {
               <Button href={`/${locale}/contact`} variant="gold">
                 {locale === 'fr' ? "Réserver votre place" : "Book your spot"}
               </Button>
-              <p className="mt-4 text-beige-light text-sm">
+              <p className="mt-4 text-beige-light text-sm font-light">
                 {locale === 'fr'
                   ? "Places limitées – Réservation conseillée"
                   : "Limited spots – Booking recommended"
