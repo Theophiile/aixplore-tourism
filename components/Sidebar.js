@@ -7,48 +7,44 @@ import { useState, useEffect } from 'react';
 import { getTranslation } from '@/lib/translations';
 
 const menuItems = [
-  { key: 'home', href: '/', icon: '🏡' },
-  { key: 'guidedTours', href: '/visites-guidees', icon: '🚶‍♀️' },
-  { key: 'privateTours', href: '/visites-privees', icon: '🚐' },
-  { key: 'familyNature', href: '/nature-famille', icon: '🌿' },
-  { key: 'wellnessRetreats', href: '/retraites-bien-etre', icon: '🏔️' },
-  { key: 'favorites', href: '/coups-de-coeur', icon: '💛' },
-  { key: 'about', href: '/a-propos', icon: '👩‍💼' },
-  { key: 'contact', href: '/contact', icon: '💬' },
+  { key: 'home', href: '/' },
+  { key: 'guidedTours', href: '/visites-guidees' },
+  { key: 'privateTours', href: '/visites-privees' },
+  { key: 'familyNature', href: '/nature-famille' },
+  { key: 'wellnessRetreats', href: '/retraites-bien-etre' },
+  { key: 'favorites', href: '/coups-de-coeur' },
+  { key: 'about', href: '/a-propos' },
+  { key: 'contact', href: '/contact' },
 ];
 
 function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
   return (
     <>
       {/* Logo */}
-      <div className="p-6 border-b border-stone-light">
+      <div className="p-6 pb-8 border-b border-white/10">
         <Link href={`/${locale}`} className="block">
-          <h1 className="text-2xl font-playfair font-bold text-stone-dark">
+          <h1 className="text-[26px] font-playfair font-light text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight">
             Aixplore Tourism
           </h1>
-          <p className="text-sm text-stone mt-1 font-montserrat">
-            Découvrez les Alpes
-          </p>
         </Link>
       </div>
 
       {/* Navigation */}
-      <nav className="p-4">
-        <ul className="space-y-2">
+      <nav className="p-6">
+        <ul className="space-y-1">
           {menuItems.map((item) => {
             const active = isActive(item.href);
             return (
               <li key={item.key}>
                 <Link
                   href={`/${locale}${item.href === '/' ? '' : item.href}`}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 font-montserrat ${
+                  className={`block px-4 py-3 rounded-lg transition-all duration-200 font-montserrat text-[15px] font-light ${
                     active
-                      ? 'bg-lake text-white shadow-md'
-                      : 'text-stone-dark hover:bg-beige hover:text-lake-dark'
+                      ? 'bg-white/20 text-white shadow-lg font-normal'
+                      : 'text-white/90 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <span className="text-xl">{item.icon}</span>
-                  <span className="text-sm">{t(item.key)}</span>
+                  <span className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{t(item.key)}</span>
                 </Link>
               </li>
             );
@@ -57,24 +53,24 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
       </nav>
 
       {/* Langue */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-stone-light bg-beige-light">
-        <div className="flex gap-2 justify-center">
+      <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10">
+        <div className="flex gap-3 justify-center">
           <button
             onClick={() => onLanguageChange('fr')}
-            className={`px-4 py-2 rounded-lg text-sm font-montserrat transition-all ${
+            className={`px-6 py-2.5 rounded-lg text-sm font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
               locale === 'fr'
-                ? 'bg-lake text-white'
-                : 'text-stone hover:bg-beige'
+                ? 'bg-white/20 text-white font-normal'
+                : 'text-white/90 hover:bg-white/10'
             }`}
           >
             FR
           </button>
           <button
             onClick={() => onLanguageChange('en')}
-            className={`px-4 py-2 rounded-lg text-sm font-montserrat transition-all ${
+            className={`px-6 py-2.5 rounded-lg text-sm font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
               locale === 'en'
-                ? 'bg-lake text-white'
-                : 'text-stone hover:bg-beige'
+                ? 'bg-white/20 text-white font-normal'
+                : 'text-white/90 hover:bg-white/10'
             }`}
           >
             EN
@@ -133,7 +129,7 @@ export default function Sidebar({ locale = 'fr' }) {
       {/* Bouton toggle pour mobile */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-50 lg:hidden bg-stone text-white p-3 rounded-full shadow-lg"
+        className="fixed top-4 left-4 z-50 lg:hidden bg-white/10 text-white p-3 rounded-full shadow-lg hover:bg-white/20 transition-all"
         aria-label="Toggle menu"
       >
         <svg
@@ -169,7 +165,7 @@ export default function Sidebar({ locale = 'fr' }) {
               animate={{ x: 0 }}
               exit={{ x: -300 }}
               transition={{ type: 'spring', damping: 25 }}
-              className="fixed left-0 top-0 h-screen w-64 bg-beige-light border-r border-stone-light shadow-xl z-40 overflow-y-auto lg:hidden"
+              className="fixed left-0 top-0 h-screen w-64 border-r border-white/10 z-40 overflow-y-auto lg:hidden"
             >
               <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
             </motion.aside>
@@ -186,7 +182,7 @@ export default function Sidebar({ locale = 'fr' }) {
       </AnimatePresence>
 
       {/* Sidebar Desktop */}
-      <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 bg-beige-light border-r border-stone-light shadow-xl z-40 overflow-y-auto">
+      <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 border-r border-white/10 z-40 overflow-y-auto">
         <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
       </aside>
     </>

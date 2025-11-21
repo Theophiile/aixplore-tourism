@@ -19,11 +19,11 @@ export default function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${className}`}
+      className={`bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col ${className}`}
     >
       {/* Image */}
       {image && (
-        <div className="relative h-64 w-full overflow-hidden">
+        <div className="relative h-64 w-full overflow-hidden flex-shrink-0">
           <Image
             src={image}
             alt={title}
@@ -34,7 +34,7 @@ export default function Card({
       )}
 
       {/* Contenu */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         {date && (
           <p className="text-sm text-gold font-montserrat mb-2 font-semibold">
             {date}
@@ -52,12 +52,14 @@ export default function Card({
         )}
         
         {href && (
-          <Link
-            href={href}
-            className="inline-block px-6 py-3 bg-lake text-white rounded-lg hover:bg-lake-dark transition-all duration-200 font-montserrat shadow-md hover:shadow-lg"
-          >
-            {buttonText}
-          </Link>
+          <div className="mt-auto">
+            <Link
+              href={href}
+              className="inline-block px-6 py-3 bg-lake text-white rounded-lg hover:bg-lake-dark transition-all duration-200 font-montserrat shadow-md hover:shadow-lg"
+            >
+              {buttonText}
+            </Link>
+          </div>
         )}
       </div>
     </motion.div>

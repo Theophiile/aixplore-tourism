@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Card from '@/components/Card';
 import ParallaxSection from '@/components/ParallaxSection';
+import Button from '@/components/Button';
 import { getTranslation } from '@/lib/translations';
 
 export default function NatureFamillePage({ params }) {
@@ -11,58 +12,74 @@ export default function NatureFamillePage({ params }) {
 
   const activities = [
     {
-      title: locale === 'fr' ? "À la Découverte des Traces d'Animaux" : "Discovering Animal Tracks",
+      title: locale === 'fr' ? "🎨 Chasse aux couleurs" : "🎨 Color Hunt",
       description: locale === 'fr' 
-        ? "Apprenez à reconnaître les traces et indices de présence de la faune alpine. Une aventure ludique et éducative pour petits et grands."
-        : "Learn to recognize tracks and signs of alpine wildlife. A fun and educational adventure for young and old.",
+        ? "Observer les teintes du printemps et trouver dans la nature les éléments correspondant à chaque couleur."
+        : "Observe the spring hues and find natural elements matching each color.",
       image: "/images/family-tracks.jpg",
-      date: locale === 'fr' ? "Samedi 15 juin 2025" : "Saturday June 15, 2025",
-      href: `/${locale}/nature-famille/traces-animaux`
+      date: locale === 'fr' ? "19 avril 2026" : "April 19, 2026",
+      location: locale === 'fr' ? "Le Mollard Noir" : "Le Mollard Noir",
+      href: `/${locale}/nature-famille/chasse-couleurs`
     },
     {
-      title: locale === 'fr' ? "Les Secrets de la Forêt" : "Secrets of the Forest",
+      title: locale === 'fr' ? "🔍 Chasse au trésor nature" : "🔍 Nature Treasure Hunt",
       description: locale === 'fr'
-        ? "Explorez l'écosystème forestier et découvrez les plantes, arbres et petits habitants de nos forêts alpines."
-        : "Explore the forest ecosystem and discover the plants, trees and small inhabitants of our alpine forests.",
+        ? "Résoudre des énigmes, suivre des indices et redécouvrir la montagne en jouant."
+        : "Solve riddles, follow clues and rediscover the mountain while playing.",
       image: "/images/family-forest.jpg",
-      date: locale === 'fr' ? "Dimanche 23 juin 2025" : "Sunday June 23, 2025",
-      href: `/${locale}/nature-famille/secrets-foret`
+      date: locale === 'fr' ? "17 mai 2026" : "May 17, 2026",
+      location: locale === 'fr' ? "Croix des Bergers" : "Croix des Bergers",
+      href: `/${locale}/nature-famille/chasse-tresor`
     },
     {
-      title: locale === 'fr' ? "Atelier Construction de Cabanes" : "Cabin Building Workshop",
+      title: locale === 'fr' ? "🌸 Herbier coloré" : "🌸 Colorful Herbarium",
       description: locale === 'fr'
-        ? "Un atelier créatif en pleine nature où les enfants apprennent à construire leur cabane avec des matériaux naturels."
-        : "A creative outdoor workshop where children learn to build their cabin with natural materials.",
-      image: "/images/family-cabins.jpg",
-      date: locale === 'fr' ? "Samedi 13 juillet 2025" : "Saturday July 13, 2025",
-      href: `/${locale}/nature-famille/cabanes`
-    },
-    {
-      title: locale === 'fr' ? "Observation des Oiseaux" : "Bird Watching",
-      description: locale === 'fr'
-        ? "Initiation à l'ornithologie pour toute la famille. Jumelles fournies pour observer les oiseaux de montagne."
-        : "Introduction to ornithology for the whole family. Binoculars provided to observe mountain birds.",
-      image: "/images/family-birds.jpg",
-      date: locale === 'fr' ? "Dimanche 28 juillet 2025" : "Sunday July 28, 2025",
-      href: `/${locale}/nature-famille/oiseaux`
-    },
-    {
-      title: locale === 'fr' ? "Balade au Fil de l'Eau" : "Walk Along the Water",
-      description: locale === 'fr'
-        ? "Suivez le cours d'une rivière alpine et découvrez son écosystème fascinant, de la source jusqu'au lac."
-        : "Follow the course of an alpine river and discover its fascinating ecosystem, from source to lake.",
-      image: "/images/family-water.jpg",
-      date: locale === 'fr' ? "Samedi 10 août 2025" : "Saturday August 10, 2025",
-      href: `/${locale}/nature-famille/fil-eau`
-    },
-    {
-      title: locale === 'fr' ? "Cueillette et Herbier Alpin" : "Alpine Harvesting & Herbarium",
-      description: locale === 'fr'
-        ? "Apprenez à reconnaître les plantes comestibles et médicinales des Alpes, et créez votre propre herbier."
-        : "Learn to recognize edible and medicinal Alpine plants, and create your own herbarium.",
+        ? "Créer un herbier artistique à partir des fleurs et feuilles ramassées sur le chemin."
+        : "Create an artistic herbarium from flowers and leaves collected along the way.",
       image: "/images/family-plants.jpg",
-      date: locale === 'fr' ? "Dimanche 24 août 2025" : "Sunday August 24, 2025",
+      date: locale === 'fr' ? "14 juin 2026" : "June 14, 2026",
+      location: locale === 'fr' ? "Lac de Lathuile" : "Lake Lathuile",
       href: `/${locale}/nature-famille/herbier`
+    },
+    {
+      title: locale === 'fr' ? "🎧 Écoute sensorielle" : "🎧 Sensory Listening",
+      description: locale === 'fr'
+        ? "Se poser, fermer les yeux, écouter la cascade et reconnaître les sons des oiseaux."
+        : "Pause, close your eyes, listen to the waterfall and recognize bird sounds.",
+      image: "/images/family-water.jpg",
+      date: locale === 'fr' ? "28 juin 2026" : "June 28, 2026",
+      location: locale === 'fr' ? "Cascade de Pissieu" : "Pissieu Waterfall",
+      href: `/${locale}/nature-famille/ecoute-oiseaux`
+    },
+    {
+      title: locale === 'fr' ? "🪶 Land Art & Nature" : "🪶 Land Art & Nature",
+      description: locale === 'fr'
+        ? "Réaliser un tableau naturel à partir de bois, pierres, feuilles et terre."
+        : "Create a natural artwork using wood, stones, leaves and earth.",
+      image: "/images/family-cabins.jpg",
+      date: locale === 'fr' ? "30 août 2026" : "August 30, 2026",
+      location: locale === 'fr' ? "Lacs de Chevelu" : "Chevelu Lakes",
+      href: `/${locale}/nature-famille/land-art`
+    },
+    {
+      title: locale === 'fr' ? "🌌 Le mystère du disque céleste" : "🌌 The Celestial Disc Mystery",
+      description: locale === 'fr'
+        ? "Jeu d'observation et d'imaginaire autour des étoiles et des légendes anciennes."
+        : "Observation and imagination game around stars and ancient legends.",
+      image: "/images/family-birds.jpg",
+      date: locale === 'fr' ? "13 septembre 2026" : "September 13, 2026",
+      location: locale === 'fr' ? "Grotte du Loup (Nances)" : "Wolf Cave (Nances)",
+      href: `/${locale}/nature-famille/disque-celeste`
+    },
+    {
+      title: locale === 'fr' ? "🍄 Les secrets des champignons" : "🍄 Mushroom Secrets",
+      description: locale === 'fr'
+        ? "Jeu \"cherche et trouve\" et découverte de la vie du sol."
+        : "\"Seek and find\" game and discover life in the soil.",
+      image: "/images/family-forest.jpg",
+      date: locale === 'fr' ? "18 octobre 2026" : "October 18, 2026",
+      location: locale === 'fr' ? "Verel Pragondran" : "Verel Pragondran",
+      href: `/${locale}/nature-famille/champignons`
     }
   ];
 
@@ -71,25 +88,25 @@ export default function NatureFamillePage({ params }) {
       {/* Hero Section */}
       <ParallaxSection 
         image="/images/family-nature-hero.jpg"
-        height="h-96"
+        height="h-screen"
       >
         <div className="text-center text-white px-4">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-playfair font-bold mb-4"
+            className="text-5xl md:text-7xl font-playfair font-bold mb-6"
           >
-            {locale === 'fr' ? "Rendez-vous Nature en Famille" : "Family Nature Outings"}
+            {locale === 'fr' ? "🌿 Les Rendez-vous Nature en Famille" : "🌿 Family Nature Outings"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-montserrat max-w-2xl mx-auto"
+            className="text-xl md:text-3xl font-playfair italic max-w-3xl mx-auto"
           >
             {locale === 'fr'
-              ? "Des activités ludiques et éducatives pour découvrir la nature alpine"
-              : "Fun and educational activities to discover alpine nature"
+              ? "Grandir ensemble, les pieds dans l'herbe et les yeux grands ouverts"
+              : "Growing together, feet in the grass and eyes wide open"
             }
           </motion.p>
         </div>
@@ -97,152 +114,420 @@ export default function NatureFamillePage({ params }) {
 
       {/* Section Introduction */}
       <section className="section-padding bg-beige-light">
-        <div className="container-custom max-w-4xl text-center">
+        <div className="container-custom max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="space-y-6 text-lg text-stone font-montserrat leading-relaxed"
+          >
+            <p>
+              {locale === 'fr'
+                ? "Et si, le temps d'une matinée, on laissait les écrans de côté pour écouter le vent, toucher les feuilles, sentir la mousse et rire en famille ?"
+                : "What if, for a morning, we put screens aside to listen to the wind, touch the leaves, smell the moss and laugh together as a family?"
+              }
+            </p>
+            <p>
+              {locale === 'fr'
+                ? "Les Rendez-vous Nature en Famille d'Aixplore Tourism sont des sorties sensorielles et ludiques pensées pour les enfants de 5 à 12 ans et leurs parents."
+                : "Aixplore Tourism's Family Nature Outings are sensory and playful outings designed for children aged 5 to 12 and their parents."
+              }
+            </p>
+            <p>
+              {locale === 'fr'
+                ? "Chaque rencontre est une invitation à explorer la nature autrement, à stimuler la curiosité, à apprendre en s'amusant et à vivre ensemble des émotions simples et vraies."
+                : "Each outing is an invitation to explore nature differently, stimulate curiosity, learn while having fun and experience simple and true emotions together."
+              }
+            </p>
+            <p className="font-semibold text-stone-dark">
+              {locale === 'fr'
+                ? "Dans la forêt, au bord de l'eau ou en montagne, petits et grands découvrent les trésors de la Savoie à travers leurs cinq sens : observer, écouter, toucher, respirer, ressentir."
+                : "In the forest, by the water or in the mountains, young and old discover the treasures of Savoie through their five senses: observe, listen, touch, breathe, feel."
+              }
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section Pourquoi */}
+      <section className="section-padding">
+        <div className="container-custom max-w-5xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-bold text-stone-dark mb-6">
-              {locale === 'fr' ? "Éveillez la Curiosité de vos Enfants 🌿" : "Awaken Your Children's Curiosity 🌿"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-6">
+              {locale === 'fr' ? "🌸 Pourquoi ces rendez-vous ?" : "🌸 Why These Outings?"}
             </h2>
-            <p className="text-lg text-stone font-montserrat leading-relaxed mb-8">
+            <p className="text-2xl font-playfair italic text-lake-dark mb-6">
               {locale === 'fr'
-                ? "Nos rendez-vous nature sont spécialement conçus pour les familles. À travers des activités interactives et ludiques, vos enfants découvriront les merveilles de la nature alpine tout en s'amusant. Chaque sortie est une aventure éducative adaptée aux enfants de 5 à 12 ans."
-                : "Our nature outings are specially designed for families. Through interactive and fun activities, your children will discover the wonders of alpine nature while having fun. Each outing is an educational adventure adapted for children aged 5 to 12."
+                ? "Parce que la nature est la plus belle salle de classe du monde."
+                : "Because nature is the most beautiful classroom in the world."
               }
             </p>
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="text-4xl mb-3">👨‍👩‍👧‍👦</div>
-                <h3 className="font-playfair font-bold text-lg text-stone-dark mb-2">
-                  {locale === 'fr' ? "Activités familiales" : "Family Activities"}
-                </h3>
-                <p className="text-sm text-stone">
-                  {locale === 'fr' ? "Adaptées aux enfants et aux parents" : "Suitable for children and parents"}
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="text-4xl mb-3">📚</div>
-                <h3 className="font-playfair font-bold text-lg text-stone-dark mb-2">
-                  {locale === 'fr' ? "Approche pédagogique" : "Educational Approach"}
-                </h3>
-                <p className="text-sm text-stone">
-                  {locale === 'fr' ? "Apprendre en s'amusant" : "Learning while having fun"}
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="text-4xl mb-3">🌲</div>
-                <h3 className="font-playfair font-bold text-lg text-stone-dark mb-2">
-                  {locale === 'fr' ? "En pleine nature" : "In the Heart of Nature"}
-                </h3>
-                <p className="text-sm text-stone">
-                  {locale === 'fr' ? "Des lieux magiques et préservés" : "Magical and preserved places"}
-                </p>
-              </div>
-            </div>
+            <p className="text-lg text-stone font-montserrat mb-4">
+              {locale === 'fr'
+                ? "Les études montrent que les enfants qui passent du temps dehors développent :"
+                : "Studies show that children who spend time outdoors develop:"
+              }
+            </p>
+            <ul className="space-y-2 text-lg text-stone font-montserrat ml-6">
+              <li className="flex items-start gap-2">
+                <span>•</span>
+                <span>
+                  {locale === 'fr'
+                    ? "une meilleure concentration et mémoire,"
+                    : "better concentration and memory,"
+                  }
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span>•</span>
+                <span>
+                  {locale === 'fr'
+                    ? "plus de créativité et de confiance en eux,"
+                    : "more creativity and self-confidence,"
+                  }
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span>•</span>
+                <span>
+                  {locale === 'fr'
+                    ? "une connexion profonde à leur environnement,"
+                    : "a deep connection to their environment,"
+                  }
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span>•</span>
+                <span>
+                  {locale === 'fr'
+                    ? "et davantage d'empathie et de coopération."
+                    : "and greater empathy and cooperation."
+                  }
+                </span>
+              </li>
+            </ul>
+            <p className="text-lg text-stone font-montserrat mt-6">
+              {locale === 'fr'
+                ? "Ces matinées sont conçues comme des bulles d'éveil et de bien-être, où chaque famille retrouve le plaisir de marcher, jouer et créer ensemble, loin des sollicitations du quotidien."
+                : "These mornings are designed as bubbles of awakening and well-being, where each family rediscovers the pleasure of walking, playing and creating together, away from daily demands."
+              }
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Section Activités */}
-      <section className="section-padding">
+      {/* Section Programme 2025-2026 */}
+      <section className="section-padding bg-gradient-to-br from-lake-light to-beige-light">
         <div className="container-custom">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl font-playfair font-bold text-stone-dark mb-12 text-center"
+            className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-4 text-center"
           >
-            {locale === 'fr' ? "Nos Prochains Rendez-vous 2025" : "Our Upcoming Outings 2025"}
+            {locale === 'fr' ? "🌞 Programme 2026" : "🌞 2026 Program"}
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-center text-stone font-montserrat mb-12 max-w-2xl mx-auto text-lg"
+          >
+            {locale === 'fr'
+              ? "7 sorties sensorielles et ludiques pour explorer la Savoie en famille"
+              : "7 sensory and playful outings to explore Savoie as a family"
+            }
+          </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {activities.map((item, index) => (
-              <Card
+              <motion.div
                 key={index}
-                title={item.title}
-                description={item.description}
-                image={item.image}
-                date={item.date}
-                href={item.href}
-                buttonText={locale === 'fr' ? "En savoir plus" : "Learn more"}
-              />
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-lake-light/50 to-gold/50 flex items-center justify-center">
+                    <span className="text-6xl">{item.title.split(' ')[0]}</span>
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-sm text-gold font-montserrat font-semibold mb-1">
+                    📅 {item.date}
+                  </p>
+                  <p className="text-sm text-lake font-montserrat font-semibold mb-3">
+                    📍 {item.location}
+                  </p>
+                  <h3 className="text-xl font-playfair font-bold text-stone-dark mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-stone font-montserrat leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+                  <div className="mt-auto">
+                    <Button href={item.href} variant="lake">
+                      {locale === 'fr' ? "En savoir plus" : "Learn more"}
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section Infos Pratiques */}
-      <section className="section-padding bg-lake-light">
+      {/* Section Ce que vos enfants vont découvrir */}
+      <section className="section-padding bg-beige">
+        <div className="container-custom max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-8 text-center">
+              {locale === 'fr' ? "🍀 Ce que vos enfants vont y découvrir" : "🍀 What Your Children Will Discover"}
+            </h2>
+            <ul className="space-y-4 text-lg text-stone font-montserrat">
+              <li className="flex items-start gap-3">
+                <span className="text-2xl flex-shrink-0">✨</span>
+                <span>
+                  {locale === 'fr'
+                    ? "Le plaisir d'apprendre sans s'en rendre compte, en observant, en jouant, en manipulant."
+                    : "The pleasure of learning without realizing it, by observing, playing, manipulating."
+                  }
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-2xl flex-shrink-0">🎨</span>
+                <span>
+                  {locale === 'fr'
+                    ? "La joie de créer à partir d'éléments naturels : herbiers, œuvres d'art, petits bateaux, trésors cachés."
+                    : "The joy of creating from natural elements: herbariums, artworks, small boats, hidden treasures."
+                  }
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-2xl flex-shrink-0">💚</span>
+                <span>
+                  {locale === 'fr'
+                    ? "Le bonheur d'être ensemble, dehors, dans la lumière, le vent, la forêt."
+                    : "The happiness of being together, outside, in the light, wind, forest."
+                  }
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-2xl flex-shrink-0">🌿</span>
+                <span>
+                  {locale === 'fr'
+                    ? "Une connexion sensorielle et émotionnelle à la nature, essentielle à leur équilibre."
+                    : "A sensory and emotional connection to nature, essential for their balance."
+                  }
+                </span>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section Informations Pratiques */}
+      <section className="section-padding bg-lake text-white">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="bg-white rounded-lg p-8 shadow-lg"
+            className="text-center mb-8"
           >
-            <h3 className="text-3xl font-playfair font-bold text-stone-dark mb-6 text-center">
-              {locale === 'fr' ? "Informations Pratiques" : "Practical Information"}
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
+              {locale === 'fr' ? "🍎 Informations pratiques" : "🍎 Practical Information"}
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6 font-montserrat">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                <span>🕓</span> {locale === 'fr' ? "Durée" : "Duration"}
+              </h3>
+              <p>{locale === 'fr' ? "environ 3h à 4h" : "approximately 3 to 4 hours"}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                <span>👨‍👩‍👧‍👦</span> {locale === 'fr' ? "Public" : "Audience"}
+              </h3>
+              <p>{locale === 'fr' ? "familles avec enfants de 5 à 12 ans" : "families with children aged 5 to 12"}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                <span>⚙</span> {locale === 'fr' ? "Niveau" : "Level"}
+              </h3>
+              <p>{locale === 'fr' ? "facile, accessible à tous" : "easy, accessible to all"}</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
+                <span>📍</span> {locale === 'fr' ? "Lieux" : "Locations"}
+              </h3>
+              <p>
+                {locale === 'fr'
+                  ? "autour d'Aix-les-Bains, du lac du Bourget et du massif des Bauges"
+                  : "around Aix-les-Bains, Lake Bourget and Bauges mountains"
+                }
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <span>🎒</span> {locale === 'fr' ? "À prévoir" : "What to Bring"}
             </h3>
-            <div className="grid md:grid-cols-2 gap-6 font-montserrat">
-              <div>
-                <h4 className="font-semibold text-lg text-stone-dark mb-3 flex items-center gap-2">
-                  <span>⏰</span> {locale === 'fr' ? "Durée" : "Duration"}
-                </h4>
-                <p className="text-stone">
-                  {locale === 'fr' ? "Demi-journée (environ 3 heures)" : "Half-day (approximately 3 hours)"}
+            <p className="text-beige-light">
+              {locale === 'fr'
+                ? "chaussures fermées, eau, chapeau, curiosité et bonne humeur !"
+                : "closed shoes, water, hat, curiosity and good mood!"
+              }
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Tarifs */}
+      <section className="section-padding bg-gradient-to-br from-stone-dark to-lake-dark text-white">
+        <div className="container-custom max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-center">
+              {locale === 'fr' ? "💰 Tarifs & Réservation" : "💰 Rates & Booking"}
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="text-4xl mb-3">👧</div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {locale === 'fr' ? "Enfant" : "Child"}
+                </h3>
+                <p className="text-sm text-beige-light mb-2">
+                  {locale === 'fr' ? "(5 à 12 ans)" : "(5 to 12 years)"}
                 </p>
+                <p className="text-3xl font-bold text-gold">€13</p>
               </div>
-              <div>
-                <h4 className="font-semibold text-lg text-stone-dark mb-3 flex items-center gap-2">
-                  <span>👶</span> {locale === 'fr' ? "Âge recommandé" : "Recommended Age"}
-                </h4>
-                <p className="text-stone">
-                  {locale === 'fr' 
-                    ? "De 5 à 12 ans (accompagnés d'un adulte)"
-                    : "5 to 12 years old (accompanied by an adult)"
-                  }
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="text-4xl mb-3">👨</div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {locale === 'fr' ? "Adulte" : "Adult"}
+                </h3>
+                <p className="text-sm text-beige-light mb-2">
+                  {locale === 'fr' ? "accompagnant" : "accompanying"}
                 </p>
+                <p className="text-3xl font-bold text-gold">€9</p>
               </div>
-              <div>
-                <h4 className="font-semibold text-lg text-stone-dark mb-3 flex items-center gap-2">
-                  <span>💰</span> {locale === 'fr' ? "Tarifs" : "Rates"}
-                </h4>
-                <p className="text-stone">
-                  {locale === 'fr'
-                    ? "25€ par enfant, 15€ par adulte accompagnant"
-                    : "€25 per child, €15 per accompanying adult"
-                  }
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="text-4xl mb-3">👨‍👩‍👧‍👦</div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {locale === 'fr' ? "Forfait famille" : "Family Package"}
+                </h3>
+                <p className="text-sm text-beige-light mb-2">
+                  {locale === 'fr' ? "(2 adultes + 2 enfants)" : "(2 adults + 2 children)"}
                 </p>
+                <p className="text-3xl font-bold text-gold">€40</p>
               </div>
-              <div>
-                <h4 className="font-semibold text-lg text-stone-dark mb-3 flex items-center gap-2">
-                  <span>🎒</span> {locale === 'fr' ? "À prévoir" : "What to Bring"}
-                </h4>
-                <p className="text-stone">
-                  {locale === 'fr'
-                    ? "Chaussures de marche, eau, snack, vêtements adaptés"
-                    : "Hiking shoes, water, snack, appropriate clothing"
-                  }
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <div className="text-4xl mb-3">➕</div>
+                <h3 className="text-xl font-semibold mb-2">
+                  {locale === 'fr' ? "Supplémentaire" : "Additional"}
+                </h3>
+                <p className="text-sm text-beige-light mb-2">
+                  {locale === 'fr' ? "participant" : "participant"}
                 </p>
+                <p className="text-3xl font-bold text-gold">€7</p>
               </div>
-              <div>
-                <h4 className="font-semibold text-lg text-stone-dark mb-3 flex items-center gap-2">
-                  <span>👥</span> {locale === 'fr' ? "Groupe" : "Group"}
-                </h4>
-                <p className="text-stone">
-                  {locale === 'fr' ? "Maximum 12 enfants par sortie" : "Maximum 12 children per outing"}
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg text-stone-dark mb-3 flex items-center gap-2">
-                  <span>☔</span> {locale === 'fr' ? "Météo" : "Weather"}
-                </h4>
-                <p className="text-stone">
-                  {locale === 'fr' ? "Report en cas de mauvais temps" : "Postponed in case of bad weather"}
-                </p>
-              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 space-y-4">
+              <p className="text-beige-light font-montserrat">
+                ✅ {locale === 'fr'
+                  ? "Réservation obligatoire – les places sont limitées pour préserver la qualité du moment partagé."
+                  : "Booking required – spots are limited to preserve the quality of the shared moment."
+                }
+              </p>
+              <p className="text-beige-light font-montserrat">
+                📅 {locale === 'fr'
+                  ? "Réservation obligatoire – sorties limitées à 10 familles."
+                  : "Booking required – outings limited to 10 families."
+                }
+              </p>
+              <p className="text-beige-light font-montserrat">
+                💳 {locale === 'fr'
+                  ? "Paiement par carte ou virement au moment de la réservation."
+                  : "Payment by card or bank transfer upon booking."
+                }
+              </p>
+              <p className="text-beige-light font-montserrat">
+                🌦 {locale === 'fr'
+                  ? "En cas de météo défavorable : Si la sortie ne peut pas être maintenue, une autre date vous sera proposée, ou vous pourrez choisir un remboursement intégral."
+                  : "In case of unfavorable weather: If the outing cannot be maintained, another date will be offered, or you can choose a full refund."
+                }
+              </p>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button href={`/${locale}/contact`} variant="gold">
+                {locale === 'fr' ? "Réserver maintenant" : "Book now"}
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section L'esprit Aixplore */}
+      <section className="section-padding bg-beige-light">
+        <div className="container-custom max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-8">
+              {locale === 'fr' ? "💬 L'esprit Aixplore" : "💬 The Aixplore Spirit"}
+            </h2>
+            <div className="space-y-4 text-lg text-stone font-montserrat leading-relaxed">
+              <p className="italic">
+                {locale === 'fr'
+                  ? "Parce qu'un souvenir d'enfance commence souvent par une promenade dans la nature."
+                  : "Because a childhood memory often begins with a walk in nature."
+                }
+              </p>
+              <p className="italic">
+                {locale === 'fr'
+                  ? "Parce que grandir, c'est aussi apprendre à regarder le monde autrement."
+                  : "Because growing up also means learning to see the world differently."
+                }
+              </p>
+              <p className="font-semibold text-stone-dark">
+                {locale === 'fr'
+                  ? "Ces balades sont des moments de complicité, d'émerveillement et de lenteur, où chaque rire résonne entre les arbres et chaque pas devient une découverte 🌲💫"
+                  : "These walks are moments of complicity, wonder and slowness, where every laugh resonates through the trees and every step becomes a discovery 🌲💫"
+                }
+              </p>
+            </div>
+
+            <div className="mt-12 p-8 bg-gradient-to-r from-lake-light to-gold-light rounded-lg">
+              <p className="text-2xl font-playfair italic text-stone-dark">
+                {locale === 'fr'
+                  ? "👉 Rejoignez les Petits Explorateurs d'Aixplore et offrez à vos enfants le plus beau des cadeaux : le temps de s'émerveiller."
+                  : "👉 Join the Little Explorers of Aixplore and give your children the most beautiful gift: time to wonder."
+                }
+              </p>
             </div>
           </motion.div>
         </div>
@@ -250,4 +535,3 @@ export default function NatureFamillePage({ params }) {
     </div>
   );
 }
-

@@ -11,12 +11,12 @@ export default function Button({
   className = '',
   ...props 
 }) {
-  const baseClasses = "inline-block px-6 py-3 rounded-lg font-montserrat transition-all duration-300 shadow-md hover:shadow-lg";
+  const baseClasses = "inline-block px-8 py-3.5 rounded-full font-montserrat font-light transition-all duration-300";
   
   const variants = {
-    primary: "bg-lake text-white hover:bg-lake-dark",
-    secondary: "bg-beige text-stone-dark hover:bg-beige-light border-2 border-stone-light",
-    gold: "bg-gold text-white hover:bg-gold-light hover:text-stone-dark",
+    primary: "bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm",
+    secondary: "bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm",
+    gold: "bg-gold/80 text-white border border-gold/40 hover:bg-gold/90",
   };
 
   const classes = `${baseClasses} ${variants[variant]} ${className}`;
