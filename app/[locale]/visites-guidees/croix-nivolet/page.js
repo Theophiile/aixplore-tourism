@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ParallaxSection from '@/components/ParallaxSection';
 import Button from '@/components/Button';
 
 export default function CroixNivoletPage({ params }) {
@@ -10,17 +9,14 @@ export default function CroixNivoletPage({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <ParallaxSection 
-        image="/images/cretes.jpg"
-        height="h-screen"
-      >
-        <div className="text-center text-white px-4">
+      <section className="relative h-screen w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
+        <div className="text-center text-white px-4 z-10">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-playfair font-light drop-shadow-2xl mb-6"
           >
-            Entre ciel et forêt
+            {locale === 'fr' ? "Entre ciel et forêt" : "Between Sky and Forest"}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -28,7 +24,10 @@ export default function CroixNivoletPage({ params }) {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl font-montserrat italic max-w-3xl mx-auto mb-4"
           >
-            Randonnée guidée à la Croix du Nivolet
+            {locale === 'fr' 
+              ? "Randonnée guidée à la Croix du Nivolet"
+              : "Guided hike to Croix du Nivolet"
+            }
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -36,10 +35,13 @@ export default function CroixNivoletPage({ params }) {
             transition={{ delay: 0.3 }}
             className="text-lg font-montserrat font-light"
           >
-            au départ du Sire – boucle panoramique et sous-bois
+            {locale === 'fr'
+              ? "au départ du Sire – boucle panoramique et sous-bois"
+              : "from Le Sire – panoramic loop and forest trails"
+            }
           </motion.p>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* Section Description */}
       <section className="section-padding bg-beige-light">
@@ -51,29 +53,53 @@ export default function CroixNivoletPage({ params }) {
           >
             <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
               <p>
-                Depuis le plateau du Sire, la marche débute entre clairières et forêts de sapins.
+                {locale === 'fr'
+                  ? "Depuis le plateau du Sire, la marche débute entre clairières et forêts de sapins."
+                  : "From the Sire plateau, the hike begins between clearings and fir forests."
+                }
               </p>
               <p>
-                Peu à peu, la vue s&apos;ouvre sur le lac du Bourget, puis sur les sommets des Bauges.
+                {locale === 'fr'
+                  ? "Peu à peu, la vue s'ouvre sur le lac du Bourget, puis sur les sommets des Bauges."
+                  : "Gradually, the view opens onto Lake Bourget, then onto the Bauges peaks."
+                }
               </p>
               <p>
-                Le sentier alterne crêtes panoramiques et passages boisés, au rythme des haltes commentées de votre guide.
+                {locale === 'fr'
+                  ? "Le sentier alterne crêtes panoramiques et passages boisés, au rythme des haltes commentées de votre guide."
+                  : "The trail alternates between panoramic ridges and wooded passages, at the rhythm of your guide's commented stops."
+                }
               </p>
               <p className="font-normal text-stone-dark text-xl">
-                Au sommet, la grande croix du Nivolet se dresse face au vide.
+                {locale === 'fr'
+                  ? "Au sommet, la grande croix du Nivolet se dresse face au vide."
+                  : "At the summit, the great cross of Nivolet stands facing the void."
+                }
               </p>
               <p>
-                Symbole de la région, elle offre l&apos;un des plus beaux points de vue sur la Savoie — jusqu&apos;au Mont-Blanc par temps clair.
+                {locale === 'fr'
+                  ? "Symbole de la région, elle offre l'un des plus beaux points de vue sur la Savoie."
+                  : "A symbol of the region, it offers one of the most beautiful viewpoints over Savoie."
+                }
               </p>
               <p>
-                Le retour s&apos;effectue en boucle, dans la fraîcheur des sous-bois.
+                {locale === 'fr'
+                  ? "Le retour s'effectue dans la fraîcheur des sous-bois."
+                  : "The return takes place in the coolness of the undergrowth."
+                }
               </p>
               <p className="italic text-lake-dark">
-                Une randonnée vivante, entre nature, légendes et panoramas à couper le souffle.
+                {locale === 'fr'
+                  ? "Une randonnée vivante, entre nature, légendes et panoramas à couper le souffle."
+                  : "A lively hike, between nature, legends and breathtaking panoramas."
+                }
               </p>
             </div>
             <p className="mt-6 text-stone text-sm italic">
-              Sous réserve de conditions météorologiques favorables.
+              {locale === 'fr'
+                ? "Sous réserve de conditions météorologiques favorables."
+                : "Subject to favorable weather conditions."
+              }
             </p>
           </motion.div>
         </div>
@@ -88,7 +114,7 @@ export default function CroixNivoletPage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-12 text-center">
-              🏞 Ce que vous allez découvrir
+              {locale === 'fr' ? "Ce que vous allez découvrir" : "What you'll discover"}
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -98,13 +124,12 @@ export default function CroixNivoletPage({ params }) {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-lake-light to-lake p-6 rounded-lg shadow-lg"
               >
-                <div className="text-4xl mb-4">⛪</div>
                 <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
-                  La célèbre croix du Nivolet
+                  {locale === 'fr'
+                    ? "La célèbre croix du Nivolet, symbole de la Savoie"
+                    : "The famous Nivolet cross, symbol of Savoie"
+                  }
                 </h3>
-                <p className="text-stone font-montserrat">
-                  Symbole de la Savoie
-                </p>
               </motion.div>
 
               <motion.div
@@ -114,13 +139,12 @@ export default function CroixNivoletPage({ params }) {
                 transition={{ delay: 0.1 }}
                 className="bg-gradient-to-br from-beige to-gold-light p-6 rounded-lg shadow-lg"
               >
-                <div className="text-4xl mb-4">🌊</div>
                 <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
-                  Vues spectaculaires
+                  {locale === 'fr'
+                    ? "Des vues spectaculaires sur le lac du Bourget et le bassin chambérien"
+                    : "Spectacular views of Lake Bourget and the Chambéry basin"
+                  }
                 </h3>
-                <p className="text-stone font-montserrat">
-                  Sur le lac du Bourget et le bassin chambérien
-                </p>
               </motion.div>
 
               <motion.div
@@ -130,13 +154,12 @@ export default function CroixNivoletPage({ params }) {
                 transition={{ delay: 0.2 }}
                 className="bg-gradient-to-br from-beige-light to-beige p-6 rounded-lg shadow-lg"
               >
-                <div className="text-4xl mb-4">🌲</div>
                 <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
-                  Forêts et clairières
+                  {locale === 'fr'
+                    ? "Les forêts et clairières du massif des Bauges"
+                    : "The forests and clearings of the Bauges massif"
+                  }
                 </h3>
-                <p className="text-stone font-montserrat">
-                  Du massif des Bauges
-                </p>
               </motion.div>
 
               <motion.div
@@ -146,13 +169,12 @@ export default function CroixNivoletPage({ params }) {
                 transition={{ delay: 0.3 }}
                 className="bg-gradient-to-br from-gold-light to-gold/40 p-6 rounded-lg shadow-lg"
               >
-                <div className="text-4xl mb-4">📖</div>
                 <h3 className="text-xl font-playfair font-normal text-stone-dark mb-2">
-                  Histoires et légendes
+                  {locale === 'fr'
+                    ? "Les histoires et légendes racontées par votre guide"
+                    : "The stories and legends told by your guide"
+                  }
                 </h3>
-                <p className="text-stone font-montserrat">
-                  Racontées par votre guide
-                </p>
               </motion.div>
             </div>
           </motion.div>
@@ -168,35 +190,56 @@ export default function CroixNivoletPage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-playfair font-light text-stone-dark mb-8 text-center">
-              ℹ️ À savoir
+              {locale === 'fr' ? "À savoir" : "Good to know"}
             </h2>
             
             <div className="bg-white rounded-lg p-8 shadow-xl">
               <div className="space-y-6 font-montserrat">
                 <div>
-                  <h3 className="text-xl font-normal text-stone-dark mb-2 flex items-center gap-2">
-                    <span>💪</span> Niveau physique
+                  <h3 className="text-xl font-normal text-stone-dark mb-2">
+                    {locale === 'fr' ? "Niveau physique" : "Physical level"}
                   </h3>
                   <p className="text-stone">
-                    Intermédiaire (3h de marche environ, dénivelé 330 m)
+                    {locale === 'fr'
+                      ? "Intermédiaire (2h de marche environ, dénivelé 330 m)"
+                      : "Intermediate (about 2h walking, 330 m elevation)"
+                    }
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-normal text-stone-dark mb-2 flex items-center gap-2">
-                    <span>🎒</span> Prévoir
+                  <h3 className="text-xl font-normal text-stone-dark mb-2">
+                    {locale === 'fr' ? "Prévoir" : "What to bring"}
                   </h3>
                   <p className="text-stone">
-                    Chaussures de marche, eau, coupe-vent, appareil photo
+                    {locale === 'fr'
+                      ? "Chaussures de marche, eau, coupe-vent, appareil photo"
+                      : "Hiking shoes, water, windbreaker, camera"
+                    }
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-normal text-stone-dark mb-2 flex items-center gap-2">
-                    <span>✅</span> Inclus
+                  <h3 className="text-xl font-normal text-stone-dark mb-2">
+                    {locale === 'fr' ? "Inclus" : "Included"}
                   </h3>
                   <p className="text-stone">
-                    Transport, accompagnement guidé, commentaires
+                    {locale === 'fr'
+                      ? "Transport, accompagnement guidé, commentaires"
+                      : "Transportation, guided accompaniment, commentary"
+                    }
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-normal text-stone-dark mb-2">
+                    {locale === 'fr' ? "Horaires" : "Schedule"}
+                  </h3>
+                  <p className="text-stone">
+                    {locale === 'fr'
+                      ? "Départ les lundi et samedi de 7H40 à 13H00"
+                      : "Departure on Mondays and Saturdays from 7:40 AM to 1:00 PM"
+                    }
                   </p>
                 </div>
               </div>
@@ -214,13 +257,16 @@ export default function CroixNivoletPage({ params }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-light mb-6">
-              Prêt pour cette aventure ?
+              {locale === 'fr' ? "Prêt pour cette aventure ?" : "Ready for this adventure?"}
             </h2>
             <p className="text-xl font-montserrat mb-8">
-              Réservez votre place pour cette randonnée panoramique
+              {locale === 'fr'
+                ? "Réservez votre place pour cette randonnée panoramique"
+                : "Book your spot for this panoramic hike"
+              }
             </p>
             <Button href={`/${locale}/contact`} variant="gold">
-              Réserver maintenant
+              {locale === 'fr' ? "Réserver maintenant" : "Book now"}
             </Button>
           </motion.div>
         </div>
@@ -228,4 +274,3 @@ export default function CroixNivoletPage({ params }) {
     </div>
   );
 }
-

@@ -80,13 +80,13 @@ export default function HomePage({ params }) {
       </section>
 
       {/* Section Description */}
-      <section className="section-padding">
-        <div className="container-custom text-center">
+      <section className="py-12 md:py-16">
+        <div className="container-custom text-center max-w-4xl">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-light text-white mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+            className="text-3xl md:text-4xl font-playfair font-light text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
           >
             {t('home.exploreAlps')}
           </motion.h2>
@@ -96,7 +96,7 @@ export default function HomePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-white/95 max-w-3xl mx-auto leading-relaxed font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+            className="text-base text-white/95 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             {t('home.description')}
           </motion.p>
@@ -104,18 +104,18 @@ export default function HomePage({ params }) {
       </section>
 
       {/* Section Highlights */}
-      <section className="section-padding">
-        <div className="container-custom">
+      <section className="py-12 md:py-16">
+        <div className="container-custom max-w-6xl">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl font-playfair font-light text-white mb-12 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+            className="text-3xl font-playfair font-light text-white mb-8 text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
           >
             {t('home.experiences')}
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {highlights.map((item, index) => (
               <motion.div
                 key={index}
@@ -123,15 +123,15 @@ export default function HomePage({ params }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/15 p-10 rounded-xl shadow-lg hover:shadow-2xl hover:bg-white/20 transition-all duration-300 text-center border border-white/20 flex flex-col h-full"
+                className="bg-white/15 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:bg-white/20 transition-all duration-300 text-center border border-white/20 flex flex-col h-full"
               >
-                <h3 className="text-2xl font-playfair font-normal text-white mb-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                <h3 className="text-xl font-playfair font-normal text-white mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   {item.title}
                 </h3>
-                <p className="text-white/95 mb-8 font-montserrat font-light leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] flex-grow">
+                <p className="text-white/95 mb-4 font-montserrat font-light text-sm leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] flex-grow">
                   {item.description}
                 </p>
-                <div className="mt-auto pt-2">
+                <div className="mt-auto">
                   <Button href={item.href} variant="primary">
                     {t('common.discover')}
                   </Button>
@@ -143,13 +143,13 @@ export default function HomePage({ params }) {
       </section>
 
       {/* Section CTA */}
-      <section className="section-padding text-white">
-        <div className="container-custom text-center">
+      <section className="py-12 md:py-16 text-white">
+        <div className="container-custom text-center max-w-3xl">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-light mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+            className="text-3xl md:text-4xl font-playfair font-light mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
           >
             {t('home.readyForAdventure')}
           </motion.h2>
@@ -159,7 +159,7 @@ export default function HomePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl mb-8 max-w-2xl mx-auto font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+            className="text-base mb-6 max-w-2xl mx-auto font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             {t('home.contactForNext')}
           </motion.p>

@@ -1,5 +1,6 @@
 import './globals.css';
 import { Playfair_Display, Montserrat } from 'next/font/google';
+import BrowserExtensionFix from '@/components/BrowserExtensionFix';
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -22,7 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={`${playfair.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+      <body>
+        <BrowserExtensionFix />
+        {children}
+      </body>
     </html>
   );
 }

@@ -9,8 +9,8 @@ export default function Champignons({ params }) {
 
   return (
     <div>
-      <ParallaxSection image="/images/family-forest.jpg" height="h-96">
-        <div className="text-center text-white px-4">
+      <section className="relative h-96 w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
+        <div className="text-center text-white px-4 z-10">
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-6xl font-playfair font-light mb-4 drop-shadow-2xl">
             {locale === 'fr' ? "Vérel-Pragondran – Champignons et trésors d'automne" : "Vérel-Pragondran – Mushrooms and Autumn Treasures"}
           </motion.h1>
@@ -18,7 +18,7 @@ export default function Champignons({ params }) {
             {locale === 'fr' ? "18 octobre 2026" : "October 18, 2026"}
           </motion.p>
         </div>
-      </ParallaxSection>
+      </section>
 
       <section className="section-padding bg-beige-light">
         <div className="container-custom max-w-4xl">

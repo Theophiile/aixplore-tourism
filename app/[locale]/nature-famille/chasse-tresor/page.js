@@ -10,11 +10,8 @@ export default function ChasseTresor({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <ParallaxSection 
-        image="/images/family-forest.jpg"
-        height="h-96"
-      >
-        <div className="text-center text-white px-4">
+      <section className="relative h-96 w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
+        <div className="text-center text-white px-4 z-10">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,7 +31,7 @@ export default function ChasseTresor({ params }) {
             {locale === 'fr' ? "17 mai 2026" : "May 17, 2026"}
           </motion.p>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* Présentation */}
       <section className="section-padding bg-beige-light">

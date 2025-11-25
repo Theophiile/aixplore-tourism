@@ -62,11 +62,8 @@ export default function VisitesPriveesPage({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <ParallaxSection 
-        image="/images/private-tour-hero.jpg"
-        height="h-screen"
-      >
-        <div className="text-center text-white px-4">
+      <section className="relative h-screen w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
+        <div className="text-center text-white px-4 z-10">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -97,7 +94,7 @@ export default function VisitesPriveesPage({ params }) {
             }
           </motion.p>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* Section Introduction */}
       <section className="section-padding bg-beige-light">

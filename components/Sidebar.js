@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -21,16 +22,21 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
   return (
     <>
       {/* Logo */}
-      <div className="p-6 pb-8 border-b border-white/10">
+      <div className="p-6 pb-2">
         <Link href={`/${locale}`} className="block">
-          <h1 className="text-[26px] font-playfair font-light text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight">
-            Aixplore Tourism
-          </h1>
+          <Image 
+            src="/images/logo_aixplore_1.png" 
+            alt="Aixplore Tourism" 
+            width={80} 
+            height={24}
+            className="w-20 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+            priority
+          />
         </Link>
       </div>
 
       {/* Navigation */}
-      <nav className="p-6">
+      <nav className="px-6 pt-1 pb-6">
         <ul className="space-y-1">
           {menuItems.map((item) => {
             const active = isActive(item.href);
@@ -53,11 +59,11 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
       </nav>
 
       {/* Langue */}
-      <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/10">
-        <div className="flex gap-3 justify-center mb-3">
+      <div className="absolute bottom-0 left-0 right-0 p-6">
+        <div className="flex gap-2 justify-center mb-3">
           <button
             onClick={() => onLanguageChange('fr')}
-            className={`px-6 py-2.5 rounded-lg text-sm font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
               locale === 'fr'
                 ? 'bg-white/20 text-white font-normal'
                 : 'text-white/90 hover:bg-white/10'
@@ -67,7 +73,7 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
           </button>
           <button
             onClick={() => onLanguageChange('en')}
-            className={`px-6 py-2.5 rounded-lg text-sm font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
               locale === 'en'
                 ? 'bg-white/20 text-white font-normal'
                 : 'text-white/90 hover:bg-white/10'
@@ -180,7 +186,7 @@ export default function Sidebar({ locale = 'fr' }) {
               animate={{ x: 0 }}
               exit={{ x: -300 }}
               transition={{ type: 'spring', damping: 25 }}
-              className="fixed left-0 top-0 h-screen w-64 border-r border-white/10 z-40 overflow-y-auto lg:hidden"
+              className="fixed left-0 top-0 h-screen w-64 z-40 overflow-y-auto lg:hidden"
             >
               <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
             </motion.aside>
@@ -197,7 +203,7 @@ export default function Sidebar({ locale = 'fr' }) {
       </AnimatePresence>
 
       {/* Sidebar Desktop */}
-      <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 border-r border-white/10 z-40 overflow-y-auto">
+      <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 z-40 overflow-y-auto">
         <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
       </aside>
     </>

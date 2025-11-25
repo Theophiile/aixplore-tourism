@@ -114,11 +114,8 @@ export default function CoupsDeCoeurPage({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <ParallaxSection 
-        image="/images/favorites-hero.jpg"
-        height="h-96"
-      >
-        <div className="text-center text-white px-4">
+      <section className="relative h-96 w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
+        <div className="text-center text-white px-4 z-10">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,7 +135,7 @@ export default function CoupsDeCoeurPage({ params }) {
             }
           </motion.p>
         </div>
-      </ParallaxSection>
+      </section>
 
       {/* Section Introduction */}
       <section className="section-padding bg-beige-light">

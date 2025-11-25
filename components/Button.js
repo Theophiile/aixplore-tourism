@@ -11,7 +11,7 @@ export default function Button({
   className = '',
   ...props 
 }) {
-  const baseClasses = "inline-block px-8 py-3.5 rounded-full font-montserrat font-light transition-all duration-300";
+  const baseClasses = "inline-block px-6 py-2.5 rounded-full font-montserrat font-light text-sm transition-all duration-300";
   
   const variants = {
     primary: "bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm",

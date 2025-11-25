@@ -19,11 +19,11 @@ export default function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col ${className}`}
+      className={`relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col min-h-[400px] ${className}`}
     >
-      {/* Image */}
+      {/* Image de fond */}
       {image && (
-        <div className="relative h-64 w-full overflow-hidden flex-shrink-0">
+        <div className="absolute inset-0 w-full h-full">
           <Image
             src={image}
             alt={title}
@@ -33,34 +33,35 @@ export default function Card({
         </div>
       )}
 
-      {/* Contenu */}
-      <div className="p-6 flex flex-col flex-grow">
-        {date && (
-          <p className="text-sm text-gold font-montserrat mb-2 font-semibold">
-            {date}
-          </p>
-        )}
-        
-        <h3 className="text-2xl font-playfair font-bold text-stone-dark mb-3">
-          {title}
-        </h3>
-        
-        {description && (
-          <p className="text-stone mb-4 font-montserrat leading-relaxed">
-            {description}
-          </p>
-        )}
-        
-        {href && (
-          <div className="mt-auto">
+      {/* Overlay sombre */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+
+      {/* Contenu par-dessus */}
+      <div className="relative z-10 p-5 flex flex-col justify-between h-full">
+        {/* Haut : Date + Titre */}
+        <div>
+          {date && (
+            <p className="text-xs text-gold font-montserrat mb-2 font-semibold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              {date}
+            </p>
+          )}
+          
+          <h3 className="text-lg font-playfair font-normal text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            {title}
+          </h3>
+        </div>
+
+        {/* Bas : Bouton */}
+        <div>
+          {href && (
             <Link
               href={href}
-              className="inline-block px-6 py-3 bg-lake text-white rounded-lg hover:bg-lake-dark transition-all duration-200 font-montserrat shadow-md hover:shadow-lg"
+              className="inline-block px-4 py-2 bg-white/20 text-white rounded-full hover:bg-white/30 transition-all duration-200 font-montserrat font-light border border-white/30 shadow-md hover:shadow-lg text-xs"
             >
               {buttonText}
             </Link>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </motion.div>
   );
