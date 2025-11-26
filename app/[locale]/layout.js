@@ -11,7 +11,7 @@ export default function LocaleLayout({ children, params }) {
   return (
     <div className="flex min-h-screen">
       <Sidebar locale={locale} />
-      <main className="flex-1 lg:ml-64 w-full">
+      <main className="flex-1 lg:ml-56 w-full">
         {children}
       </main>
     </div>

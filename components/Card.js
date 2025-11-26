@@ -19,7 +19,9 @@ export default function Card({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col min-h-[400px] ${className}`}
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className={`relative rounded-xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-shadow duration-300 ${className}`}
+      style={{ height: '350px', display: 'flex', flexDirection: 'column' }}
     >
       {/* Image de fond */}
       {image && (
@@ -28,16 +30,16 @@ export default function Card({
             src={image}
             alt={title}
             fill
-            className="object-cover hover:scale-110 transition-transform duration-500"
+            className="object-cover"
           />
         </div>
       )}
 
-      {/* Overlay sombre */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+      {/* Overlay sombre avec gradient plus prononcé */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/30" />
 
       {/* Contenu par-dessus */}
-      <div className="relative z-10 p-5 flex flex-col justify-between h-full">
+      <div className="relative z-10 p-6 flex flex-col justify-between flex-1">
         {/* Haut : Date + Titre */}
         <div>
           {date && (
@@ -46,7 +48,7 @@ export default function Card({
             </p>
           )}
           
-          <h3 className="text-lg font-playfair font-normal text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <h3 className="text-xl font-playfair font-normal text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             {title}
           </h3>
         </div>
@@ -56,7 +58,7 @@ export default function Card({
           {href && (
             <Link
               href={href}
-              className="inline-block px-4 py-2 bg-white/20 text-white rounded-full hover:bg-white/30 transition-all duration-200 font-montserrat font-light border border-white/30 shadow-md hover:shadow-lg text-xs"
+              className="inline-block px-5 py-2.5 bg-white/20 text-white rounded-full hover:bg-white/30 transition-all duration-200 font-montserrat font-light border border-white/30 shadow-md hover:shadow-lg text-sm backdrop-blur-sm"
             >
               {buttonText}
             </Link>

@@ -83,19 +83,20 @@ export default function HomePage({ params }) {
       <section className="py-12 md:py-16">
         <div className="container-custom text-center max-w-4xl">
           <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 2.5, ease: "easeOut" }}
             className="text-3xl md:text-4xl font-playfair font-light text-white mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
           >
             {t('home.exploreAlps')}
           </motion.h2>
           
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 2.5, delay: 0.5, ease: "easeOut" }}
             className="text-base text-white/95 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             {t('home.description')}

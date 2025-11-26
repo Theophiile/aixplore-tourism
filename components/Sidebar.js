@@ -18,18 +18,18 @@ const menuItems = [
   { key: 'contact', href: '/contact' },
 ];
 
-function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
+function SidebarContent({ locale, pathname, isActive, t, onLanguageChange, isScrolledToBeige }) {
   return (
     <>
       {/* Logo */}
-      <div className="p-6 pb-2">
+      <div className="p-6 pb-2 flex justify-center">
         <Link href={`/${locale}`} className="block">
           <Image 
-            src="/images/logo_aixplore_1.png" 
+            src="/images/logo_aixplore_1.png"
             alt="Aixplore Tourism" 
             width={80} 
             height={24}
-            className="w-20 h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+            className="w-20 h-auto transition-all duration-300 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
             priority
           />
         </Link>
@@ -44,7 +44,7 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
               <li key={item.key}>
                 <Link
                   href={`/${locale}${item.href === '/' ? '' : item.href}`}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-200 font-montserrat text-[15px] font-light ${
+                  className={`block px-4 py-3 rounded-lg transition-all duration-300 font-montserrat text-[15px] font-light ${
                     active
                       ? 'bg-white/20 text-white shadow-lg font-normal'
                       : 'text-white/90 hover:bg-white/10 hover:text-white'
@@ -63,7 +63,7 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
         <div className="flex gap-2 justify-center mb-3">
           <button
             onClick={() => onLanguageChange('fr')}
-            className={`px-4 py-1.5 rounded-lg text-xs font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-montserrat font-light transition-all duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
               locale === 'fr'
                 ? 'bg-white/20 text-white font-normal'
                 : 'text-white/90 hover:bg-white/10'
@@ -73,7 +73,7 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
           </button>
           <button
             onClick={() => onLanguageChange('en')}
-            className={`px-4 py-1.5 rounded-lg text-xs font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
+            className={`px-4 py-1.5 rounded-lg text-xs font-montserrat font-light transition-all duration-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
               locale === 'en'
                 ? 'bg-white/20 text-white font-normal'
                 : 'text-white/90 hover:bg-white/10'
@@ -85,14 +85,14 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
         <div className="flex gap-2 justify-center text-xs">
           <Link 
             href={`/${locale}/cgv`}
-            className="text-white/60 hover:text-white/90 font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+            className="font-montserrat font-light transition-all duration-300 text-white/60 hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
           >
             {t('cgv')}
           </Link>
-          <span className="text-white/40">•</span>
+          <span className="transition-all duration-300 text-white/40">•</span>
           <Link 
             href={`/${locale}/mentions-legales`}
-            className="text-white/60 hover:text-white/90 font-montserrat font-light transition-all drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
+            className="font-montserrat font-light transition-all duration-300 text-white/60 hover:text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]"
           >
             {t('legal')}
           </Link>
@@ -104,8 +104,12 @@ function SidebarContent({ locale, pathname, isActive, t, onLanguageChange }) {
 
 export default function Sidebar({ locale = 'fr' }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolledToBeige, setIsScrolledToBeige] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
+  // Vérifier si on est sur la page d'accueil
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
   // Restaurer la position de scroll au chargement et lors du changement de locale
   useEffect(() => {
@@ -118,6 +122,35 @@ export default function Sidebar({ locale = 'fr' }) {
       sessionStorage.removeItem('scrollPosition');
     }
   }, [locale, pathname]);
+
+  // Gérer le scroll pour changer le style (pour toutes les pages sauf l'accueil)
+  useEffect(() => {
+    // Réinitialiser l'état quand on change de page
+    setIsScrolledToBeige(false);
+    
+    if (isHomePage) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Détecter si on a scrollé (après 60% de la hauteur de l'écran)
+      const hasScrolled = currentScrollY >= window.innerHeight * 0.6;
+      setIsScrolledToBeige(hasScrolled);
+    };
+
+    // Petit délai pour s'assurer que la page est bien chargée
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId);
+    };
+  }, [isHomePage, pathname]);
 
   const isActive = (href) => {
     if (href === '/') {
@@ -186,9 +219,9 @@ export default function Sidebar({ locale = 'fr' }) {
               animate={{ x: 0 }}
               exit={{ x: -300 }}
               transition={{ type: 'spring', damping: 25 }}
-              className="fixed left-0 top-0 h-screen w-64 z-40 overflow-y-auto lg:hidden"
+              className="fixed left-0 top-0 h-screen w-56 z-40 overflow-y-auto lg:hidden bg-black/80 backdrop-blur-sm"
             >
-              <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
+              <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} isScrolledToBeige={false} />
             </motion.aside>
 
             <motion.div
@@ -203,8 +236,11 @@ export default function Sidebar({ locale = 'fr' }) {
       </AnimatePresence>
 
       {/* Sidebar Desktop */}
-      <aside className="hidden lg:block fixed left-0 top-0 h-screen w-64 z-40 overflow-y-auto">
-        <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} />
+      <aside 
+        className={`hidden lg:block fixed left-0 top-0 h-screen w-56 z-40 overflow-y-auto transition-colors duration-300 shadow-xl`}
+        style={{ backgroundColor: isScrolledToBeige ? '#124e78' : 'transparent' }}
+      >
+        <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} isScrolledToBeige={isScrolledToBeige} />
       </aside>
     </>
   );
