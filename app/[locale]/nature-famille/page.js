@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import Link from 'next/link';
 import Card from '@/components/Card';
 import ParallaxSection from '@/components/ParallaxSection';
 import Button from '@/components/Button';
@@ -9,6 +11,8 @@ import { getTranslation } from '@/lib/translations';
 export default function NatureFamillePage({ params }) {
   const { locale } = params;
   const t = (key) => getTranslation(locale, key);
+  const [openEnfants, setOpenEnfants] = useState(false); // État pour la section enfants
+  const [openInfos, setOpenInfos] = useState(false); // État pour la section infos
 
   const activities = [
     {
@@ -86,12 +90,20 @@ export default function NatureFamillePage({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
-        <div className="text-center text-white px-4 z-10">
+      <section className="relative h-screen w-screen lg:-ml-56 flex items-center justify-center">
+        {/* Image de fond */}
+        <div 
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/rendez-vous_nature_en_famille.webp')" }}
+        />
+        {/* Overlay sombre */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+        
+        <div className="text-center text-white/90 px-4 z-10 relative lg:ml-56">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-playfair font-light mb-6 drop-shadow-2xl"
+            className="text-4xl md:text-5xl font-playfair font-light mb-6 drop-shadow-lg"
           >
             {locale === 'fr' ? "Les Rendez-vous Nature en Famille" : "Family Nature Outings"}
           </motion.h1>
@@ -99,7 +111,7 @@ export default function NatureFamillePage({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-3xl font-playfair italic max-w-3xl mx-auto font-light drop-shadow-lg"
+            className="text-xl md:text-2xl font-playfair italic max-w-3xl mx-auto font-light drop-shadow-md"
           >
             {locale === 'fr'
               ? "Grandir ensemble, les pieds dans l'herbe et les yeux grands ouverts"
@@ -111,12 +123,12 @@ export default function NatureFamillePage({ params }) {
 
       {/* Section Introduction */}
       <section className="section-padding bg-beige-light">
-        <div className="container-custom max-w-5xl">
+        <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="space-y-6 text-lg text-stone font-montserrat font-light leading-relaxed"
+            className="space-y-4 text-base text-stone/80 font-montserrat font-light leading-relaxed"
           >
             <p>
               {locale === 'fr'
@@ -136,7 +148,7 @@ export default function NatureFamillePage({ params }) {
                 : "Each outing is an invitation to explore nature differently, stimulate curiosity, learn while having fun and experience simple and true emotions together."
               }
             </p>
-            <p className="font-semibold text-stone-dark">
+            <p className="font-medium text-stone-dark">
               {locale === 'fr'
                 ? "Dans la forêt, au bord de l'eau ou en montagne, petits et grands découvrent les trésors de la Savoie à travers leurs cinq sens : observer, écouter, toucher, respirer, ressentir."
                 : "In the forest, by the water or in the mountains, young and old discover the treasures of Savoie through their five senses: observe, listen, touch, breathe, feel."
@@ -147,84 +159,93 @@ export default function NatureFamillePage({ params }) {
       </section>
 
       {/* Section Pourquoi */}
-      <section className="section-padding">
-        <div className="container-custom max-w-5xl">
+      <section className="py-12 bg-beige-light">
+        <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-4">
               {locale === 'fr' ? "Pourquoi ces rendez-vous ?" : "Why These Outings?"}
             </h2>
-            <p className="text-2xl font-playfair italic text-lake-dark mb-6 font-light">
+            <p className="text-lg font-playfair italic text-lake mb-8 font-light">
               {locale === 'fr'
                 ? "Parce que la nature est la plus belle salle de classe du monde."
                 : "Because nature is the most beautiful classroom in the world."
               }
             </p>
-            <p className="text-lg text-stone font-montserrat font-light mb-4">
-              {locale === 'fr'
-                ? "Les études montrent que les enfants qui passent du temps dehors développent :"
-                : "Studies show that children who spend time outdoors develop:"
-              }
-            </p>
-            <ul className="space-y-2 text-lg text-stone font-montserrat font-light ml-6">
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.2 }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-lake/20"
+              >
+                <p className="text-base text-stone font-montserrat font-light">
                   {locale === 'fr'
-                    ? "une meilleure concentration et mémoire,"
-                    : "better concentration and memory,"
+                    ? "Une meilleure concentration et mémoire"
+                    : "Better concentration and memory"
                   }
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>
+                </p>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.4 }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-lake/20"
+              >
+                <p className="text-base text-stone font-montserrat font-light">
                   {locale === 'fr'
-                    ? "plus de créativité et de confiance en eux,"
-                    : "more creativity and self-confidence,"
+                    ? "Plus de créativité et de confiance en soi"
+                    : "More creativity and self-confidence"
                   }
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>
+                </p>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.6 }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-lake/20"
+              >
+                <p className="text-base text-stone font-montserrat font-light">
                   {locale === 'fr'
-                    ? "une connexion profonde à leur environnement,"
-                    : "a deep connection to their environment,"
+                    ? "Une connexion profonde à l'environnement"
+                    : "A deep connection to the environment"
                   }
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>•</span>
-                <span>
+                </p>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.8 }}
+                className="bg-white rounded-lg p-6 shadow-sm border border-lake/20"
+              >
+                <p className="text-base text-stone font-montserrat font-light">
                   {locale === 'fr'
-                    ? "et davantage d'empathie et de coopération."
-                    : "and greater empathy and cooperation."
+                    ? "Davantage d'empathie et de coopération"
+                    : "Greater empathy and cooperation"
                   }
-                </span>
-              </li>
-            </ul>
-            <p className="text-lg text-stone font-montserrat font-light mt-6">
-              {locale === 'fr'
-                ? "Ces matinées sont conçues comme des bulles d'éveil et de bien-être, où chaque famille retrouve le plaisir de marcher, jouer et créer ensemble, loin des sollicitations du quotidien."
-                : "These mornings are designed as bubbles of awakening and well-being, where each family rediscovers the pleasure of walking, playing and creating together, away from daily demands."
-              }
-            </p>
+                </p>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Section Programme 2025-2026 */}
-      <section className="section-padding bg-gradient-to-br from-lake-light to-beige-light">
+      {/* Section Programme 2026 */}
+      <section className="section-padding bg-beige-light">
         <div className="container-custom">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-4 text-center"
+            className="text-3xl font-playfair font-light text-stone-dark mb-3 text-center"
           >
             {locale === 'fr' ? "Programme 2026" : "2026 Program"}
           </motion.h2>
@@ -233,7 +254,7 @@ export default function NatureFamillePage({ params }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-center text-stone font-montserrat font-light mb-12 max-w-2xl mx-auto text-lg"
+            className="text-center text-stone/70 font-montserrat font-light mb-12 max-w-2xl mx-auto text-base"
           >
             {locale === 'fr'
               ? "7 sorties sensorielles et ludiques pour explorer la Savoie en famille"
@@ -241,238 +262,322 @@ export default function NatureFamillePage({ params }) {
             }
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {activities.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-lake-light/50 to-gold/50 flex items-center justify-center">
-                    <span className="text-6xl">{item.title.split(' ')[0]}</span>
+              <Link key={index} href={item.href}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white rounded-xl overflow-hidden border border-stone/10 hover:border-lake/30 hover:shadow-lg transition-all duration-300 flex flex-col h-full cursor-pointer"
+                >
+                  <div className="p-5 flex flex-col flex-grow">
+                    <div className="mb-3">
+                      <p className="text-xs text-gold font-montserrat font-medium mb-1">
+                        {item.date}
+                      </p>
+                      <p className="text-xs text-lake font-montserrat font-normal">
+                        {item.location}
+                      </p>
+                    </div>
+                    <h3 className="text-lg font-playfair font-normal text-stone-dark mb-2 leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-stone/80 font-montserrat font-light leading-relaxed text-sm flex-grow">
+                      {item.description}
+                    </p>
                   </div>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-sm text-gold font-montserrat font-normal mb-1">
-                    {item.date}
-                  </p>
-                  <p className="text-sm text-lake font-montserrat font-normal mb-3">
-                    {item.location}
-                  </p>
-                  <h3 className="text-xl font-playfair font-normal text-stone-dark mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-stone font-montserrat font-light leading-relaxed mb-4">
-                    {item.description}
-                  </p>
-                  <div className="mt-auto">
-                    <Button href={item.href} variant="lake">
-                      {locale === 'fr' ? "En savoir plus" : "Learn more"}
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section Ce que vos enfants vont découvrir */}
-      <section className="section-padding bg-beige">
-        <div className="container-custom max-w-5xl">
+      {/* Section Ce que vos enfants vont découvrir & Informations Pratiques */}
+      <section className="bg-beige-light">
+        <div className="container-custom max-w-6xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-light text-stone-dark mb-8 text-center">
-              {locale === 'fr' ? "Ce que vos enfants vont y découvrir" : "What Your Children Will Discover"}
-            </h2>
-            <ul className="space-y-4 text-lg text-stone font-montserrat font-light">
-              <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">•</span>
-                <span>
-                  {locale === 'fr'
-                    ? "Le plaisir d'apprendre sans s'en rendre compte, en observant, en jouant, en manipulant."
-                    : "The pleasure of learning without realizing it, by observing, playing, manipulating."
-                  }
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">•</span>
-                <span>
-                  {locale === 'fr'
-                    ? "La joie de créer à partir d'éléments naturels : herbiers, œuvres d'art, petits bateaux, trésors cachés."
-                    : "The joy of creating from natural elements: herbariums, artworks, small boats, hidden treasures."
-                  }
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">•</span>
-                <span>
-                  {locale === 'fr'
-                    ? "Le bonheur d'être ensemble, dehors, dans la lumière, le vent, la forêt."
-                    : "The happiness of being together, outside, in the light, wind, forest."
-                  }
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-2xl flex-shrink-0">•</span>
-                <span>
-                  {locale === 'fr'
-                    ? "Une connexion sensorielle et émotionnelle à la nature, essentielle à leur équilibre."
-                    : "A sensory and emotional connection to nature, essential for their balance."
-                  }
-                </span>
-              </li>
-            </ul>
+            <div className="grid md:grid-cols-2 gap-6 items-start">
+              {/* Ce que vos enfants vont découvrir */}
+              <div className="bg-white rounded-lg border border-lake/20 shadow-sm overflow-hidden">
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenEnfants(!openEnfants);
+                  }}
+                  className="w-full p-5 flex items-center justify-between text-left hover:bg-beige-light/30 transition-colors"
+                  type="button"
+                >
+                  <h2 className="text-lg font-playfair font-light text-stone-dark">
+                    {locale === 'fr' ? "Ce que vos enfants vont y découvrir" : "What Your Children Will Discover"}
+                  </h2>
+                  <svg
+                    className={`w-5 h-5 text-stone-dark transition-transform duration-300 flex-shrink-0 ml-2 ${
+                      openEnfants ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {openEnfants ? (
+                  <div className="p-5 pt-0 space-y-4">
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <p className="text-sm text-stone font-montserrat font-light">
+                        {locale === 'fr'
+                          ? "Le plaisir d'apprendre sans s'en rendre compte, en observant, en jouant, en manipulant"
+                          : "The pleasure of learning without realizing it, by observing, playing, manipulating"
+                        }
+                      </p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <p className="text-sm text-stone font-montserrat font-light">
+                        {locale === 'fr'
+                          ? "La joie de créer à partir d'éléments naturels : herbiers, œuvres d'art, petits bateaux, trésors cachés"
+                          : "The joy of creating from natural elements: herbariums, artworks, small boats, hidden treasures"
+                        }
+                      </p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <p className="text-sm text-stone font-montserrat font-light">
+                        {locale === 'fr'
+                          ? "Le bonheur d'être ensemble, dehors, dans la lumière, le vent, la forêt"
+                          : "The happiness of being together, outside, in the light, wind, forest"
+                        }
+                      </p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <p className="text-sm text-stone font-montserrat font-light">
+                        {locale === 'fr'
+                          ? "Une connexion sensorielle et émotionnelle à la nature, essentielle à leur équilibre"
+                          : "A sensory and emotional connection to nature, essential for their balance"
+                        }
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+
+              {/* Informations pratiques */}
+              <div className="bg-white rounded-lg border border-lake/20 shadow-sm overflow-hidden">
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenInfos(!openInfos);
+                  }}
+                  className="w-full p-5 flex items-center justify-between text-left hover:bg-beige-light/30 transition-colors"
+                  type="button"
+                >
+                  <h2 className="text-lg font-playfair font-light text-stone-dark">
+                    {locale === 'fr' ? "Informations pratiques" : "Practical Information"}
+                  </h2>
+                  <svg
+                    className={`w-5 h-5 text-stone-dark transition-transform duration-300 flex-shrink-0 ml-2 ${
+                      openInfos ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {openInfos ? (
+                  <div className="p-5 pt-0 space-y-4 font-montserrat">
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <h3 className="text-base font-medium mb-2 text-stone-dark">
+                        {locale === 'fr' ? "Durée" : "Duration"}
+                      </h3>
+                      <p className="text-sm text-stone/80 font-light">{locale === 'fr' ? "environ 3h à 4h" : "approximately 3 to 4 hours"}</p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <h3 className="text-base font-medium mb-2 text-stone-dark">
+                        {locale === 'fr' ? "Public" : "Audience"}
+                      </h3>
+                      <p className="text-sm text-stone/80 font-light">{locale === 'fr' ? "familles avec enfants de 5 à 12 ans" : "families with children aged 5 to 12"}</p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <h3 className="text-base font-medium mb-2 text-stone-dark">
+                        {locale === 'fr' ? "Niveau" : "Level"}
+                      </h3>
+                      <p className="text-sm text-stone/80 font-light">{locale === 'fr' ? "facile, accessible à tous" : "easy, accessible to all"}</p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <h3 className="text-base font-medium mb-2 text-stone-dark">
+                        {locale === 'fr' ? "Lieux" : "Locations"}
+                      </h3>
+                      <p className="text-sm text-stone/80 font-light">
+                        {locale === 'fr'
+                          ? "autour d'Aix-les-Bains, du lac du Bourget et du massif des Bauges"
+                          : "around Aix-les-Bains, Lake Bourget and Bauges mountains"
+                        }
+                      </p>
+                    </div>
+                    <div className="bg-beige-light rounded-lg p-4">
+                      <h3 className="text-base font-medium mb-2 text-stone-dark">
+                        {locale === 'fr' ? "À prévoir" : "What to Bring"}
+                      </h3>
+                      <p className="text-sm text-stone/80 font-light">
+                        {locale === 'fr'
+                          ? "chaussures fermées, eau, chapeau, curiosité et bonne humeur !"
+                          : "closed shoes, water, hat, curiosity and good mood!"
+                        }
+                      </p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Section Informations Pratiques */}
-      <section className="section-padding bg-lake text-white">
-        <div className="container-custom max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-4">
-              {locale === 'fr' ? "Informations pratiques" : "Practical Information"}
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6 font-montserrat">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
-                {locale === 'fr' ? "Durée" : "Duration"}
-              </h3>
-              <p>{locale === 'fr' ? "environ 3h à 4h" : "approximately 3 to 4 hours"}</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
-                {locale === 'fr' ? "Public" : "Audience"}
-              </h3>
-              <p>{locale === 'fr' ? "familles avec enfants de 5 à 12 ans" : "families with children aged 5 to 12"}</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
-                {locale === 'fr' ? "Niveau" : "Level"}
-              </h3>
-              <p>{locale === 'fr' ? "facile, accessible à tous" : "easy, accessible to all"}</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h3 className="text-xl font-normal mb-2 flex items-center gap-2">
-                {locale === 'fr' ? "Lieux" : "Locations"}
-              </h3>
-              <p>
-                {locale === 'fr'
-                  ? "autour d'Aix-les-Bains, du lac du Bourget et du massif des Bauges"
-                  : "around Aix-les-Bains, Lake Bourget and Bauges mountains"
-                }
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-lg p-6">
-            <h3 className="text-xl font-normal mb-4 flex items-center gap-2">
-              {locale === 'fr' ? "À prévoir" : "What to Bring"}
-            </h3>
-            <p className="text-beige-light font-light">
-              {locale === 'fr'
-                ? "chaussures fermées, eau, chapeau, curiosité et bonne humeur !"
-                : "closed shoes, water, hat, curiosity and good mood!"
-              }
-            </p>
-          </div>
         </div>
       </section>
 
       {/* Section Tarifs */}
-      <section className="section-padding bg-gradient-to-br from-stone-dark to-lake-dark text-white">
-        <div className="container-custom max-w-5xl">
+      <section className="py-16 bg-beige-light">
+        <div className="container-custom max-w-6xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-light mb-8 text-center">
+            <h2 className="text-3xl font-playfair font-light mb-3 text-center text-stone-dark">
               {locale === 'fr' ? "Tarifs & Réservation" : "Rates & Booking"}
             </h2>
+            <p className="text-center text-stone/60 font-montserrat font-light text-sm mb-12">
+              {locale === 'fr' ? "Des tarifs adaptés pour toute la famille" : "Rates adapted for the whole family"}
+            </p>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <h3 className="text-xl font-normal mb-2">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-white hover:bg-gradient-to-br hover:from-lake/10 hover:to-gold/10 rounded-xl p-6 text-center border border-stone/10 hover:border-lake/20 shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <h3 className="text-sm font-montserrat font-medium mb-1 text-stone-dark uppercase tracking-wide">
                   {locale === 'fr' ? "Enfant" : "Child"}
                 </h3>
-                <p className="text-sm text-beige-light mb-2">
+                <p className="text-xs text-stone/60 mb-4 font-montserrat font-light">
                   {locale === 'fr' ? "(5 à 12 ans)" : "(5 to 12 years)"}
                 </p>
-                <p className="text-3xl font-bold text-gold">€13</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <h3 className="text-xl font-normal mb-2">
+                <div className="flex items-baseline justify-center">
+                  <p className="text-4xl font-playfair font-light text-stone-dark">13</p>
+                  <p className="text-xl font-playfair font-light text-stone-dark ml-1">€</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white hover:bg-gradient-to-br hover:from-lake/10 hover:to-gold/10 rounded-xl p-6 text-center border border-stone/10 hover:border-lake/20 shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <h3 className="text-sm font-montserrat font-medium mb-1 text-stone-dark uppercase tracking-wide">
                   {locale === 'fr' ? "Adulte" : "Adult"}
                 </h3>
-                <p className="text-sm text-beige-light mb-2">
+                <p className="text-xs text-stone/60 mb-4 font-montserrat font-light">
                   {locale === 'fr' ? "accompagnant" : "accompanying"}
                 </p>
-                <p className="text-3xl font-bold text-gold">€9</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <h3 className="text-xl font-normal mb-2">
-                  {locale === 'fr' ? "Forfait famille" : "Family Package"}
+                <div className="flex items-baseline justify-center">
+                  <p className="text-4xl font-playfair font-light text-stone-dark">9</p>
+                  <p className="text-xl font-playfair font-light text-stone-dark ml-1">€</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white hover:bg-gradient-to-br hover:from-lake/10 hover:to-gold/10 rounded-xl p-6 text-center border border-stone/10 hover:border-lake/20 shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <h3 className="text-sm font-montserrat font-medium mb-1 text-stone-dark uppercase tracking-wide">
+                  {locale === 'fr' ? "Forfait famille" : "Family Pack"}
                 </h3>
-                <p className="text-sm text-beige-light mb-2">
+                <p className="text-xs text-stone/60 mb-4 font-montserrat font-light">
                   {locale === 'fr' ? "(2 adultes + 2 enfants)" : "(2 adults + 2 children)"}
                 </p>
-                <p className="text-3xl font-bold text-gold">€40</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
-                <h3 className="text-xl font-normal mb-2">
-                  {locale === 'fr' ? "Supplémentaire" : "Additional"}
+                <div className="flex items-baseline justify-center">
+                  <p className="text-4xl font-playfair font-light text-stone-dark">40</p>
+                  <p className="text-xl font-playfair font-light text-stone-dark ml-1">€</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white hover:bg-gradient-to-br hover:from-lake/10 hover:to-gold/10 rounded-xl p-6 text-center border border-stone/10 hover:border-lake/20 shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <h3 className="text-sm font-montserrat font-medium mb-1 text-stone-dark uppercase tracking-wide">
+                  {locale === 'fr' ? "Supplément" : "Additional"}
                 </h3>
-                <p className="text-sm text-beige-light mb-2">
-                  {locale === 'fr' ? "participant" : "participant"}
+                <p className="text-xs text-stone/60 mb-4 font-montserrat font-light">
+                  {locale === 'fr' ? "par participant" : "per participant"}
                 </p>
-                <p className="text-3xl font-bold text-gold">€7</p>
+                <div className="flex items-baseline justify-center">
+                  <p className="text-4xl font-playfair font-light text-stone-dark">7</p>
+                  <p className="text-xl font-playfair font-light text-stone-dark ml-1">€</p>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-white rounded-xl p-8 space-y-4 border border-stone/10 shadow-sm max-w-3xl mx-auto"
+            >
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-lake flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <p className="text-stone/80 font-montserrat font-light text-sm">
+                  {locale === 'fr'
+                    ? "Réservation obligatoire – sorties limitées à 10 familles pour garantir une expérience de qualité."
+                    : "Booking required – outings limited to 10 families to ensure a quality experience."
+                  }
+                </p>
               </div>
-            </div>
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-lake flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <p className="text-stone/80 font-montserrat font-light text-sm">
+                  {locale === 'fr'
+                    ? "Paiement sécurisé par carte ou virement au moment de la réservation."
+                    : "Secure payment by card or bank transfer upon booking."
+                  }
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-lake flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <p className="text-stone/80 font-montserrat font-light text-sm">
+                  {locale === 'fr'
+                    ? "En cas de météo défavorable : report ou remboursement intégral sans frais."
+                    : "In case of unfavorable weather: postponement or full refund without fees."
+                  }
+                </p>
+              </div>
+            </motion.div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 space-y-4">
-              <p className="text-beige-light font-montserrat font-light">
-                {locale === 'fr'
-                  ? "Réservation obligatoire – les places sont limitées pour préserver la qualité du moment partagé."
-                  : "Booking required – spots are limited to preserve the quality of the shared moment."
-                }
-              </p>
-              <p className="text-beige-light font-montserrat font-light">
-                {locale === 'fr'
-                  ? "Réservation obligatoire – sorties limitées à 10 familles."
-                  : "Booking required – outings limited to 10 families."
-                }
-              </p>
-              <p className="text-beige-light font-montserrat font-light">
-                {locale === 'fr'
-                  ? "Paiement par carte ou virement au moment de la réservation."
-                  : "Payment by card or bank transfer upon booking."
-                }
-              </p>
-              <p className="text-beige-light font-montserrat font-light">
-                {locale === 'fr'
-                  ? "En cas de météo défavorable : Si la sortie ne peut pas être maintenue, une autre date vous sera proposée, ou vous pourrez choisir un remboursement intégral."
-                  : "In case of unfavorable weather: If the outing cannot be maintained, another date will be offered, or you can choose a full refund."
-                }
-              </p>
-            </div>
-
-            <div className="text-center mt-8">
+            <div className="text-center mt-10">
               <Button href={`/${locale}/contact`} variant="gold">
                 {locale === 'fr' ? "Réserver maintenant" : "Book now"}
               </Button>
@@ -490,10 +595,10 @@ export default function NatureFamillePage({ params }) {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-stone-dark mb-8">
+            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "L'esprit Aixplore" : "The Aixplore Spirit"}
             </h2>
-            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
+            <div className="space-y-4 text-base text-stone/80 font-montserrat font-light leading-relaxed max-w-3xl mx-auto">
               <p className="italic">
                 {locale === 'fr'
                   ? "Parce qu'un souvenir d'enfance commence souvent par une promenade dans la nature."
@@ -514,8 +619,8 @@ export default function NatureFamillePage({ params }) {
               </p>
             </div>
 
-            <div className="mt-12 p-8 bg-gradient-to-r from-lake-light to-gold-light rounded-lg">
-              <p className="text-2xl font-playfair italic text-stone-dark font-light">
+            <div className="mt-10 p-8 bg-gradient-to-r from-lake-light to-gold-light rounded-lg shadow-sm border border-lake/10">
+              <p className="text-lg font-playfair italic text-stone-dark font-light">
                 {locale === 'fr'
                   ? "Rejoignez les Petits Explorateurs d'Aixplore et offrez à vos enfants le plus beau des cadeaux : le temps de s'émerveiller."
                   : "Join the Little Explorers of Aixplore and give your children the most beautiful gift: time to wonder."

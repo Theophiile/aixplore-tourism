@@ -10,8 +10,13 @@ export default function ChasseCouleurs({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-96 w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
-        <div className="text-center text-white px-4 z-10">
+      <section className="relative h-96 w-full flex items-center justify-center">
+        <div 
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/le_mollard_noir.webp')" }}
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+        <div className="text-center text-white px-4 z-10 relative">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

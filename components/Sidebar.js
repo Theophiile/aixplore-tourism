@@ -110,6 +110,16 @@ export default function Sidebar({ locale = 'fr' }) {
 
   // Vérifier si on est sur la page d'accueil
   const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+  
+  // Vérifier si on est sur une page d'activité nature-famille
+  const isNatureFamilleActivityPage = pathname.includes('/nature-famille/') && 
+    (pathname.includes('/chasse-couleurs') ||
+     pathname.includes('/chasse-tresor') ||
+     pathname.includes('/herbier') ||
+     pathname.includes('/ecoute-oiseaux') ||
+     pathname.includes('/land-art') ||
+     pathname.includes('/disque-celeste') ||
+     pathname.includes('/champignons'));
 
   // Restaurer la position de scroll au chargement et lors du changement de locale
   useEffect(() => {
@@ -123,12 +133,19 @@ export default function Sidebar({ locale = 'fr' }) {
     }
   }, [locale, pathname]);
 
-  // Gérer le scroll pour changer le style (pour toutes les pages sauf l'accueil)
+  // Gérer le scroll pour changer le style (pour toutes les pages sauf l'accueil et les activités nature-famille)
   useEffect(() => {
     // Réinitialiser l'état quand on change de page
     setIsScrolledToBeige(false);
     
+    // Si on est sur la page d'accueil, ne rien faire
     if (isHomePage) {
+      return;
+    }
+    
+    // Si on est sur une page d'activité nature-famille, forcer le style bleu
+    if (isNatureFamilleActivityPage) {
+      setIsScrolledToBeige(true);
       return;
     }
 
@@ -150,7 +167,7 @@ export default function Sidebar({ locale = 'fr' }) {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(timeoutId);
     };
-  }, [isHomePage, pathname]);
+  }, [isHomePage, isNatureFamilleActivityPage, pathname]);
 
   const isActive = (href) => {
     if (href === '/') {
@@ -237,7 +254,9 @@ export default function Sidebar({ locale = 'fr' }) {
 
       {/* Sidebar Desktop */}
       <aside 
-        className={`hidden lg:block fixed left-0 top-0 h-screen w-56 z-40 overflow-y-auto transition-colors duration-300 shadow-xl`}
+        className={`hidden lg:block fixed left-0 top-0 h-screen w-56 z-40 overflow-y-auto shadow-xl ${
+          isNatureFamilleActivityPage ? '' : 'transition-colors duration-300'
+        }`}
         style={{ backgroundColor: isScrolledToBeige ? '#124e78' : 'transparent' }}
       >
         <SidebarContent locale={locale} pathname={pathname} isActive={isActive} t={t} onLanguageChange={handleLanguageChange} isScrolledToBeige={isScrolledToBeige} />

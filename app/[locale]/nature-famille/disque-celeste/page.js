@@ -9,8 +9,13 @@ export default function DisqueCeleste({ params }) {
 
   return (
     <div>
-      <section className="relative h-96 w-full flex items-center justify-center bg-gradient-to-br from-lake to-lake-dark">
-        <div className="text-center text-white px-4 z-10">
+      <section className="relative h-96 w-full flex items-center justify-center">
+        <div 
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/grotte_du_loup.webp')" }}
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+        <div className="text-center text-white px-4 z-10 relative">
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-4xl md:text-6xl font-playfair font-light drop-shadow-2xl mb-4">
             {locale === 'fr' ? "🌌 Grotte du Loup – Le mystère du disque céleste" : "🌌 Wolf Cave – The Celestial Disc Mystery"}
           </motion.h1>
