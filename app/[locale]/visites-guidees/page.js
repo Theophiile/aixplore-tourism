@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Card from '@/components/Card';
 import ParallaxSection from '@/components/ParallaxSection';
 import { getTranslation } from '@/lib/translations';
@@ -64,18 +63,13 @@ export default function VisitesGuideesPage({ params }) {
     <div className="min-h-screen">
       {/* Hero Section avec image de fond - prend toute la largeur */}
       <section className="relative h-screen flex items-center justify-center w-screen lg:-ml-56 bg-[#124e78]">
-        {/* Image de fond optimisée */}
-        <Image
-          src="/images/visites_guidées.webp"
-          alt="Visites guidées en Savoie"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
-          className="object-cover"
+        {/* Image de fond */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/visites_guidées.webp')" }}
         />
         {/* Overlay sombre */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+        <div className="absolute inset-0 bg-black/40" />
         
         <div className="text-center text-white px-4 z-10 relative lg:ml-56">
           <motion.h1
