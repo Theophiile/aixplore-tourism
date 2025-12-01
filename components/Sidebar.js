@@ -130,8 +130,16 @@ export default function Sidebar({ locale = 'fr' }) {
      pathname.includes('/talloires') ||
      pathname.includes('/lac-annecy'));
 
+  // Vérifier si on est sur les pages sans image hero (coups-de-coeur, a-propos, contact, cgv, mentions-legales)
+  const isPageWithoutHeroImage = 
+    pathname.includes('/coups-de-coeur') ||
+    pathname.includes('/a-propos') ||
+    pathname.includes('/contact') ||
+    pathname.includes('/cgv') ||
+    pathname.includes('/mentions-legales');
+
   // Pages où la navbar doit toujours être bleue sans transition
-  const isAlwaysBlueNavbar = isNatureFamilleActivityPage || isVisiteGuideeActivityPage;
+  const isAlwaysBlueNavbar = isNatureFamilleActivityPage || isVisiteGuideeActivityPage || isPageWithoutHeroImage;
 
   // Restaurer la position de scroll au chargement et lors du changement de locale
   useEffect(() => {

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';
 
@@ -62,10 +63,15 @@ export default function RetraitesBienEtrePage({ params }) {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-screen w-screen lg:-ml-56 flex items-center justify-center">
-        <div 
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/retraite_bien_etre_en_montagne.webp')" }}
+      <section className="relative h-screen w-screen lg:-ml-56 flex items-center justify-center bg-[#124e78]">
+        <Image
+          src="/images/retraite_bien_etre_en_montagne.webp"
+          alt="Retraites bien-être en montagne"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
         <div className="text-center text-white/90 px-4 z-10 relative lg:ml-56">

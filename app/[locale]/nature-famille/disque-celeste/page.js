@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Button from '@/components/Button';
 
 export default function DisqueCeleste({ params }) {
@@ -8,10 +9,15 @@ export default function DisqueCeleste({ params }) {
 
   return (
     <div>
-      <section className="relative h-96 w-full flex items-center justify-center">
-        <div 
-          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/grotte_du_loup.webp')" }}
+      <section className="relative h-96 w-full flex items-center justify-center bg-[#124e78]">
+        <Image
+          src="/images/grotte_du_loup.webp"
+          alt="Grotte du Loup"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
         <div className="text-center text-white px-4 z-10 relative">
