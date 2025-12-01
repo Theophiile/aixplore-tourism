@@ -20,7 +20,7 @@ export default function ChasseCouleurs({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-playfair font-light drop-shadow-2xl mb-4"
+            className="text-4xl md:text-5xl font-playfair font-light drop-shadow-lg mb-4"
           >
             {locale === 'fr' 
               ? "Le Mollard Noir – La chasse aux couleurs de la nature"
@@ -31,7 +31,7 @@ export default function ChasseCouleurs({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-montserrat font-light drop-shadow-lg"
+            className="text-lg font-montserrat font-light drop-shadow-md"
           >
             {locale === 'fr' ? "19 avril 2026" : "April 19, 2026"}
           </motion.p>
@@ -39,17 +39,17 @@ export default function ChasseCouleurs({ params }) {
       </section>
 
       {/* Présentation */}
-      <section className="section-padding bg-beige-light">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Présentation de la sortie" : "Outing Presentation"}
             </h2>
-            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
+            <div className="space-y-4 text-base text-stone/80 font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Le printemps s'installe, la forêt s'éveille et les couleurs explosent !"
@@ -80,31 +80,31 @@ export default function ChasseCouleurs({ params }) {
       </section>
 
       {/* Thématique */}
-      <section className="section-padding">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Thématique : La nature en couleurs" : "Theme: Nature in Colors"}
             </h2>
-            <ul className="space-y-3 text-lg text-stone font-montserrat font-light">
+            <ul className="space-y-3 text-base text-stone/80 font-montserrat font-light">
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Observer la forêt qui renaît au printemps." : "Observe the forest coming back to life in spring."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Identifier les teintes de la végétation, du sol et du ciel." : "Identify the shades of vegetation, soil and sky."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Apprendre à regarder autrement et à remarquer l'invisible." : "Learn to look differently and notice the invisible."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Développer l'attention, la curiosité et la créativité des enfants." : "Develop children's attention, curiosity and creativity."}</span>
               </li>
             </ul>
@@ -113,20 +113,20 @@ export default function ChasseCouleurs({ params }) {
       </section>
 
       {/* Activité principale */}
-      <section className="section-padding bg-gradient-to-br from-lake-light to-gold-light">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Activité principale" : "Main Activity"}
             </h2>
-            <h3 className="text-2xl font-playfair font-normal text-lake-dark mb-4">
+            <h3 className="text-xl font-playfair font-normal text-lake mb-4">
               {locale === 'fr' ? "Chasse aux couleurs nature" : "Nature Color Hunt"}
             </h3>
-            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
+            <div className="space-y-4 text-base text-stone/80 font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Chaque enfant reçoit une petite carte colorée avec différentes nuances à retrouver dans la nature : vert tendre, brun d'écorce, jaune de fleur, gris de pierre, bleu du ciel…"
@@ -157,43 +157,43 @@ export default function ChasseCouleurs({ params }) {
       </section>
 
       {/* Informations pratiques */}
-      <section className="section-padding">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-5xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6 text-center">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-8 text-center">
               {locale === 'fr' ? "En résumé" : "Summary"}
             </h2>
             
-            <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
-              <table className="w-full font-montserrat font-light">
-                <tbody className="divide-y divide-stone-light">
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-stone/10 overflow-x-auto">
+              <table className="w-full font-montserrat font-light text-sm">
+                <tbody className="divide-y divide-stone/10">
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Date" : "Date"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Dimanche 19 avril 2026" : "Sunday, April 19, 2026"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Dimanche 19 avril 2026" : "Sunday, April 19, 2026"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Horaires" : "Schedule"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Rendez-vous à 13h00 – retour vers 17h00" : "Meeting at 1:00 PM – return around 5:00 PM"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Rendez-vous à 13h00 – retour vers 17h00" : "Meeting at 1:00 PM – return around 5:00 PM"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Lieu" : "Location"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Le Mollard Noir (Aix-les-Bains)" : "Le Mollard Noir (Aix-les-Bains)"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Le Mollard Noir (Aix-les-Bains)" : "Le Mollard Noir (Aix-les-Bains)"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Distance" : "Distance"}</td>
-                    <td className="py-4 px-4 text-stone">2,76 km</td>
+                    <td className="py-4 px-4 text-stone/80">2,76 km</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Dénivelé positif" : "Elevation gain"}</td>
-                    <td className="py-4 px-4 text-stone">+113 m</td>
+                    <td className="py-4 px-4 text-stone/80">+113 m</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Durée de marche" : "Walking time"}</td>
-                    <td className="py-4 px-4 text-stone">
+                    <td className="py-4 px-4 text-stone/80">
                       {locale === 'fr' 
                         ? "Environ 1h de marche, entrecoupée d'ateliers et pauses"
                         : "About 1h walk, interspersed with workshops and breaks"
@@ -202,11 +202,11 @@ export default function ChasseCouleurs({ params }) {
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Difficulté" : "Difficulty"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Facile – adaptée aux enfants" : "Easy – suitable for children"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Facile – adaptée aux enfants" : "Easy – suitable for children"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Public" : "Audience"}</td>
-                    <td className="py-4 px-4 text-stone">
+                    <td className="py-4 px-4 text-stone/80">
                       {locale === 'fr' 
                         ? "Parents et enfants de 5 à 12 ans (7 familles max)"
                         : "Parents and children aged 5 to 12 (7 families max)"
@@ -215,7 +215,7 @@ export default function ChasseCouleurs({ params }) {
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Tarif" : "Rate"}</td>
-                    <td className="py-4 px-4 text-stone">
+                    <td className="py-4 px-4 text-stone/80">
                       {locale === 'fr'
                         ? "9 € / adulte – 13 € / enfant – Pack famille : 40 €"
                         : "€9 / adult – €13 / child – Family pack: €40"
@@ -224,7 +224,7 @@ export default function ChasseCouleurs({ params }) {
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "À prévoir" : "What to bring"}</td>
-                    <td className="py-4 px-4 text-stone">
+                    <td className="py-4 px-4 text-stone/80">
                       {locale === 'fr'
                         ? "Chaussures fermées, eau, coupe-vent léger, curiosité et bonne humeur"
                         : "Closed shoes, water, light windbreaker, curiosity and good mood"
@@ -233,7 +233,7 @@ export default function ChasseCouleurs({ params }) {
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Accès & covoiturage" : "Access & carpooling"}</td>
-                    <td className="py-4 px-4 text-stone">
+                    <td className="py-4 px-4 text-stone/80">
                       {locale === 'fr'
                         ? "Le lieu précis sera communiqué quelques jours avant la sortie. Nous privilégions le covoiturage entre familles via un groupe WhatsApp dédié, créé avant la sortie pour échanger et recevoir toutes les infos utiles."
                         : "The exact location will be communicated a few days before the outing. We encourage carpooling between families via a dedicated WhatsApp group, created before the outing to exchange and receive all useful information."
@@ -242,7 +242,7 @@ export default function ChasseCouleurs({ params }) {
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Météo" : "Weather"}</td>
-                    <td className="py-4 px-4 text-stone">
+                    <td className="py-4 px-4 text-stone/80">
                       {locale === 'fr'
                         ? "En cas de pluie, la sortie est reportée ou remboursée intégralement."
                         : "In case of rain, the outing is postponed or fully refunded."
@@ -257,31 +257,31 @@ export default function ChasseCouleurs({ params }) {
       </section>
 
       {/* Ce que vos enfants vont vivre */}
-      <section className="section-padding bg-beige">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Ce que vos enfants vont vivre" : "What Your Children Will Experience"}
             </h2>
-            <ul className="space-y-3 text-lg text-stone font-montserrat font-light">
+            <ul className="space-y-3 text-base text-stone/80 font-montserrat font-light">
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Une balade paisible et colorée au cœur de la nature." : "A peaceful and colorful walk in the heart of nature."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Des jeux d'observation et d'attention." : "Observation and attention games."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Une expérience sensorielle : regarder, toucher, sentir, comparer." : "A sensory experience: look, touch, smell, compare."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Un moment de complicité et de partage en famille." : "A moment of complicity and sharing as a family."}</span>
               </li>
             </ul>
@@ -290,17 +290,17 @@ export default function ChasseCouleurs({ params }) {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-lake to-lake-dark text-white text-center">
+      <section className="py-12 bg-beige-light text-center">
         <div className="container-custom max-w-2xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light mb-6">
+            <h2 className="text-2xl font-playfair font-light mb-6 text-stone-dark">
               {locale === 'fr' ? "Prêt pour l'aventure ?" : "Ready for the adventure?"}
             </h2>
-            <p className="text-lg font-montserrat mb-8">
+            <p className="text-base font-montserrat mb-8 text-stone/70 font-light">
               {locale === 'fr'
                 ? "Réservez dès maintenant votre place pour cette sortie nature en famille !"
                 : "Book your spot now for this family nature outing!"

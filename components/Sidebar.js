@@ -121,6 +121,18 @@ export default function Sidebar({ locale = 'fr' }) {
      pathname.includes('/disque-celeste') ||
      pathname.includes('/champignons'));
 
+  // Vérifier si on est sur une page de visite guidée individuelle
+  const isVisiteGuideeActivityPage = pathname.includes('/visites-guidees/') && 
+    (pathname.includes('/chanaz') ||
+     pathname.includes('/croix-nivolet') ||
+     pathname.includes('/mont-revard') ||
+     pathname.includes('/savoie-grandeur-nature') ||
+     pathname.includes('/talloires') ||
+     pathname.includes('/lac-annecy'));
+
+  // Pages où la navbar doit toujours être bleue sans transition
+  const isAlwaysBlueNavbar = isNatureFamilleActivityPage || isVisiteGuideeActivityPage;
+
   // Restaurer la position de scroll au chargement et lors du changement de locale
   useEffect(() => {
     const savedScrollPosition = sessionStorage.getItem('scrollPosition');
@@ -133,7 +145,7 @@ export default function Sidebar({ locale = 'fr' }) {
     }
   }, [locale, pathname]);
 
-  // Gérer le scroll pour changer le style (pour toutes les pages sauf l'accueil et les activités nature-famille)
+  // Gérer le scroll pour changer le style (pour toutes les pages sauf l'accueil et les pages à navbar bleue fixe)
   useEffect(() => {
     // Réinitialiser l'état quand on change de page
     setIsScrolledToBeige(false);
@@ -143,8 +155,8 @@ export default function Sidebar({ locale = 'fr' }) {
       return;
     }
     
-    // Si on est sur une page d'activité nature-famille, forcer le style bleu
-    if (isNatureFamilleActivityPage) {
+    // Si on est sur une page où la navbar doit toujours être bleue, forcer le style bleu
+    if (isAlwaysBlueNavbar) {
       setIsScrolledToBeige(true);
       return;
     }
@@ -167,7 +179,7 @@ export default function Sidebar({ locale = 'fr' }) {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(timeoutId);
     };
-  }, [isHomePage, isNatureFamilleActivityPage, pathname]);
+  }, [isHomePage, isAlwaysBlueNavbar, pathname]);
 
   const isActive = (href) => {
     if (href === '/') {
@@ -255,7 +267,7 @@ export default function Sidebar({ locale = 'fr' }) {
       {/* Sidebar Desktop */}
       <aside 
         className={`hidden lg:block fixed left-0 top-0 h-screen w-56 z-40 overflow-y-auto shadow-xl ${
-          isNatureFamilleActivityPage ? '' : 'transition-colors duration-300'
+          isAlwaysBlueNavbar ? '' : 'transition-colors duration-300'
         }`}
         style={{ backgroundColor: isScrolledToBeige ? '#124e78' : 'transparent' }}
       >

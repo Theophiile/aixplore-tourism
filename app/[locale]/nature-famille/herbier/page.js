@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ParallaxSection from '@/components/ParallaxSection';
 import Button from '@/components/Button';
 
 export default function Herbier({ params }) {
@@ -19,7 +18,7 @@ export default function Herbier({ params }) {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-playfair font-light drop-shadow-2xl mb-4"
+            className="text-4xl md:text-5xl font-playfair font-light drop-shadow-lg mb-4"
           >
             {locale === 'fr' 
               ? "Lac de La Thuile – L'herbier coloré du bord de l'eau"
@@ -30,24 +29,24 @@ export default function Herbier({ params }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-montserrat font-light drop-shadow-lg"
+            className="text-lg font-montserrat font-light drop-shadow-md"
           >
             {locale === 'fr' ? "14 juin 2026" : "June 14, 2026"}
           </motion.p>
         </div>
       </section>
 
-      <section className="section-padding bg-beige-light">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Présentation de la sortie" : "Outing Presentation"}
             </h2>
-            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
+            <div className="space-y-4 text-base text-stone/80 font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Entre forêt et montagne, le lac de La Thuile est un petit bijou naturel niché dans un écrin de verdure."
@@ -68,8 +67,8 @@ export default function Herbier({ params }) {
               </p>
               <p className="font-normal text-stone-dark">
                 {locale === 'fr'
-                  ? "Cette activité allie découverte botanique, éveil des sens et créativité — une expérience idéale pour les enfants curieux et les parents aimant apprendre ensemble, au rythme tranquille de la nature 🌸"
-                  : "This activity combines botanical discovery, sensory awakening and creativity — an ideal experience for curious children and parents who love learning together, at nature's peaceful pace 🌸"
+                  ? "Cette activité allie découverte botanique, éveil des sens et créativité — une expérience idéale pour les enfants curieux et les parents aimant apprendre ensemble, au rythme tranquille de la nature."
+                  : "This activity combines botanical discovery, sensory awakening and creativity — an ideal experience for curious children and parents who love learning together, at nature's peaceful pace."
                 }
               </p>
             </div>
@@ -77,31 +76,31 @@ export default function Herbier({ params }) {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Thématique : La nature comme palette de couleurs" : "Theme: Nature as a Color Palette"}
             </h2>
-            <ul className="space-y-3 text-lg text-stone font-montserrat font-light">
+            <ul className="space-y-3 text-base text-stone/80 font-montserrat font-light">
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Découvrir la flore du bord du lac et ses secrets." : "Discover the lakeside flora and its secrets."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Apprendre à reconnaître quelques fleurs et feuilles simples." : "Learn to recognize some simple flowers and leaves."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Créer un herbier coloré et poétique à rapporter à la maison." : "Create a colorful and poetic herbarium to take home."}</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-shrink-0">•</span>
+                <span className="flex-shrink-0 text-lake">•</span>
                 <span>{locale === 'fr' ? "Développer la créativité et le respect du vivant." : "Develop creativity and respect for living things."}</span>
               </li>
             </ul>
@@ -109,20 +108,20 @@ export default function Herbier({ params }) {
         </div>
       </section>
 
-      <section className="section-padding bg-gradient-to-br from-lake-light to-gold-light">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Activité principale" : "Main Activity"}
             </h2>
-            <h3 className="text-2xl font-playfair font-normal text-lake-dark mb-4">
-              {locale === 'fr' ? "🌺 Création d'un herbier coloré" : "🌺 Creating a Colorful Herbarium"}
+            <h3 className="text-xl font-playfair font-normal text-lake mb-4">
+              {locale === 'fr' ? "Création d'un herbier coloré" : "Creating a Colorful Herbarium"}
             </h3>
-            <div className="space-y-4 text-lg text-stone font-montserrat font-light leading-relaxed">
+            <div className="space-y-4 text-base text-stone/80 font-montserrat font-light leading-relaxed">
               <p>
                 {locale === 'fr'
                   ? "Les enfants partiront avec un carnet nature et apprendront à observer les formes, les textures et les couleurs des plantes rencontrées."
@@ -135,7 +134,7 @@ export default function Herbier({ params }) {
                   : "The elements collected (with care and moderation) will be used to compose an artistic herbarium, symbol of their unique view of nature."
                 }
               </p>
-              <p className="italic">
+              <p className="italic text-stone/70">
                 {locale === 'fr'
                   ? "Objectif : éveiller la curiosité, développer la motricité fine et sensibiliser à la biodiversité par la création."
                   : "Objective: awaken curiosity, develop fine motor skills and raise awareness of biodiversity through creation."
@@ -146,59 +145,59 @@ export default function Herbier({ params }) {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-5xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6 text-center">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-8 text-center">
               {locale === 'fr' ? "En résumé" : "Summary"}
             </h2>
             
-            <div className="bg-white rounded-lg p-8 shadow-xl overflow-x-auto">
-              <table className="w-full font-montserrat font-light">
-                <tbody className="divide-y divide-stone-light">
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-stone/10 overflow-x-auto">
+              <table className="w-full font-montserrat font-light text-sm">
+                <tbody className="divide-y divide-stone/10">
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Date" : "Date"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Dimanche 14 juin 2026" : "Sunday, June 14, 2026"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Dimanche 14 juin 2026" : "Sunday, June 14, 2026"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Horaires" : "Schedule"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Rendez-vous à 10h00 – retour vers 15h00" : "Meeting at 10:00 AM – return around 3:00 PM"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Rendez-vous à 10h00 – retour vers 15h00" : "Meeting at 10:00 AM – return around 3:00 PM"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Lieu" : "Location"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Lac de La Thuile" : "Lake La Thuile"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Lac de La Thuile" : "Lake La Thuile"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Longueur" : "Length"}</td>
-                    <td className="py-4 px-4 text-stone">2 km</td>
+                    <td className="py-4 px-4 text-stone/80">2 km</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Durée de marche" : "Walking time"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Environ 2H (balade + atelier + pauses)" : "About 2H (walk + workshop + breaks)"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Environ 2H (balade + atelier + pauses)" : "About 2H (walk + workshop + breaks)"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Dénivelé positif" : "Elevation gain"}</td>
-                    <td className="py-4 px-4 text-stone">+40 m</td>
+                    <td className="py-4 px-4 text-stone/80">+40 m</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Difficulté" : "Difficulty"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Randonnée facile – adaptée aux enfants" : "Easy hike – suitable for children"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Randonnée facile – adaptée aux enfants" : "Easy hike – suitable for children"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Public" : "Audience"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Parents et enfants de 5 à 12 ans (7 familles max)" : "Parents and children aged 5 to 12 (7 families max)"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Parents et enfants de 5 à 12 ans (7 familles max)" : "Parents and children aged 5 to 12 (7 families max)"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "Tarif" : "Rate"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "9 € / adulte – 13 € / enfant – Pack famille : 40 €" : "€9 / adult – €13 / child – Family pack: €40"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "9 € / adulte – 13 € / enfant – Pack famille : 40 €" : "€9 / adult – €13 / child – Family pack: €40"}</td>
                   </tr>
                   <tr>
                     <td className="py-4 px-4 font-normal text-stone-dark">{locale === 'fr' ? "À prévoir" : "What to bring"}</td>
-                    <td className="py-4 px-4 text-stone">{locale === 'fr' ? "Chaussures fermées, eau, chapeau, ciseaux à bout rond (facultatif), curiosité et bonne humeur" : "Closed shoes, water, hat, round-tip scissors (optional), curiosity and good mood"}</td>
+                    <td className="py-4 px-4 text-stone/80">{locale === 'fr' ? "Chaussures fermées, eau, chapeau, ciseaux à bout rond (facultatif), curiosité et bonne humeur" : "Closed shoes, water, hat, round-tip scissors (optional), curiosity and good mood"}</td>
                   </tr>
                 </tbody>
               </table>
@@ -207,36 +206,42 @@ export default function Herbier({ params }) {
         </div>
       </section>
 
-      <section className="section-padding bg-beige">
+      <section className="py-12 bg-beige-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light text-stone-dark mb-6">
+            <h2 className="text-2xl font-playfair font-light text-stone-dark mb-6">
               {locale === 'fr' ? "Ce que vos enfants vont vivre" : "What Your Children Will Experience"}
             </h2>
-            <ul className="space-y-3 text-lg text-stone font-montserrat font-light">
-              <li className="flex items-start gap-3"><span className="flex-shrink-0">•</span><span>{locale === 'fr' ? "Une balade paisible autour d'un lac de montagne." : "A peaceful walk around a mountain lake."}</span></li>
-              <li className="flex items-start gap-3"><span className="flex-shrink-0">•</span><span>{locale === 'fr' ? "L'observation des plantes, couleurs et textures de la nature." : "Observation of plants, colors and textures of nature."}</span></li>
-              <li className="flex items-start gap-3"><span className="flex-shrink-0">•</span><span>{locale === 'fr' ? "La création d'un herbier coloré et personnel, souvenir de leur sortie." : "Creating a colorful and personal herbarium, a memory of their outing."}</span></li>
-              <li className="flex items-start gap-3"><span className="flex-shrink-0">•</span><span>{locale === 'fr' ? "Un moment de calme, de partage et d'émerveillement familial." : "A moment of calm, sharing and family wonder."}</span></li>
+            <ul className="space-y-3 text-base text-stone/80 font-montserrat font-light">
+              <li className="flex items-start gap-3"><span className="flex-shrink-0 text-lake">•</span><span>{locale === 'fr' ? "Une balade paisible autour d'un lac de montagne." : "A peaceful walk around a mountain lake."}</span></li>
+              <li className="flex items-start gap-3"><span className="flex-shrink-0 text-lake">•</span><span>{locale === 'fr' ? "L'observation des plantes, couleurs et textures de la nature." : "Observation of plants, colors and textures of nature."}</span></li>
+              <li className="flex items-start gap-3"><span className="flex-shrink-0 text-lake">•</span><span>{locale === 'fr' ? "La création d'un herbier coloré et personnel, souvenir de leur sortie." : "Creating a colorful and personal herbarium, a memory of their outing."}</span></li>
+              <li className="flex items-start gap-3"><span className="flex-shrink-0 text-lake">•</span><span>{locale === 'fr' ? "Un moment de calme, de partage et d'émerveillement familial." : "A moment of calm, sharing and family wonder."}</span></li>
             </ul>
           </motion.div>
         </div>
       </section>
 
-      <section className="section-padding bg-gradient-to-r from-lake to-lake-dark text-white text-center">
+      <section className="py-12 bg-beige-light text-center">
         <div className="container-custom max-w-2xl">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-playfair font-light mb-6">
+            <h2 className="text-2xl font-playfair font-light mb-6 text-stone-dark">
               {locale === 'fr' ? "Prêt pour l'aventure ?" : "Ready for the adventure?"}
             </h2>
+            <p className="text-base font-montserrat mb-8 text-stone/70 font-light">
+              {locale === 'fr'
+                ? "Réservez dès maintenant votre place pour cette sortie nature en famille !"
+                : "Book your spot now for this family nature outing!"
+              }
+            </p>
             <Button href={`/${locale}/contact`} variant="gold">
               {locale === 'fr' ? "Réserver cette sortie" : "Book this outing"}
             </Button>
@@ -246,5 +251,3 @@ export default function Herbier({ params }) {
     </div>
   );
 }
-
-
